@@ -75,12 +75,12 @@ myContainer.Children.Add(keyboard);
 ## When to Use VirtualKeyboard vs. VirtualKeyboardScope
 
 ### Choose VirtualKeyboard when:
-- 
+-
 - **Fixed Target**: You need the keyboard to always target a specific input control, regardless of focus.
 - **Specialized Input**: You're building a custom input experience where focus doesn't drive the keyboard target.
 
 ### Choose VirtualKeyboardScope when:
-- 
+-
 - **Standard Input**: You want the keyboard to follow focus automatically.
 - **Simpler Integration**: You prefer a container-based approach with fewer configuration options.
 - **Automatic Visibility**: You want automatic show/hide behavior based on focus changes.

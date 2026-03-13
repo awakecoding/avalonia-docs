@@ -43,7 +43,7 @@ e.Handled = true;
 ## More Information
 
 > [!NOTE]
-> View the source code on _GitHub_ 
+> View the source code on _GitHub_
 >
 > [`PinchGestureRecognizer.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/PinchGestureRecognizer.cs)
 >

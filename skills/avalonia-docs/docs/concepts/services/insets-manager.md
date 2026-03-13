@@ -1,6 +1,6 @@
 # Insets Manager
 
-The `InsetsManager` allows you to interact with the platform's system bars and handle changes to the safe area of the mobile window. 
+The `InsetsManager` allows you to interact with the platform's system bars and handle changes to the safe area of the mobile window.
 
 The `InsetsManager` can be access through an instance of `TopLevel` or `Window`, for more details on accessing `TopLevel` please visit [TopLevel](../toplevel.md) page:
 ```cs
@@ -13,7 +13,7 @@ var insetsManager = TopLevel.GetTopLevel(control).InsetsManager;
 > [!NOTE]
 > Starting with Avalonia 11.1, any Avalonia app will automatically adjust its root view accordingly to the inset values. This behavior can be disabled by setting `TopLevel.AutoSafeAreaPadding="False"` attached property value on the root view.
 
-## Properties 
+## Properties
 
 ### IsSystemBarVisible
 Gets or sets a value indicating whether the system bars are visible. Returns null if the platform doesn't support showing or hiding system bars.
@@ -57,7 +57,7 @@ event EventHandler<SafeAreaChangedArgs>? SafeAreaChanged;
 # SafeAreaChangedArgs
 SafeAreaChangedArgs is a class that provides data for the SafeAreaChanged event.
 
-## Properties 
+## Properties
 
 ### SafeAreaPadding
 Gets the new safe area padding.

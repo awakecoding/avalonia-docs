@@ -163,7 +163,7 @@ dnf install gtk3 webkit2gtk4.1
 | NativeWebDialog | ✔ | ✔ | ✔ |
 | WebAuthenticationBroker | ✔** | ✔ | ✔** |
 
-\* For Linux, use NativeWebDialog instead of NativeWebView  
+\* For Linux, use NativeWebDialog instead of NativeWebView
 \** Uses NativeWebDialog implementation
 
 ## Next Steps

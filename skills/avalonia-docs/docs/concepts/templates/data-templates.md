@@ -71,7 +71,7 @@ But you will see only the fully-qualified class name for the student object:
 
 ![](../../../static/img/concepts/templates/content-type.png)
 
-This is not very helpful! It happens because _Avalonia UI_ has no definition of how to display an object of class `Student` - and it is not a control - so it falls back on the `.ToString()` method, and all you see is the fully-qualified class name. 
+This is not very helpful! It happens because _Avalonia UI_ has no definition of how to display an object of class `Student` - and it is not a control - so it falls back on the `.ToString()` method, and all you see is the fully-qualified class name.
 
 On the next page you will see one of the ways you can specify how to display an object created from a class that you have defined (not a control or a simple string).
 

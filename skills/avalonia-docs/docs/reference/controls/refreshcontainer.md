@@ -36,7 +36,7 @@ This is the default state of the visualizer. The user is not interacting with th
 
 * #### Interacting
 The user is pulling in the direction specified in the `PullDirection` property, but has not reached the pull threshold. The visualizer gradually becomes visible until the pull threshold is reached.
-If the pull is releaseed before reaching the pull threshold, the `Visualizer` returns to the `Idle` state, and no refresh is initiated. 
+If the pull is releaseed before reaching the pull threshold, the `Visualizer` returns to the `Idle` state, and no refresh is initiated.
 If the pull threshold is reached, the `Visualizer` enters the `Pending` state.
 
 * #### Pending

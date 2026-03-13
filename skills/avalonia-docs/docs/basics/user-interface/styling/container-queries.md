@@ -1,6 +1,6 @@
-# Container Queries <MinVersion version="11.3" /> 
+# Container Queries (Avalonia 11.3+)
 
-Container Queries allow styles to be activated for a control based on the size of an ancestor, which acts as a container. 
+Container Queries allow styles to be activated for a control based on the size of an ancestor, which acts as a container.
 
 > [!TIP]
 > Avalonia's Container Queries are similar to CSS's Container Queries, with a more limited functionality to suit the platforms and form factors Avalonia supports. They can also behave like media queries if the Toplevel is set as a container.
@@ -58,7 +58,7 @@ They can also be part of a `ControlTheme`'s styles:
 The `Name` property defines the name of the container it will attach to. This isn't a unique identifier, and multiple container queries can use the same name.
 The `Query` defines the rules to activate the containing size. See [Queries](#queries) below.
 
-This makes them quite easy to use in themes targeting different screen sizes, or themes that have different forms depending on the space available in its parent. This comes with a few restrictions. 
+This makes them quite easy to use in themes targeting different screen sizes, or themes that have different forms depending on the space available in its parent. This comes with a few restrictions.
 1. Container Queries can't be hosted in a `Style` element.
    The following is invalid.
 ```xml

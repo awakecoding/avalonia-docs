@@ -2,10 +2,10 @@
 
 Welcome to the documentation for Avalonia.
 
-## Overview 
+## Overview
 Avalonia is a powerful framework that enables developers to create cross-platform application using .NET. It uses its own rendering engine to draw UI controls, ensuring consistent appearance and behavior across various platforms, including Windows, macOS, Linux, Android, iOS and WebAssembly. This means that developers can share their UI code and maintain a uniform look and feel regardless of the target platform.
 
-Applications built with Avalonia are written in C# or F#, which makes it easy to rapidly prototype applications that can develop over time into complex systems. Unlike other toolkits that might be restricted by limited APIs, or poor performance, Avalonia applications have the advantage of full access to the platform's capabilities and deliver incredible performance, thanks to the compositional renderer. 
+Applications built with Avalonia are written in C# or F#, which makes it easy to rapidly prototype applications that can develop over time into complex systems. Unlike other toolkits that might be restricted by limited APIs, or poor performance, Avalonia applications have the advantage of full access to the platform's capabilities and deliver incredible performance, thanks to the compositional renderer.
 
 As Avalonia applications are cross-platform applications, they are architected similarly to other traditional cross-platform applications. The most common approach is to create a core project that houses the shared code, and then develop platform-specific projects that will consume this shared code.
 

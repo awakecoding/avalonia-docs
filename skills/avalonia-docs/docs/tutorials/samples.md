@@ -33,26 +33,26 @@
       description: 'This sample you will learn how to validate properties and display an error message to the user, if the entered values are invalid.',
       tags: ['XAML', 'C#', 'MVVM'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/MVVM/ValidationSample'
-    },   
+    },
     {
       title: 'Dialogs',
       description: 'This sample will show you how to use Reactive UI Interactions to show [dialogs] in your MVVM application',
       tags: ['XAML', 'C#', 'MVVM', 'RxUI'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/ViewInteraction/MvvmDialogSample'
-    }, 
+    },
     {
       title: 'Dialog Manager',
       description: 'This sample will show you how to write a service (we will call it dialog manager) that will help you to show dialogs in your MVVM application',
       tags: ['XAML', 'C#', 'MVVM'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/ViewInteraction/DialogManagerSample'
-    }, 
+    },
   ]}
 />
 
 ## DataTemplates
 
   <SampleCardsGrid
-  samples={[    
+  samples={[
     {
       title: 'Basic DataTemplate',
       description: 'This sample will show you how you can use DataTemplates to control how your data is displayed.',
@@ -77,7 +77,7 @@
 ## Controls, Styles & Drawing
 
   <SampleCardsGrid
-  samples={[    
+  samples={[
     {
       title: 'Customized Button',
       description: 'This sample will show you how to customize the style of a button by creating reusable styles.',
@@ -95,7 +95,7 @@
       description: 'This sample will show you how to use native menus on macOS and Linux.',
       tags: ['XAML', 'C#', 'Menus'],
       url: 'https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/NativeMenuOps'
-    },  
+    },
      {
       title: 'Splash Screen',
       description: 'This sample will show you how to create a custom Splash Screen that loads before your MainWindow',
@@ -132,94 +132,94 @@
 ## Custom Controls
 
   <SampleCardsGrid
-  samples={[    
+  samples={[
    {
       title: 'Custom Rating Control ',
       description: 'This sample will show you how to create a custom control. The goal is to create a rating control, where the user can vote via clicking one of several stars.',
       tags: ['XAML', 'C#', 'Custom Controls'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CustomControls/RatingControlSample'
-    },    
+    },
     {
       title: 'Custom Snowflakes Control',
       description: 'This sample will show you how to create a custom control that overrides OnRender in order to have advanced render capabilities.',
       tags: ['XAML', 'C#', 'Custom Controls'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CustomControls/SnowflakesControlSample'
-    },    
+    },
   ]}
 />
 
 ## Miscellaneous
 
   <SampleCardsGrid
-  samples={[    
+  samples={[
   {
       title: 'Clipboard Operations',
       description: 'This sample demonstrates how to interact with the devices clipboard and copy and paste text.',
       tags: ['XAML', 'C#', 'Clipboard'],
       url: 'https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/ClipboardOps'
-    },  
+    },
      {
       title: 'Drag and Drop Operations',
       description: 'This sample demonstrates how to implement dragging and dropping within your Avalonia application.',
       tags: ['XAML', 'C#', 'Drag-and-Drop'],
       url: 'https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/DragDropOps'
-    },  
+    },
     {
       title: 'Native File Dialogs',
       description: 'This sample demonstrates how to use the native Save As and Open File dialogs.',
       tags: ['XAML', 'C#', 'Dialogs'],
       url: 'https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/FileOps'
-    },  
+    },
      {
       title: 'Basic Localization',
       description: 'This sample demonstrates how to localize your Avalonia application.',
       tags: ['XAML', 'C#', 'Localization'],
       url: 'https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/Localization'
-    },  
+    },
      {
       title: 'Basic Inversion of Control',
       description: 'This sample demonstrates how to use the native Save As and Open File dialogs with IoC.',
       tags: ['XAML', 'C#', 'Dialogs', 'IoC'],
       url: 'https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/IoCFileOps'
-    },  
+    },
    {
       title: 'Basic ViewLocator',
       description: 'This sample will show you how to use a ViewLocator in order to change the contents of your UI.',
       tags: ['XAML', 'C#', 'Navigation'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Routing/BasicViewLocatorSample'
-    },    
+    },
     {
       title: 'Native AOT',
       description: 'This sample will show you how to setup your application for building with Native AOT',
       tags: ['XAML', 'C#', 'Native AOT'],
       url: 'https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/NativeAot'
-    },   
-     
+    },
+
   ]}
 />
 
 ## Automated UI Testing
 
   <SampleCardsGrid
-  samples={[    
+  samples={[
    {
       title: 'Headless Testing with XUnit',
       description: 'This sample will show you how the headless platform in Avalonia provides the capability to run Avalonia applications without a visible graphical user interface',
       tags: ['XAML', 'C#', 'Testing', 'XUnit'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Testing/TestableApp.Headless.XUnit'
-    },    
+    },
     {
       title: 'Headless Testing with NUnit',
       description: 'This sample will show you how the headless platform in Avalonia provides the capability to run Avalonia applications without a visible graphical user interface',
       tags: ['XAML', 'C#', 'Testing', 'NUnit'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Testing/TestableApp.Headless.NUnit'
-    },   
+    },
      {
       title: 'Testing with Appium',
       description: 'Automated tests for UI interactions, such as button clicks, text input, and screen navigation.',
       tags: ['XAML', 'C#', 'Testing', 'Appium'],
       url: 'https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/Testing/TestableApp.Appium'
-    },   
+    },
   ]}
 />
 

@@ -52,7 +52,7 @@ You can now enable or disable compiled bindings by setting `x:CompileBindings="[
 
 ## DataContext type inference
 
-With compiled bindings enabled and `x:DataType` set on your root element, the Avalonia XAML compiler can infer the target type, even when you reference it via a named element (`#MyElement.DataContext`) or a parent lookup (`$parent[ControlType].DataContext`).  
+With compiled bindings enabled and `x:DataType` set on your root element, the Avalonia XAML compiler can infer the target type, even when you reference it via a named element (`#MyElement.DataContext`) or a parent lookup (`$parent[ControlType].DataContext`).
 
 Explicit type casting is not required in most cases.
 

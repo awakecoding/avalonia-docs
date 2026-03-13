@@ -2,7 +2,7 @@
 
 Localization is a crucial step in delivering a great user experience for a global audience. In .NET, the `ResXResourceReader` and `ResXResourceWriter` classes are used to read and write resources in an XML-based format (.resx). This guide will walk you through the process of localizing an Avalonia application using ResX files.
 
-<GitHubSampleLink title="Localization" link="https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/Localization/"/>
+> Sample: [Localization](https://github.com/AvaloniaUI/AvaloniaUI.QuickGuides/tree/main/Localization/)
 
 ## Add ResX Files to the Project
 
@@ -14,7 +14,7 @@ Before localizing, you need to include ResX files for each language you want to 
 
 Each ResX file will contain translated text that corresponds to the keys used in the application.
 
-In this example, we added new files to a new folder called `Lang`. Since .NET generator creates namespaces depending on folder structure, it might be different for you.  
+In this example, we added new files to a new folder called `Lang`. Since .NET generator creates namespaces depending on folder structure, it might be different for you.
 
 > [!WARNING]
 > If you add the files into the `Assets` folder make sure to switch `Build Action` to `Embedded resource`, otherwise the code generation may fail.

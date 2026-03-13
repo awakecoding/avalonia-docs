@@ -4,7 +4,7 @@ The performance of Avalonia applications can be significantly improved by taking
 
 ## Use CompiledBindings
 
-One of the most effective ways to improve performance in Avalonia is to use [`CompiledBindings`](../../basics/data/data-binding/compiled-bindings.md) in your application. Compiled bindings enable faster data binding by compiling the binding path at compile time, thus reducing the overhead of reflection at runtime. 
+One of the most effective ways to improve performance in Avalonia is to use [`CompiledBindings`](../../basics/data/data-binding/compiled-bindings.md) in your application. Compiled bindings enable faster data binding by compiling the binding path at compile time, thus reducing the overhead of reflection at runtime.
 
 ## Choose the Right Control for Data Display
 
@@ -44,13 +44,13 @@ When dealing with geometries in Avalonia UI, `StreamGeometry` is a more efficien
 
 When your application necessitates the display of smaller images or thumbnails, it's beneficial to generate and use reduced-size versions of your images. By default, Avalonia will load and decode your image at its original full size, which can potentially lead to performance bottlenecks if you're loading large images and scaling them down to thumbnail sizes in controls like an `ItemsControl`.
 
-## Resolve Your Binding Errors 
+## Resolve Your Binding Errors
 
-Binding errors are a prevalent source of performance issues in Avalonia UI applications. Each occurrence of a binding error causes a performance dip as the application attempts to resolve the binding and logs the error to the trace log. Naturally, the more binding errors present, the greater the impact on performance. 
+Binding errors are a prevalent source of performance issues in Avalonia UI applications. Each occurrence of a binding error causes a performance dip as the application attempts to resolve the binding and logs the error to the trace log. Naturally, the more binding errors present, the greater the impact on performance.
 
 A significant contributor to binding errors is the use of `RelativeSource` bindings in `DataTemplates`, as the binding usually isn't resolved correctly until the `DataTemplate` has completed its initialization. It's recommended to avoid `RelativeSource.FindAncestor` entirely. A more efficient approach is to define an attached property and utilize property inheritance to push values down the visual tree, rather than performing a lookup of the visual tree.
 
-## Asynchronously Load Data 
+## Asynchronously Load Data
 
 Performance issues, UI freezes, and unresponsive applications often stem from the way data is loaded. To prevent overloading the UI thread, ensure that your data is loaded asynchronously.
 

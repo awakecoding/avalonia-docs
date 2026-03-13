@@ -30,7 +30,7 @@ Avalonia 11.0 comes with significant performance improvements, enhancing the spe
 
 ### Control Themes, Nested Styles, and Theme Variants
 We've added the ability to theme controls, apply nested styles, and choose theme variants. This makes it easier to build beautiful and consistent UIs.
- 
+
 ### Bitmap Effects
 The Bitmap Effects feature lets you apply visual effects to bitmaps. You can add blur, drop shadows, and other effects to images.
 

@@ -71,7 +71,7 @@ You will probably use these properties most often:
 ## More Information
 
 > [!NOTE]
-> View the source code on _GitHub_ 
+> View the source code on _GitHub_
 >
 > [`PullGestureRecognizer.cs`](https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Base/Input/GestureRecognizers/PullGestureRecognizer.cs)
 >

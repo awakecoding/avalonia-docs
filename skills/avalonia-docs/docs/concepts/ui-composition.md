@@ -19,7 +19,7 @@ When you build an app using _Avalonia UI_, there are several different types of 
 
 A window in _Avalonia UI_ is a basic unit of layout (for a windowing platform).
 
-_Avalonia UI_ contains a large number of built-in controls that will cover most of your UI requirements.   
+_Avalonia UI_ contains a large number of built-in controls that will cover most of your UI requirements.
 
 ![](../../static/img/concepts/composition-basic-layout.png)
 
@@ -47,7 +47,7 @@ User controls are the mainstay of UI composition in _Avalonia UI_.
 
 ![](../../static/img/concepts/composition-usercontrol.png)
 
-You can add a user control to the content zone of a main window, to represent a 'page view' (above, left).  This allows you to implement a more complex app with multiple pages; where the layout and function of each page is in its own user control (XAML and code) files.   
+You can add a user control to the content zone of a main window, to represent a 'page view' (above, left).  This allows you to implement a more complex app with multiple pages; where the layout and function of each page is in its own user control (XAML and code) files.
 
 > [!NOTE]
 > For more information about how to implement a multi-page app using views, see the guide [here](../guides/development-guides/how-to-implement-multi-page-apps.md).
@@ -57,7 +57,7 @@ Another use for a user control is as a component control (above, right). You mig
 ## Tutorial
 
 > [!NOTE]
-> For tutorials about `DataTemplates` see [Avalonia.Samples](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main?tab=readme-ov-file#%EF%B8%8F-datatemplate-samples).  
+> For tutorials about `DataTemplates` see [Avalonia.Samples](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main?tab=readme-ov-file#%EF%B8%8F-datatemplate-samples).
 
 ## Collection Controls
 

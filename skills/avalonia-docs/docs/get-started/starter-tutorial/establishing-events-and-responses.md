@@ -8,7 +8,7 @@ XAML files can be associated with a C# source file. This file is where we can co
 
 1. In your IDE, browse your project directory for **Views → MainWindow.axaml → MainWindow.axaml.cs**. This is the C# source file behind the main window XAML.
 
-<Image light={MainWindowCodeBehindLocation} alt="A screenshot showing the location of the main window's code-behind file in a file tree." position="center" maxWidth={400} cornerRadius="true"/>
+![A screenshot showing the location of the main window's code-behind file in a file tree.](../../../static/img/get-started/mainwindow-codebehind-location.png)
 
 2. Open **MainWindow.axaml.cs**.
 3. Locate the `using` directives at the top of the file. At this point, there should only be the single line `using Avalonia.Controls;`. Add these two `using` directives:
@@ -66,7 +66,7 @@ To verify we’ve created the event handler correctly, we can check the debug ou
 
 	1. Run GetStartedApp in debug mode.
 
-    <Image light={RiderRunDebugMode} alt="A screenshot showing the location of the button to run a project in debug mode in Rider." position="center" maxWidth={400} cornerRadius="true"/>
+    ![A screenshot showing the location of the button to run a project in debug mode in Rider.](../../../static/img/get-started/rider-run-debug-mode.png)
 
 	2. Open the **Debug Output** tab in the bottom panel.
     3. In the running app window, click the **Calculate** button a few times.
@@ -79,7 +79,7 @@ To verify we’ve created the event handler correctly, we can check the debug ou
     3. In the running app window, click the **Calculate** button a few times.
     4. You should see “Click!” printed in the output window.
 
-    <Image light={VsDebugOutputClick} alt="A screenshot showing the output screen in Visual Studio, with the word 'Click!' printed inside." position="center" maxWidth={400} cornerRadius="true"/>
+    ![A screenshot showing the output screen in Visual Studio, with the word 'Click!' printed inside.](../../../static/img/get-started/vs-debug-output-click.png)
 
 On the next page, you will learn how to implement the formula that converts temperatures from Celsius to Fahrenheit.
 

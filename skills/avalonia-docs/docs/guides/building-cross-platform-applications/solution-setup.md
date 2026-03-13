@@ -17,11 +17,11 @@ This forms the heart of your application and is designed to be platform-agnostic
 ### Desktop Project
 This project enables running the app to run on Windows, macOS, and Linux platforms, with an output type of 'WinExe'.
 
-### Android Project 
+### Android Project
 This is a `NET-Android` based project that references the Core Project. It features a MainActivity that inherits from `AvaloniaMainActivity`, acting as the entry point for the Android application.
 
-### iOS Project 
-This is a `NET-iOS` project tailored for iOS and iPadOS platforms. The entry point for this project is the `AppDelegate`, which inherits from `AvaloniaAppDelegate`. 
+### iOS Project
+This is a `NET-iOS` project tailored for iOS and iPadOS platforms. The entry point for this project is the `AppDelegate`, which inherits from `AvaloniaAppDelegate`.
 
 ### Browser Project
 This WebAssembly (WASM) project allows your Avalonia application to run in a web browser. Its RuntimeIdentifier is `'browser-wasm'`.
@@ -30,13 +30,13 @@ This WebAssembly (WASM) project allows your Avalonia application to run in a web
 
 Shared code projects should only reference assemblies that are universally available across all platforms. This generally includes common framework namespaces like `System`, `System.Core`, and `System.Xml`.
 
-These shared projects aim to implement as much application functionality as possible, including UI components, thereby maximizing the reusability of code. 
+These shared projects aim to implement as much application functionality as possible, including UI components, thereby maximizing the reusability of code.
 
 By separating functionalities into distinct layers, code becomes easier to manage, test, and reuse across multiple platforms. This layered architecture approach in Avalonia UI projects promotes efficiency and scalability in application development.
 
 ## Platform-Specific Application Projects
 
-Platform-Specific projects must reference the Core Project. The Platform Specific projects exist to enable the application to run on unique platforms including iOS, Android and WASM. 
+Platform-Specific projects must reference the Core Project. The Platform Specific projects exist to enable the application to run on unique platforms including iOS, Android and WASM.
 
 While desktop platforms can share a single project, it may be beneficial to create a separate project for macOS using the [Xamarin.Mac Target Framework](https://learn.microsoft.com/en-us/xamarin/mac/platform/target-framework). This will enable easier distribution and packaging of your application.
 

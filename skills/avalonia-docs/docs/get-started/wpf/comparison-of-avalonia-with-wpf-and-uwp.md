@@ -197,5 +197,5 @@ This section describes the differences in controls in vanilla WPF and UWP (with 
 * There are several namespaces differences in UWP and WPF. For example, WPF has System.Windows.Media.Colors while UWP moves this to Windows.UI.Colors.
 
 > [!TIP]
-> Also see the [Avalonia XPF docs](../xpf/welcome.md) for WPF migration and XPF-specific guidance.
+> Also see the [Avalonia XPF docs](../../../xpf/welcome.md) for WPF migration and XPF-specific guidance.
 

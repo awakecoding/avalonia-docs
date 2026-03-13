@@ -75,6 +75,6 @@ public partial class MainWindowViewModel : ViewModelBase
 
 ![](../../../../static/img/reference/controls/grid/grid-sharedsizegroup.png)
 
-Notice how each column is sized: the first column is sized by the `Button`, the second and fourth are sized 
+Notice how each column is sized: the first column is sized by the `Button`, the second and fourth are sized
 by the `ListBox` content, and the third takes the remaining space.
 

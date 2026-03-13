@@ -139,7 +139,7 @@ private void Button_OnClick(object? sender, RoutedEventArgs e)
 
 <details>
   <summary>Full listing of DevToolsSerilogSink class</summary>
-  
+
 ```csharp
 public class DevToolsSerilogSink(string logArea = "Serilog", IFormatProvider? formatProvider = null)
     : ILogEventSink, ILoggerObservable

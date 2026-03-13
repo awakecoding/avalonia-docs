@@ -89,7 +89,7 @@ We store the data in an [`ObservableCollection<T>`](https://docs.microsoft.com/e
 
 The source defines how to map the data model to rows and columns. Because we're displaying hierarchical data, we'll use a `HierarchicalTreeDataGridSource<Person>`. `HierarchicalTreeDataGridSource` is a generic class where the type parameter represents the data model type, in this case `Person`.
 
-The constructor to `HierarchicalTreeDataGridSource` accepts a collection of type `IEnumerable<T>` to which we'll pass our data set. 
+The constructor to `HierarchicalTreeDataGridSource` accepts a collection of type `IEnumerable<T>` to which we'll pass our data set.
 
 We'll create the source in the `MainWindowViewModel` constructor, add three columns, and expose the source in a property:
 

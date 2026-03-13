@@ -1,6 +1,6 @@
 # Headless Testing with XUnit
 
-## Preparation 
+## Preparation
 
 This page assumes that XUnit project was already created.
 If not, please follow XUnit "Getting Started" and "Installation" here https://xunit.net/docs/getting-started/netfx/visual-studio.
@@ -14,7 +14,7 @@ Aside from XUnit packages, we need to install two more packages:
 > [!TIP]
 > Headless platform doesn't require any specific theme, and it is possible to swap FluentTheme with any other.
 
-## Setup Application 
+## Setup Application
 As in any other Avalonia app, an `Application` instance needs to be created, and themes need to be applied. When using the Headless platform, the setup is not much different from a regular Avalonia app and can mostly be reused.
 
 ```xml title=App.axaml

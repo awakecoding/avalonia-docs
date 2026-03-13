@@ -82,7 +82,7 @@ So, extending the example XAML to supply the parameter (string) from a text box:
 > [!NOTE]
 > This example uses the technique of binding directly to another control. You can see how to do this, [here](binding-to-controls.md).
 
-You will see that the button becomes enables only when the text box contains a string. 
+You will see that the button becomes enables only when the text box contains a string.
 
 ![](../../../static/img/guides/data-binding/bind-method-canexecute.gif)
 

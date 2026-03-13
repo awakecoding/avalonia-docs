@@ -29,6 +29,39 @@ function Get-RelativePathSafe {
     return ConvertTo-ForwardSlashes ([System.IO.Path]::GetRelativePath($BasePath, $TargetPath))
 }
 
+function Get-AttributeValue {
+    param(
+        [string]$Attributes,
+        [string]$Name
+    )
+
+    $pattern = '\b' + [regex]::Escape($Name) + '=(?:"(?<dq>[^"]*)"|''(?<sq>[^'']*)''|\{(?<expr>[^}]+)\})'
+    $match = [regex]::Match($Attributes, $pattern, [System.Text.RegularExpressions.RegexOptions]::Singleline)
+    if (-not $match.Success) {
+        return $null
+    }
+
+    if ($match.Groups['dq'].Success) {
+        return $match.Groups['dq'].Value
+    }
+
+    if ($match.Groups['sq'].Success) {
+        return $match.Groups['sq'].Value
+    }
+
+    if ($match.Groups['expr'].Success) {
+        return $match.Groups['expr'].Value
+    }
+
+    return $null
+}
+
+function Test-IsVideoAsset {
+    param([string]$Path)
+
+    return [System.IO.Path]::GetExtension($Path) -in @('.mp4', '.webm', '.mov', '.avi', '.wmv', '.m4v')
+}
+
 function Parse-FrontMatter {
     param([string]$Text)
 
@@ -251,6 +284,10 @@ function Copy-ReferencedAsset {
         return $null
     }
 
+    if (Test-IsVideoAsset -Path $sourceFull) {
+        return $null
+    }
+
     if ($CopiedAssetMap.ContainsKey($sourceFull)) {
         return $CopiedAssetMap[$sourceFull]
     }
@@ -271,6 +308,27 @@ function Copy-ReferencedAsset {
     return $destination
 }
 
+function Resolve-ImportedAssetTarget {
+    param(
+        [string]$VariableName,
+        [pscustomobject]$Record,
+        [hashtable]$ImportMap,
+        [hashtable]$CopiedAssetMap,
+        [string]$SkillRoot
+    )
+
+    if ([string]::IsNullOrWhiteSpace($VariableName) -or -not $ImportMap.ContainsKey($VariableName)) {
+        return $null
+    }
+
+    $copiedAsset = Copy-ReferencedAsset -SourcePath $ImportMap[$VariableName] -SkillRoot $SkillRoot -CopiedAssetMap $CopiedAssetMap
+    if ($null -eq $copiedAsset) {
+        return $null
+    }
+
+    return Get-RelativePathSafe -BasePath $Record.OutputDirectory -TargetPath $copiedAsset
+}
+
 function Resolve-ImportedPath {
     param(
         [string]$ImportTarget,
@@ -286,6 +344,38 @@ function Resolve-ImportedPath {
     }
 
     return Get-NormalizedPath (Join-Path $SourceDirectory $ImportTarget)
+}
+
+function Resolve-AbsoluteDocOutputPath {
+    param(
+        [string]$Route,
+        [hashtable]$AbsoluteRouteMap,
+        [hashtable]$DocSourceMap
+    )
+
+    if ($AbsoluteRouteMap.ContainsKey($Route)) {
+        return $AbsoluteRouteMap[$Route]
+    }
+
+    $trimmedRoute = $Route.TrimStart('/')
+    $routeParts = $trimmedRoute.Split('/', 2)
+    if ($routeParts.Length -lt 1) {
+        return $null
+    }
+
+    $collectionRoot = Join-Path $script:RepositoryRoot $routeParts[0]
+    if (-not (Test-Path -LiteralPath $collectionRoot -PathType Container)) {
+        return $null
+    }
+
+    $relativeTarget = if ($routeParts.Length -eq 2) { $routeParts[1] } else { '' }
+    foreach ($candidate in (Get-DocCandidatePaths -Target $relativeTarget -CurrentSourceDirectory $collectionRoot)) {
+        if ($DocSourceMap.ContainsKey($candidate)) {
+            return $DocSourceMap[$candidate].OutputPath
+        }
+    }
+
+    return $null
 }
 
 function Get-DocCandidatePaths {
@@ -309,6 +399,9 @@ function Get-DocCandidatePaths {
         $candidates.Add((Get-NormalizedPath ([System.IO.Path]::ChangeExtension($basePath, '.mdx'))))
     } elseif ($extension -eq '.mdx') {
         $candidates.Add((Get-NormalizedPath ([System.IO.Path]::ChangeExtension($basePath, '.md'))))
+    } elseif ($extension) {
+        $candidates.Add((Get-NormalizedPath ($basePath + '.md')))
+        $candidates.Add((Get-NormalizedPath ($basePath + '.mdx')))
     }
 
     if (-not $extension) {
@@ -351,41 +444,40 @@ function Resolve-LinkTarget {
     $absoluteRedirects = @{
         '/docs/get-started/install' = '/docs/get-started/index'
         '/docs/get-started/getting-started' = '/docs/get-started/index'
+        '/reference/services/clipboard' = '/docs/concepts/services/clipboard'
     }
     if ($absoluteRedirects.ContainsKey($mainTarget)) {
         $mainTarget = $absoluteRedirects[$mainTarget]
     }
 
-    if ($mainTarget.StartsWith('/docs/') -or $mainTarget -eq '/docs' -or $mainTarget.StartsWith('/accelerate/') -or $mainTarget -eq '/accelerate' -or $mainTarget.StartsWith('/xpf/') -or $mainTarget -eq '/xpf') {
-        if ($AbsoluteRouteMap.ContainsKey($mainTarget)) {
-            $targetOutput = $AbsoluteRouteMap[$mainTarget]
-            return (Get-RelativePathSafe -BasePath $Record.OutputDirectory -TargetPath $targetOutput) + $suffix
-        }
-
-        $trimmedTarget = $mainTarget.TrimStart('/')
-        $routeParts = $trimmedTarget.Split('/', 2)
-        if ($routeParts.Length -ge 1) {
-            $collectionRoot = Join-Path $script:RepositoryRoot $routeParts[0]
-            if (Test-Path -LiteralPath $collectionRoot -PathType Container) {
-                $relativeTarget = if ($routeParts.Length -eq 2) { $routeParts[1] } else { '' }
-                foreach ($candidate in (Get-DocCandidatePaths -Target $relativeTarget -CurrentSourceDirectory $collectionRoot)) {
-                    if ($DocSourceMap.ContainsKey($candidate)) {
-                        $targetRecord = $DocSourceMap[$candidate]
-                        return (Get-RelativePathSafe -BasePath $Record.OutputDirectory -TargetPath $targetRecord.OutputPath) + $suffix
-                    }
-                }
-            }
-        }
-    }
-
     if ($mainTarget.StartsWith('/')) {
-        $assetSource = $null
         if ($mainTarget -match '^/(img|video|assets|favicons|logo)(/.*)?$') {
             $assetSource = Join-Path $script:RepositoryRoot ("static$mainTarget")
-        } else {
-            $assetSource = Join-Path $script:RepositoryRoot ($mainTarget.TrimStart('/'))
+            $copiedAsset = Copy-ReferencedAsset -SourcePath $assetSource -SkillRoot $SkillRoot -CopiedAssetMap $CopiedAssetMap
+            if ($null -ne $copiedAsset) {
+                return (Get-RelativePathSafe -BasePath $Record.OutputDirectory -TargetPath $copiedAsset) + $suffix
+            }
+
+            return $Target
         }
 
+        $routeCandidates = New-Object System.Collections.Generic.List[string]
+        $routeCandidates.Add($mainTarget)
+
+        if (-not ($mainTarget.StartsWith('/docs/') -or $mainTarget -eq '/docs' -or $mainTarget.StartsWith('/accelerate/') -or $mainTarget -eq '/accelerate' -or $mainTarget.StartsWith('/xpf/') -or $mainTarget -eq '/xpf')) {
+            $routeCandidates.Add("/docs$mainTarget")
+            $routeCandidates.Add("/accelerate$mainTarget")
+            $routeCandidates.Add("/xpf$mainTarget")
+        }
+
+        foreach ($routeCandidate in ($routeCandidates | Select-Object -Unique)) {
+            $targetOutput = Resolve-AbsoluteDocOutputPath -Route $routeCandidate -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap
+            if ($null -ne $targetOutput) {
+                return (Get-RelativePathSafe -BasePath $Record.OutputDirectory -TargetPath $targetOutput) + $suffix
+            }
+        }
+
+        $assetSource = Join-Path $script:RepositoryRoot ($mainTarget.TrimStart('/'))
         $copiedAsset = Copy-ReferencedAsset -SourcePath $assetSource -SkillRoot $SkillRoot -CopiedAssetMap $CopiedAssetMap
         if ($null -ne $copiedAsset) {
             return (Get-RelativePathSafe -BasePath $Record.OutputDirectory -TargetPath $copiedAsset) + $suffix
@@ -481,13 +573,7 @@ function Replace-ImgTags {
 
             $variableMatch = [regex]::Match($attributes, 'src=\{(?<name>[A-Za-z0-9_]+)\}')
             if ($variableMatch.Success) {
-                $variableName = $variableMatch.Groups['name'].Value
-                if ($ImportMap.ContainsKey($variableName)) {
-                    $copiedAsset = Copy-ReferencedAsset -SourcePath $ImportMap[$variableName] -SkillRoot $SkillRoot -CopiedAssetMap $CopiedAssetMap
-                    if ($null -ne $copiedAsset) {
-                        $sourceTarget = Get-RelativePathSafe -BasePath $Record.OutputDirectory -TargetPath $copiedAsset
-                    }
-                }
+                $sourceTarget = Resolve-ImportedAssetTarget -VariableName $variableMatch.Groups['name'].Value -Record $Record -ImportMap $ImportMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
             } else {
                 $quotedMatch = [regex]::Match($attributes, 'src="(?<value>[^"]+)"')
                 if ($quotedMatch.Success) {
@@ -500,6 +586,60 @@ function Replace-ImgTags {
             }
 
             return $match.Value
+        }
+    )
+}
+
+function Replace-MdxImageComponents {
+    param(
+        [string]$Line,
+        [pscustomobject]$Record,
+        [hashtable]$ImportMap,
+        [hashtable]$AbsoluteRouteMap,
+        [hashtable]$DocSourceMap,
+        [hashtable]$CopiedAssetMap,
+        [string]$SkillRoot
+    )
+
+    return [regex]::Replace(
+        $Line,
+        '<Image\b(?<attributes>[^>]*)/?>',
+        {
+            param($match)
+
+            $attributes = $match.Groups['attributes'].Value
+            if (-not ($attributes -match '\b(light|dark|src)=')) {
+                return $match.Value
+            }
+
+            $sourceTarget = $null
+            foreach ($attributeName in @('light', 'dark', 'src')) {
+                $attributeValue = Get-AttributeValue -Attributes $attributes -Name $attributeName
+                if ([string]::IsNullOrWhiteSpace($attributeValue)) {
+                    continue
+                }
+
+                if ($attributeValue -match '^[A-Za-z_][A-Za-z0-9_]*$') {
+                    $sourceTarget = Resolve-ImportedAssetTarget -VariableName $attributeValue -Record $Record -ImportMap $ImportMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
+                } else {
+                    $sourceTarget = Resolve-LinkTarget -Target $attributeValue -Record $Record -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
+                }
+
+                if ($sourceTarget) {
+                    break
+                }
+            }
+
+            if (-not $sourceTarget) {
+                return $match.Value
+            }
+
+            $alt = Get-AttributeValue -Attributes $attributes -Name 'alt'
+            if ([string]::IsNullOrWhiteSpace($alt)) {
+                $alt = 'Image'
+            }
+
+            return "![$alt]($sourceTarget)"
         }
     )
 }
@@ -550,6 +690,105 @@ function Convert-Alerts {
     return $output
 }
 
+function Remove-FencedCodeBlocks {
+    param([string]$Text)
+
+    return [regex]::Replace($Text, '(?ms)^```.*?^```\s*', '')
+}
+
+function Remove-HtmlComments {
+    param([string]$Text)
+
+    return [regex]::Replace($Text, '<!--.*?-->', '', [System.Text.RegularExpressions.RegexOptions]::Singleline)
+}
+
+function Test-GeneratedSkill {
+    param([string]$SkillRoot)
+
+    $brokenLinks = New-Object System.Collections.Generic.List[string]
+    $unsupportedPatterns = New-Object System.Collections.Generic.List[string]
+    $patternChecks = @(
+        [pscustomobject]@{ Label = 'DocCardList'; Pattern = '<DocCardList\b|<DocsCardList\b' },
+        [pscustomobject]@{ Label = 'GitHubSampleLink'; Pattern = '<GitHubSampleLink\b' },
+        [pscustomobject]@{ Label = 'MinVersion'; Pattern = '<MinVersion\b' },
+        [pscustomobject]@{ Label = 'MDX image'; Pattern = '<Image\s+(?:light|dark)=\{' },
+        [pscustomobject]@{ Label = 'mdx-code-block'; Pattern = 'mdx-code-block' }
+    )
+
+    foreach ($file in (Get-ChildItem -LiteralPath $SkillRoot -Recurse -File | Where-Object { $_.Extension -in '.md', '.mdx' })) {
+        $relativePath = Get-RelativePathSafe -BasePath $SkillRoot -TargetPath $file.FullName
+        $raw = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8
+        $scanText = Remove-HtmlComments (Remove-FencedCodeBlocks $raw)
+        $scanDirectory = Split-Path -Parent $file.FullName
+
+        foreach ($patternCheck in $patternChecks) {
+            if ([regex]::IsMatch($scanText, $patternCheck.Pattern, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)) {
+                $unsupportedPatterns.Add("$relativePath`t$($patternCheck.Label)")
+            }
+        }
+
+        foreach ($match in [regex]::Matches($scanText, '(?<!`)\[[^\]]*\]\((?<target>[^)\s]+)(?:\s+"[^"]*")?\)')) {
+            $target = $match.Groups['target'].Value
+            if ($target -match '^(https?|mailto|data):' -or $target.StartsWith('#')) {
+                continue
+            }
+
+            $baseTarget = ($target -split '[#?]')[0]
+            if ([string]::IsNullOrWhiteSpace($baseTarget)) {
+                continue
+            }
+
+            $candidate = [System.IO.Path]::GetFullPath((Join-Path $scanDirectory $baseTarget))
+            if (-not (Test-Path -LiteralPath $candidate)) {
+                $brokenLinks.Add("$relativePath`t$target")
+            }
+        }
+
+        foreach ($match in [regex]::Matches($scanText, '(?<attr>src|href)="(?<target>[^"]+)"')) {
+            $target = $match.Groups['target'].Value
+            if ($target -match '^(https?|mailto|data):' -or $target.StartsWith('#')) {
+                continue
+            }
+
+            $baseTarget = ($target -split '[#?]')[0]
+            if ([string]::IsNullOrWhiteSpace($baseTarget)) {
+                continue
+            }
+
+            $candidate = if ($baseTarget.StartsWith('/')) {
+                Join-Path $SkillRoot $baseTarget.TrimStart('/')
+            } else {
+                [System.IO.Path]::GetFullPath((Join-Path $scanDirectory $baseTarget))
+            }
+
+            if (-not (Test-Path -LiteralPath $candidate)) {
+                $brokenLinks.Add("$relativePath`t$target")
+            }
+        }
+    }
+
+    if ($brokenLinks.Count -gt 0 -or $unsupportedPatterns.Count -gt 0) {
+        $messageLines = New-Object System.Collections.Generic.List[string]
+        $messageLines.Add('Generated skill validation failed.')
+
+        if ($brokenLinks.Count -gt 0) {
+            $messageLines.Add('Broken local references:')
+            foreach ($issue in ($brokenLinks | Sort-Object | Select-Object -First 20)) {
+                $messageLines.Add("- $issue")
+            }
+        }
+
+        if ($unsupportedPatterns.Count -gt 0) {
+            $messageLines.Add('Unsupported MDX artifacts:')
+            foreach ($issue in ($unsupportedPatterns | Sort-Object | Select-Object -First 20)) {
+                $messageLines.Add("- $issue")
+            }
+        }
+
+        throw ($messageLines -join [Environment]::NewLine)
+    }
+}
+
 function Convert-RecordContent {
     param(
         [pscustomobject]$Record,
@@ -570,9 +809,14 @@ function Convert-RecordContent {
     $cardSectionBuffer = New-Object System.Collections.Generic.List[string]
     $inCardSection = $false
     $inTabsBlock = $false
+    $inVideoBlock = $false
     $tabLabels = @{}
 
     foreach ($line in $lines) {
+        if (-not $inCode -and ($line -match '^\s*<!--```mdx-code-block\s*$' -or $line -match '^\s*```-->\s*$')) {
+            continue
+        }
+
         if (-not $inCode -and $line -match '^import\s+.+?\s+from\s+["''](?<target>[^"'']+)["''];\s*$') {
             if ($line -match '^import\s+(?<name>[A-Za-z0-9_]+)\s+from\s+["''](?<singleTarget>[^"'']+)["''];\s*$') {
                 $importMap[$matches['name']] = Resolve-ImportedPath -ImportTarget $matches['singleTarget'] -SourceDirectory $Record.SourceDirectory
@@ -583,6 +827,20 @@ function Convert-RecordContent {
         if ($line -match '^```') {
             $inCode = -not $inCode
             $processed.Add($line)
+            continue
+        }
+
+        if (-not $inCode -and $inVideoBlock) {
+            if ($line -match '</video>') {
+                $inVideoBlock = $false
+            }
+            continue
+        }
+
+        if (-not $inCode -and $line -match '<video\b') {
+            if ($line -notmatch '</video>') {
+                $inVideoBlock = $true
+            }
             continue
         }
 
@@ -605,7 +863,7 @@ function Convert-RecordContent {
             continue
         }
 
-        if (-not $inCode -and $line -match '<DocsCardList\b') {
+        if (-not $inCode -and $line -match '<Docs?CardList\b') {
             $navKeyCandidates = @($Record.DocId, $Record.RelativeNoExtension)
             $navItems = $null
             foreach ($candidate in $navKeyCandidates) {
@@ -677,9 +935,21 @@ function Convert-RecordContent {
         }
 
         if (-not $inCode -and $line -match '<XpfAd\s*/>') {
+            $xpfLinkTarget = Resolve-LinkTarget -Target '/xpf/welcome' -Record $Record -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
             $processed.Add('> [!TIP]')
-            $processed.Add('> Also see the [Avalonia XPF docs](../xpf/welcome.md) for WPF migration and XPF-specific guidance.')
+            $processed.Add("> Also see the [Avalonia XPF docs]($xpfLinkTarget) for WPF migration and XPF-specific guidance.")
             $processed.Add('')
+            continue
+        }
+
+        if (-not $inCode -and $line -match '<GitHubSampleLink\b(?<attributes>[^>]*)/?>') {
+            $title = Get-AttributeValue -Attributes $matches['attributes'] -Name 'title'
+            $link = Get-AttributeValue -Attributes $matches['attributes'] -Name 'link'
+            if ($link) {
+                $label = if ($title) { $title } else { 'GitHub sample' }
+                $processed.Add("> Sample: [$label]($link)")
+                $processed.Add('')
+            }
             continue
         }
 
@@ -697,6 +967,21 @@ function Convert-RecordContent {
         if (-not $inCode) {
             $currentLine = [regex]::Replace(
                 $currentLine,
+                '<MinVersion\b(?<attributes>[^>]*)/?>',
+                {
+                    param($match)
+
+                    $version = Get-AttributeValue -Attributes $match.Groups['attributes'].Value -Name 'version'
+                    if ($version) {
+                        return "(Avalonia $version+)"
+                    }
+
+                    return ''
+                }
+            ).TrimEnd()
+
+            $currentLine = [regex]::Replace(
+                $currentLine,
                 '<Button\b[^>]*label="(?<label>[^"]+)"[^>]*link="(?<link>[^"]+)"[^>]*/>',
                 {
                     param($match)
@@ -704,6 +989,7 @@ function Convert-RecordContent {
                 }
             )
 
+            $currentLine = Replace-MdxImageComponents -Line $currentLine -Record $Record -ImportMap $importMap -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
             $currentLine = Replace-ImgTags -Line $currentLine -Record $Record -ImportMap $importMap -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
             $currentLine = Rewrite-HtmlAttributes -Line $currentLine -Record $Record -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
             $currentLine = Rewrite-MarkdownLinks -Line $currentLine -Record $Record -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
@@ -885,7 +1171,7 @@ foreach ($collection in $collections) {
 $readmeLines = @(
     '# Avalonia Docs Skill',
     '',
-    'Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original `docs/`, `accelerate/`, and `xpf/` collections, rewrites internal links for local file browsing, and copies only the static assets referenced by the markdown.',
+    'Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original `docs/`, `accelerate/`, and `xpf/` collections, rewrites internal links for local file browsing, and copies only the non-video static assets referenced by the markdown.',
     '',
     '## Installation',
     '',
@@ -906,7 +1192,7 @@ $readmeLines = @(
     '- [`docs/README.md`](docs/README.md) — primary Avalonia documentation index.',
     '- [`accelerate/README.md`](accelerate/README.md) — Avalonia Accelerate documentation index.',
     '- [`xpf/README.md`](xpf/README.md) — Avalonia XPF documentation index.',
-    '- `static/` — copied images and videos referenced by the markdown corpus.',
+    '- `static/` — copied non-video static assets referenced by the markdown corpus.',
     '',
     '## Included collections',
     '',
@@ -941,7 +1227,7 @@ $skillLines = @(
     '- `accelerate/README.md` — Accelerate product docs index.',
     '- `xpf/README.md` — XPF docs index.',
     '- `docs/`, `accelerate/`, `xpf/` — cleaned GFM markdown files.',
-    '- `static/` — local images and videos referenced by the markdown.',
+    '- `static/` — local non-video static assets referenced by the markdown.',
     '',
     '## Navigation strategy',
     '',
@@ -971,6 +1257,8 @@ $legalLines = @(
     'No separate license file was present in this repository at generation time. Review the upstream repository before redistributing the generated corpus outside normal documentation or agent-skill use.'
 )
 Set-Content -LiteralPath (Join-Path $skillRoot 'LEGAL.md') -Value (($legalLines -join "`n") + "`n") -Encoding UTF8
+
+Test-GeneratedSkill -SkillRoot $skillRoot
 
 Write-Host "Generated Avalonia docs skill at $skillRoot"
 Write-Host "Copied $($copiedAssetMap.Count) referenced static assets."

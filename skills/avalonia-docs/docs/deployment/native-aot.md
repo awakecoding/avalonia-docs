@@ -57,12 +57,12 @@ dotnet publish -r linux-x64 -c Release
 ```
 
 ### macOS
-Intel based macOS 
+Intel based macOS
 ```bash
 dotnet publish -r osx-x64 -c Release
 ```
 
-Apple silicon based macOS 
+Apple silicon based macOS
 ```bash
 dotnet publish -r osx-arm64 -c Release
 ```

@@ -7,7 +7,7 @@ The `StorageProvider` can be access through an instance of `TopLevel` or `Window
 var storage = window.StorageProvider;
 ```
 
-## Properties 
+## Properties
 
 ### CanOpen
 Indicates whether it's possible to open a `open file picker` on the current platform.
@@ -114,7 +114,7 @@ Attempts to read a folder from the file system by its path.
 ```cs
 Task<IStorageFolder?> TryGetFolderFromPathAsync(this IStorageProvider provider, string folderPath);
 ```
-The method returns a folder or null if it doesn't exist. 
+The method returns a folder or null if it doesn't exist.
 This method accepts local folder path string as a parameter without any scheme.
 Only supported on the OS, with physical file paths, primarily only desktop.
 

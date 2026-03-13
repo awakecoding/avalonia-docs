@@ -11,7 +11,7 @@ Some layout controls, like `StackPanel` which you used earlier, create smaller s
 > [!NOTE]
 > Each Avalonia window only accepts one control in its content zone.
 
-<Image light={AvaloniaWindowLayout} alt="A diagram displaying four overlapping, rectangular areas, representing the Avalonia window." position="center" maxWidth={400} cornerRadius="true" margin="0,0,30,0"/>
+![A diagram displaying four overlapping, rectangular areas, representing the Avalonia window.](../../../static/img/get-started/avalonia-window-layout.png)
 
 ## Default window attributes
 
@@ -52,13 +52,13 @@ mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 2. Set `d:DesignWidth` to 400.
 3. Observe the previewer. You should see that the preview now resembles a mobile display.
 
-<Image light={TemperatureConverterPortraitOrientation} alt="A screenshot of an app running in a window in portrait orientation." position="center" maxWidth={400} cornerRadius="true"/>
+![A screenshot of an app running in a window in portrait orientation.](../../../static/img/get-started/temperature-converter-portrait-orientation.png)
 
 ### Setting the runtime window size
 
 To adjust to dimensions of the runtime app window, you need to add `Width` and `Height` attributes to the `<Window>` opening tag.
 
-1. In the file **MainWindow.axaml**, go to the bottom line of the `<Window>` opening tag: 
+1. In the file **MainWindow.axaml**, go to the bottom line of the `<Window>` opening tag:
 
 ```xml
 Title="GetStartedApp">

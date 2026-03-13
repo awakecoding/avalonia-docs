@@ -43,11 +43,11 @@ We maintain a comprehensive [compatibility database](https://avaloniaui.net/xpf/
 
 * **Pure WPF Controls**: Third-party controls that are implemented purely in WPF typically work without any issues, even if not listed in our compatibility database.
 * **Unlisted Vendors**: The absence of a control vendor from our database doesn't indicate incompatibility. We encourage you to test any controls you need.
-* **Known Challenges**: Issues most commonly arise with controls that utilize GDI or WinForms components. 
-  
-## WinAPI Shim APIs 
+* **Known Challenges**: Issues most commonly arise with controls that utilize GDI or WinForms components.
 
-Below is an overview of the Windows API (WinAPI) shims available in Avalonia XPF. These shims allow for native Windows functionality while maintaining cross-platform compatibility. Some APIs may not be fully implemented. 
+## WinAPI Shim APIs
+
+Below is an overview of the Windows API (WinAPI) shims available in Avalonia XPF. These shims allow for native Windows functionality while maintaining cross-platform compatibility. Some APIs may not be fully implemented.
 
 ### Window Management
 

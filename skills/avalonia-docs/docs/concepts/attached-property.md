@@ -8,7 +8,7 @@ Here are some scenarios where an attached property is used:
 
 ## Attached Control
 
-An additional control is attached to a 'host control' for some purpose. This can be used where the control usually only allows a single child in its content zone. In this scenario the attached control is not counted as part of the content, but it will be used in some other way by the container. Examples include: context menus, tool tips and flyouts. 
+An additional control is attached to a 'host control' for some purpose. This can be used where the control usually only allows a single child in its content zone. In this scenario the attached control is not counted as part of the content, but it will be used in some other way by the container. Examples include: context menus, tool tips and flyouts.
 
 ![](../../static/img/concepts/attached-control.png)
 

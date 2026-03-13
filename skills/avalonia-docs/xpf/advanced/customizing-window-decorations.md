@@ -82,7 +82,7 @@ protected override void OnSourceInitialized(EventArgs e)
     }
 }
 ```
-`ExtendClientAreaToDecorationsHint` is responsible for removing the titlebar, but you will still have Close, Minimize and FullScreen buttons. 
+`ExtendClientAreaToDecorationsHint` is responsible for removing the titlebar, but you will still have Close, Minimize and FullScreen buttons.
 If you don't need them you will need to set `ExtendClientAreaChromeHints` to `NoChrome`.
 
 > [!NOTE]

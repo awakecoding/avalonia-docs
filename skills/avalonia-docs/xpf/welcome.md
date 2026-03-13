@@ -1,10 +1,10 @@
 # Welcome
 
-Welcome to the documentation for Avalonia XPF, our cross-platform fork of WPF. 
+Welcome to the documentation for Avalonia XPF, our cross-platform fork of WPF.
 
-## Overview 
+## Overview
 
-Avalonia XPF is a powerful solution that enables WPF applications to run natively across multiple platforms, including Windows, macOS, and Linux, with upcoming support for iOS, Android, and WebAssembly. 
+Avalonia XPF is a powerful solution that enables WPF applications to run natively across multiple platforms, including Windows, macOS, and Linux, with upcoming support for iOS, Android, and WebAssembly.
 
 Avalonia XPF maintains both API and binary compatibility with WPF while replacing the low-level WPF implementation (MilCore) with Avalonia's cross-platform rendering engine. This approach allows developers to migrate their existing WPF applications to other platforms with minimal code changes, preserving their investment in WPF development and third-party controls.
 
@@ -14,10 +14,10 @@ As a commercial product, Avalonia XPF offers different licensing tiers to suit v
 
 | Platform        | Business | Enterprise |
 |---------------|-------|-------|
-| `Windows` | ✔ | ✔ | 
-| `macOS` | ✔ | ✔ | 
-| `Desktop Linux` | ✔ | ✔ | 
-| `Embedded Linux` | ✖ | ✔ | 
+| `Windows` | ✔ | ✔ |
+| `macOS` | ✔ | ✔ |
+| `Desktop Linux` | ✔ | ✔ |
+| `Embedded Linux` | ✖ | ✔ |
 
 All applications built with Avalonia XPF will continue to work in perpetuity, regardless of license status. This ensures that your deployed applications remain functional and stable for your end users.
 
@@ -33,8 +33,8 @@ Both Business and Enterprise licenses enable organizations to thoroughly evaluat
 ### Trial Availability
 Trial periods are exclusively available for Business and Enterprise licenses. These trials are fully supported by our engineering team to ensure organizations can thoroughly evaluate XPF's capabilities with their specific applications and use cases.
 
-### Pricing 
-For the latest pricing, please see our [website](https://avaloniaui.net/xpf?utm_source=docs&utm_medium=referral&utm_content=welcome_link#pricing). 
+### Pricing
+For the latest pricing, please see our [website](https://avaloniaui.net/xpf?utm_source=docs&utm_medium=referral&utm_content=welcome_link#pricing).
 
 ## Hybrid XPF
 One of Avalonia XPF's unique features is its [hybrid capability](embedding/xpf-in-avalonia.md), allowing Avalonia developers to use WPF controls within applications. This flexibility enables Avalonia developers to leverage over 700 existing WPF controls from major vendors such as [Telerik](https://www.telerik.com/), [Actipro](https://www.actiprosoftware.com/), [DevExpress](https://www.devexpress.com/), [Infragistics](https://www.infragistics.com/), and [Syncfusion](https://www.syncfusion.com/), bridging the gap between traditional WPF development and modern cross-platform applications.

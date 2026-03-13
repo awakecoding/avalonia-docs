@@ -110,7 +110,7 @@ By default, an items repeater will render the items in a vertical stack layout. 
 </StackPanel>
 ```
 
-The items display horizontally, and those too far to the right would be hidden if it were not for the scroll viewer element added around the items repeater.   
+The items display horizontally, and those too far to the right would be hidden if it were not for the scroll viewer element added around the items repeater.
 
 ![](../../../static/img/reference/controls/itemsrepeater/itemsrepeater-horizontal.gif)
 

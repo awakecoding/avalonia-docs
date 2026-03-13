@@ -95,7 +95,7 @@ These services are optional, but essential for more advanced or context-aware ex
 
 When parameters are required, use a constructor to receive each parameter in order.
 
-For optional or unordered parameters, use properties instead. Mix and matching with multiple constructors is allowed, 
+For optional or unordered parameters, use properties instead. Mix and matching with multiple constructors is allowed,
 including parameterless ones.
 
 ```csharp
@@ -200,7 +200,7 @@ Constructors can also receive parameter types using the `object` approach, but c
 
 ### MarkupExtension Property Attributes
 
-* `[ConstructorArgument]` - Associated property may be initialized by a constructor parameter and should be ignored for 
+* `[ConstructorArgument]` - Associated property may be initialized by a constructor parameter and should be ignored for
     XAML serialization if the constructor is used.
 * `[MarkupExtensionOption]`, `[MarkupExtensionDefaultOption]` - Used with `ShouldProvideOption`, check `OnPlatform` and `OnFormFactor` source for an example.
 

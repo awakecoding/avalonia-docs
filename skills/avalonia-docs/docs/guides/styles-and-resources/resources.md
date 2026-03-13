@@ -52,7 +52,7 @@ In fact you can define resources at control level if required:
 </Window>
 ```
 
-You can also declare resources to be specific to a style. 
+You can also declare resources to be specific to a style.
 
 ```xml title="MyStyle.axaml"
 <Style Selector="TextBlock.warning">
@@ -214,7 +214,7 @@ Where the resource `InfoColor` is defined as a `SolidColorBrush` in the imported
 > [!NOTE]
 > Note that the resource has been referenced using `StaticResource` because it must not change - the requirement here is to keep the styling consistent.
 
-## Merged Resources Priority 
+## Merged Resources Priority
 
 As you saw previously, resources are resolved by searching up the logical control tree from the point of mark-up until a resource with the requested key is found.
 
@@ -261,17 +261,17 @@ The search moves upwards in the logical control tree, behaving at each level in 
 
 ## Consuming Resources from code
 
-Avalonia provides different options to access Resources from code. 
+Avalonia provides different options to access Resources from code.
 
 > [!NOTE]
 >
-> `ResourceNode` in the below samples can be any node that supports `Resource`, like `Application.Current`, `Window`, `UserControl`, ... 
+> `ResourceNode` in the below samples can be any node that supports `Resource`, like `Application.Current`, `Window`, `UserControl`, ...
 >
 
 - **ResourceNode.Resources["TheKey"]**: <br/>
-  This will directly access the underlying `Dictionary`. Be aware: Merged Dictionaries and parents will not be scanned. 
+  This will directly access the underlying `Dictionary`. Be aware: Merged Dictionaries and parents will not be scanned.
 - **ResourceNode.TryGetResource**: <br/>
-  This function will try to get a specific resource and return `true` if successful, otherwise `false`. Merged dictionaries will be scanned, but it will not follow the logical tree. 
+  This function will try to get a specific resource and return `true` if successful, otherwise `false`. Merged dictionaries will be scanned, but it will not follow the logical tree.
 - **ResourceNode.TryFindResource**:  <br/>
   This extension method will try to get a specific resource and return `true` if successful, otherwise `false`. Merged dictionaries and the logical tree will be scanned as well.
 - **ResourceNode.GetResourceObservable**: <br/>

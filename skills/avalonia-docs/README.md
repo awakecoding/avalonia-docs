@@ -1,6 +1,6 @@
 # Avalonia Docs Skill
 
-Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original `docs/`, `accelerate/`, and `xpf/` collections, rewrites internal links for local file browsing, and copies only the static assets referenced by the markdown.
+Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original `docs/`, `accelerate/`, and `xpf/` collections, rewrites internal links for local file browsing, and copies only the non-video static assets referenced by the markdown.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Or rebuild the skill locally from a clone of this repository:
 - [`docs/README.md`](docs/README.md) — primary Avalonia documentation index.
 - [`accelerate/README.md`](accelerate/README.md) — Avalonia Accelerate documentation index.
 - [`xpf/README.md`](xpf/README.md) — Avalonia XPF documentation index.
-- `static/` — copied images and videos referenced by the markdown corpus.
+- `static/` — copied non-video static assets referenced by the markdown corpus.
 
 ## Included collections
 

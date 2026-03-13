@@ -1,4 +1,4 @@
-# Filtering <MinVersion version="11.3" /> 
+# Filtering (Avalonia 11.3+)
 
 Filtering allows you to display only rows that match specific criteria in your TreeDataGrid. Both `FlatTreeDataGridSource` and `HierarchicalTreeDataGridSource` support filtering through predicate functions.
 

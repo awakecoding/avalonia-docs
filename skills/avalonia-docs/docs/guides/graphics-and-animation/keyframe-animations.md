@@ -28,7 +28,7 @@ Follow this procedure to define a simple color fade animation using XAML:
 -  Now define the keyframes for the animation. This example uses cues at 0% and 100%.
 -  Add `Setter` elements to each keyframe for value of the fill opacity. This example animates between opacity values of 0.0 and 1.0.
 
-The finished code will look like this: 
+The finished code will look like this:
 
 ```xml
 <Window xmlns="https://github.com/avaloniaui">

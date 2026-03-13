@@ -24,7 +24,7 @@ Avalonia distinguishes itself from other UI frameworks such as WPF and MAUI thro
 
 ---
 
-## What versions of .NET can I use? 
+## What versions of .NET can I use?
 
 * .NET Framework 4.6.2+
 * .NET Core 2.0+
@@ -68,19 +68,19 @@ Avalonia Accelerate will help developers build applications more efficiently thr
 
 ## Does Avalonia support Hot Reload?
 
-You can use a [community project](https://github.com/Kira-NT/HotAvalonia) to enable hot reload with Avalonia. 
+You can use a [community project](https://github.com/Kira-NT/HotAvalonia) to enable hot reload with Avalonia.
 
 ---
 
 ## Can Avalonia interop with native APIs?
 
-Yes. See our [guide on using platform specific features](guides/building-cross-platform-applications/dealing-with-platforms.md#platform-abstraction). 
+Yes. See our [guide on using platform specific features](guides/building-cross-platform-applications/dealing-with-platforms.md#platform-abstraction).
 
 ---
 
 ## Can I cross-compile for different platforms?
 
-Yes. You can compile for macOS, Linux, Android and WebAssembly from Windows. You'll likely need to package your app on those platforms to create release packages of your app. 
+Yes. You can compile for macOS, Linux, Android and WebAssembly from Windows. You'll likely need to package your app on those platforms to create release packages of your app.
 
 You will require a Mac to build iOS applications.
 
@@ -124,7 +124,7 @@ WSL 2 distros are supported as well, but `libice6`, `libsm6` and `libfontconfig1
 
 * Windows 8.1+
 
-Avalonia also runs on Windows 7, but new platforms specific features won't be available there, and we do not provide bug fixes for this version anymore. 
+Avalonia also runs on Windows 7, but new platforms specific features won't be available there, and we do not provide bug fixes for this version anymore.
 
 ### What versions of macOS are supported?
 

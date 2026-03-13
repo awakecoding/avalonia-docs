@@ -1,6 +1,6 @@
 # Focus Manager
 
-The `FocusManager` service is responsible for managing the keyboard focus for the application. It keeps track of the currently focused element and the current focus scope. 
+The `FocusManager` service is responsible for managing the keyboard focus for the application. It keeps track of the currently focused element and the current focus scope.
 
 The `FocusManager` can be access through an instance of `TopLevel` or `Window`, for more details on accessing `TopLevel` please visit [TopLevel](../toplevel.md) page:
 ```cs
@@ -27,7 +27,7 @@ void ClearFocus()
 
 ### Focusing a control
 
-Developers usually don't need a `FocusManager` service to focus a control. 
+Developers usually don't need a `FocusManager` service to focus a control.
 It can be achieved with a method call directly on the control:
 ```cs
 var hasFocused = button.Focus();

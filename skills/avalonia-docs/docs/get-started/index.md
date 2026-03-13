@@ -49,7 +49,7 @@ Visual Studio Code is also supported, although we do not recommend it due to mor
   4. Follow any additional installation instructions. You may need to close and reopen Visual Studio to complete the installation.
 
 	![A screenshot displaying how to download the Avalonia extension in Visual Studio.](../../static/img/get-started/download-vs-avalonia-extension.png)
-  
+
   Alternatively, you can [download the extension from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaVS).
 
 > [!NOTE]

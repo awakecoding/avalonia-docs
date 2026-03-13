@@ -6,7 +6,7 @@ Avalonia controls can be hosted in Windows Forms applications. This enables a st
 
 An exemplary Windows Forms application with Avalonia controls requires at least two projects:
 
-1. `YourApp` Cross platform library where you put your Avalonia controls 
+1. `YourApp` Cross platform library where you put your Avalonia controls
 2. `YourApp.WinForms` Your existing Windows Forms application
 3. `YourApp.Desktop` (optional) Executable Avalonia application, required only for the Visual Studio Avalonia designer
 

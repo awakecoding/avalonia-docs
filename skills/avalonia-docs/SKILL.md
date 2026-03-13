@@ -18,7 +18,7 @@ description: Local Avalonia documentation corpus navigator. Use this skill for f
 - `accelerate/README.md` — Accelerate product docs index.
 - `xpf/README.md` — XPF docs index.
 - `docs/`, `accelerate/`, `xpf/` — cleaned GFM markdown files.
-- `static/` — local images and videos referenced by the markdown.
+- `static/` — local non-video static assets referenced by the markdown.
 
 ## Navigation strategy
 

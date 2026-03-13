@@ -8,7 +8,7 @@ Avalonia Simple theme is specifically designed to be minimal and lightweight, wi
 
 ## How to use
 
-As a first step, [Avalonia.Themes.Simple](https://www.nuget.org/packages/Avalonia.Themes.Simple/) nuget package needs to be installed. 
+As a first step, [Avalonia.Themes.Simple](https://www.nuget.org/packages/Avalonia.Themes.Simple/) nuget package needs to be installed.
 
 > [!NOTE]
 > On how to add a nuget package, you can follow steps from the NuGet page or [Visual Studio](https://learn.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio), [Rider](https://www.jetbrains.com/help/rider/Using_NuGet.html) documentation.

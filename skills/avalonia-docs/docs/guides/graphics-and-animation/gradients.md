@@ -90,9 +90,9 @@ A LinearGradientBrush is defined using the following basic structure:
 </Border>
 ```
 
-## Example 
+## Example
 
-Below is the code to replicate the following sample. 
+Below is the code to replicate the following sample.
 
 ![Gradient Sample](../../../static/img/guides/gradients/gradients.png)
 

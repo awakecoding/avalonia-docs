@@ -31,5 +31,5 @@ Data templates in Avalonia can also target interfaces and derived classes (which
 In WPF you can create a `DataTemplateSelector` to select or create a `DataTemplate` based on the provided data. In Avalonia you cannot do this; but you can implement `IDataTemplate` which can be seen as a good replacement for the `DataTemplateSelector`. Please find a sample [here](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/DataTemplates/IDataTemplateSample).
 
 > [!TIP]
-> Also see the [Avalonia XPF docs](../xpf/welcome.md) for WPF migration and XPF-specific guidance.
+> Also see the [Avalonia XPF docs](../../../xpf/welcome.md) for WPF migration and XPF-specific guidance.
 

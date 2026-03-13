@@ -4,7 +4,7 @@ On this page you will learn how the MVVM pattern is realised when used with _Ava
 
 ## Views and View Models
 
-When you use the MVVM pattern with _Avalonia UI_, you implement a view with an AXAML file, attached to a corresponding code-behind file, and a view model with a plain-old code class file. 
+When you use the MVVM pattern with _Avalonia UI_, you implement a view with an AXAML file, attached to a corresponding code-behind file, and a view model with a plain-old code class file.
 
 In _Avalonia UI_, a view is implemented as a composition of UI elements in a window or a user control (both AXAML files with code-behind). The UI elements in a composition can be a mixture of _Avalonia UI_ built-in controls, user controls and (more advanced) controls of your own design and implementation.
 
@@ -25,7 +25,7 @@ Data binding is the key technology that allows an _Avalonia UI_ MVVM application
 
 Notice how some of the data bindings are represented by a two way arrow and others by a single-headed arrow. For example, the name and address inputs are two ways - you want both changes in the view model to be notified to the view, and for inputs to the view to be updated on the view model.
 
-The buttons however have one-direction commands, issued by the view and acted out by the view model. 
+The buttons however have one-direction commands, issued by the view and acted out by the view model.
 
 Notice how the view model class is not dependent on the view layer, or how it will be rendered on the target platform by _Avalonia UI_. Because the view model class is independent, it can be unit tested like any other code.
 

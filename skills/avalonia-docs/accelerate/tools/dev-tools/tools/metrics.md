@@ -6,7 +6,7 @@ Meter providers were introduced with .NET 6. More libraries and parts of .NET it
 
 There are several main types of metric instruments:
 - Counter - a measurement representing a single value that can only grow. Typically representing "total" values, like total raised exceptions count.
-- UpDownCounter - similar to Counter, but allowing negative increments. For example, Memory Working Set.  
+- UpDownCounter - similar to Counter, but allowing negative increments. For example, Memory Working Set.
 - Histogram - distribution of measurements. Frame render or HTTP request duration is an example. `Developer Tools` also displays useful P50 (median), P90 and P95 percentiles for histograms.
 - Gauge - a measurement without historical data. Only displays latest value. **Note**: not supported by `Developer Tools` at the moment.
 

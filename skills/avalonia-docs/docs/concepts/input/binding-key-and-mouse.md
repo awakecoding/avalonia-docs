@@ -1,4 +1,4 @@
-# KeyBinding and MouseBinding 
+# KeyBinding and MouseBinding
 - This section explains how to place shortcut keys that often appear in business tools in various controls.
 - As an example, binding with double-click or the Enter key on a simple list box.
 - It also works for DataGrid.

@@ -6,9 +6,14 @@ Now that you’re set up with an Avalonia project in your integrated development
 
 Follow through this tutorial to create the app. As you do so, you will learn about:
 
-<DocCardList />
+- [Adding a control](adding-a-control.md)
+- [Adding some layout](adding-some-layout.md)
+- [Converting data](converting-data.md)
+- [Customizing the Avalonia window](customizing-the-avalonia-window.md)
+- [Establishing events and responses](establishing-events-and-responses.md)
+- [Exercises](exercises.md)
 
-<Image light={TemperatureConverterComplete} alt="A screenshot of a completed app that converts temperatures from Celsius to Fahrenheit." position="center" maxWidth={400} cornerRadius="true" margin={10}/>
+![A screenshot of a completed app that converts temperatures from Celsius to Fahrenheit.](../../../static/img/get-started/temperature-converter-complete.png)
 
 ## .axaml
 
@@ -24,7 +29,7 @@ See the [XAML previewers page](../xaml-previewers.md) for how to enable and test
 
 In the **Views** folder of your project directory, open the file **MainWindow.axaml**. We will mainly be working on this file throughout this tutorial.
 
-<Image light={MainWindowFileLocation} alt="A screenshot showing the location of the main window file in a file tree." position="center" maxWidth={400} cornerRadius="true" margin="20,0,50,0"/>
+![A screenshot showing the location of the main window file in a file tree.](../../../static/img/get-started/mainwindow-file-location.png)
 
 Nearly everything in **MainWindow.axaml** goes between the `<Window>...</Window>` XAML tag. This tag represents the Avalonia window, where your app will run on the target platform. We’ll look at Avalonia windows in more detail later, when we get to [customizing the Avalonia window](customizing-the-avalonia-window.md).
 

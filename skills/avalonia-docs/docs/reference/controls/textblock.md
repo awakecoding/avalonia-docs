@@ -36,7 +36,7 @@ The styling works in the preview pane:
 
 ## Inlines
 
-Text inlines allow diverse formatting of text and controls inside of a single `TextBlock`. While `TextBlock.Text` is routinely 
+Text inlines allow diverse formatting of text and controls inside of a single `TextBlock`. While `TextBlock.Text` is routinely
 used to display a single uniformly formatted text, its child `Content` allows for a collection of inlines.
 
 ### Run
@@ -72,8 +72,8 @@ The `LineBreak` inline forces a line break.
 
 ### Span
 
-The `Span` inline allows grouping of inlines, including non-text inlines. While `Span` can apply its own text formatting, 
-there are a few predefined formatting inlines derived from `Span`: `Bold`, `Italic`, and `Underline`. Users may also derive 
+The `Span` inline allows grouping of inlines, including non-text inlines. While `Span` can apply its own text formatting,
+there are a few predefined formatting inlines derived from `Span`: `Bold`, `Italic`, and `Underline`. Users may also derive
 from `Span` to create their own formatting instead of using styles.
 
 ```xml

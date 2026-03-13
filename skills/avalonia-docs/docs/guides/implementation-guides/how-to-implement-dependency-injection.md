@@ -2,7 +2,7 @@
 
 [Dependency injection (DI)](https://en.wikipedia.org/wiki/Dependency_injection) allows developers to write cleaner, more modular, and testable code. It accomplishes this by creating discrete services that are passed around/created as needed.
 
-This guide will show you step by step how to use Dependency Injection (DI) with _Avalonia UI_ and the MVVM pattern. 
+This guide will show you step by step how to use Dependency Injection (DI) with _Avalonia UI_ and the MVVM pattern.
 
 ## Step 0: Context and Initial Code
 
@@ -48,8 +48,8 @@ var window = new MainWindow
 ```
 
 This works great for simple constructors that are not used very often and don't ever change. But this pattern does not scale well, because:
-- The more dependencies your constructor has the more things you will need to instantiate yourself and pass in. Instantiating the dependencies locally in the constructor (such as by doing `new MainViewModel(new MyService())`) results in direct rigid coupling to a specific instance of the dependencies. 
-- Similarly if the `MainViewModel` constructor itself creates its own dependencies, it also becomes directly coupled to the creation of the dependencies which can result in many of the same problems. 
+- The more dependencies your constructor has the more things you will need to instantiate yourself and pass in. Instantiating the dependencies locally in the constructor (such as by doing `new MainViewModel(new MyService())`) results in direct rigid coupling to a specific instance of the dependencies.
+- Similarly if the `MainViewModel` constructor itself creates its own dependencies, it also becomes directly coupled to the creation of the dependencies which can result in many of the same problems.
 - Furthermore, if `MainViewModel` is instantiated in many places, _every_ instantiation of `MainViewModel` would also need to be updated should the dependencies of `MainViewModel` ever change (such as the addition of new dependencies, or changing which implementation of a dependency to use).
 
 Dependency injection solves these problem by abstracting away the creation of objects and their dependencies. This allows for well encapsulated services that will be automatically passed into any other service that is registered to use them.
@@ -63,7 +63,7 @@ Run the following command in a terminal inside your project directory to install
 dotnet add package Microsoft.Extensions.DependencyInjection
 ```
 
-## Step 2: Add ServiceCollectionExtensions 
+## Step 2: Add ServiceCollectionExtensions
 The following code creates an extension method for `IServiceCollection`. The method will register services to the service collection and make them available for injection.
 
 ```csharp
@@ -79,7 +79,7 @@ public static class ServiceCollectionExtensions
 ```
 
 ## Step 3: Modify App.axaml.cs
-Next: the `App.xaml.cs` class should be modified to use the DI container. This will allow the view model which was registered in the previous step to be resolved via the dependency injection container. The fully realised view model can then be set to the data context of the `MainWindow`/`MainView`. 
+Next: the `App.xaml.cs` class should be modified to use the DI container. This will allow the view model which was registered in the previous step to be resolved via the dependency injection container. The fully realised view model can then be set to the data context of the `MainWindow`/`MainView`.
 
 ```csharp
 public class App : Application

@@ -4,7 +4,7 @@ On this page you will learn how to use the _ReactiveUI_ `ReactiveCommand` and an
 
 ## Revealed Functionality
 
-This is a very important principle that ensures that a user is properly guided through your UI because features and functions only become available (or even visible) once they are valid. 
+This is a very important principle that ensures that a user is properly guided through your UI because features and functions only become available (or even visible) once they are valid.
 
 As a simple example: an input requires at least 8 characters before a button can be clicked, so it is proper UI practice to keep the button disabled until valid input has been made.
 

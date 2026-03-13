@@ -5,7 +5,7 @@
 
 ## Introduction
 
-In Avalonia, a `theme variant` refers to a specific visual appearance of control based on a chosen theme. 
+In Avalonia, a `theme variant` refers to a specific visual appearance of control based on a chosen theme.
 
 By using theme variants, developers can create visually appealing and consistent user interfaces that adapt to different user preferences or system settings. For example, an application may provide a light theme variant with a white background and black text, as well as a dark theme variant with a black background and white text. The user can choose their preferred theme, and the application will adjust its appearance accordingly.
 
@@ -16,12 +16,12 @@ Avalonia's built-in themes, `SimpleTheme` and `FluentTheme`, seamlessly support 
 By default, Avalonia inherits theme variant set by user preferences system-wide.
 Application has control over theme variants through two important properties: [ActualThemeVariant](#actualthemevariant-property) and [RequestedThemeVariant](#requestedthemevariant-property). These properties allow to manage and switch theme variants at different levels within your application.
 
-### `ActualThemeVariant` Property 
+### `ActualThemeVariant` Property
 
 The ActualThemeVariant read-only property is used to retrieve the UI theme currently in use by a control, window, or application. It represents the theme variant that is actively applied to the element.
 This property is available on each control and is inherited down the tree. Its value also used by the styling system while accessing `theme dictionaries`.
 
-### `RequestedThemeVariant` Property 
+### `RequestedThemeVariant` Property
 
 The RequestedThemeVariant property allows to override theme variant and specify a desired variant for a `Application`, `Window` (`TopLevel`) or `ThemeVariantScope`.
 
@@ -68,7 +68,7 @@ If it's required to use reset RequestedThemeVariant value, `RequestedThemeVarian
 
 ## Defining and referencing custom variant specific resources
 
-In Avalonia, theme variant specific resources can be defined in the `ResourceDictionary` using the `ThemeDictionaries` property. 
+In Avalonia, theme variant specific resources can be defined in the `ResourceDictionary` using the `ThemeDictionaries` property.
 
 Typically, developers use `Light` or `Dark` as the key for the theme variants. Using `Default` as the key marks this specific theme dictionary as a fallback in case the theme variant or resource key is not found in other theme dictionaries.
 

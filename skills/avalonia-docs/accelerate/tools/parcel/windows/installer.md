@@ -40,7 +40,7 @@ Default: false.
 The installer icon in **ICO** or **SVG** format. ICO files should include multiple resolutions from 16x16 to 256x256 pixels. This icon appears in Windows Explorer for the installer executable, during installation, and in the Windows uninstaller list.
 
 > [!NOTE]
-> This is separate from the application icon. 
+> This is separate from the application icon.
 >
 > Application icon is defined by the standard .NET `<ApplicationIcon>file.ico</ApplicationIcon>` property in the .csproj file.
 

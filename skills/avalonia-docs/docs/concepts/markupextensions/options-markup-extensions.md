@@ -4,7 +4,7 @@
 
 ## `OnPlatform` markup extension
 
-One example of an options markup extension is the built-in `OnPlatform` markup extension. This markup extension defines values per runtime platform (Windows, macOS, Linux, etc.) to optimize branches, selecting only those relevant to the platform being compiled for. 
+One example of an options markup extension is the built-in `OnPlatform` markup extension. This markup extension defines values per runtime platform (Windows, macOS, Linux, etc.) to optimize branches, selecting only those relevant to the platform being compiled for.
 
 With `OnPlatform`, you can, for instance, use the `Markdown` control on Linux and the `WebView` control on other platforms. The unused control would be excluded, thus reducing the binary size.
 

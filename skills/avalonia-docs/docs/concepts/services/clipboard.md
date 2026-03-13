@@ -10,7 +10,7 @@ Data formats are considered equal if they have the same kind and identifier.
 
 ### Universal Formats
 
-Universal formats are cross-platform formats that Avalonia directly understands.  
+Universal formats are cross-platform formats that Avalonia directly understands.
 There are currently three universal formats:
 
 | Format              | Identifier | Type           | Description         |
@@ -24,7 +24,7 @@ There are currently three universal formats:
 Platform format is compatible **only with the current platform** that the application is running on (e.g., Windows, Linux, iOS, etc.). Its identifier should be a name understood by the underlying platform. Use this format only when you need direct interoperability with the target platform and have precise knowledge of its encoding or serialization.
 
 > [!WARNING]
-> Do **not** assume that a given identifier works for all platforms!  
+> Do **not** assume that a given identifier works for all platforms!
 > For example, the HTML format is named `HTML format` on Windows, `text/html` on Linux and Android, and `public.html` on macOS and iOS. Always verify the intended operating system before using a platform-specific format.
 
 A platform format can be defined using `DataFormat.CreateBytesPlatformFormat` or `DataFormat.CreateStringPlatformFormat`, respectively using `byte[]` and `string` types. Avalonia does not perform automatic serialization.
@@ -162,7 +162,7 @@ The `IAsyncDataTransferItem` interface represents a single item inside an `IAsyn
 - `TryGetRawAsync(DataFormat)`, used to retrieve a single value in a given data format asynchronously.
 
 > [!NOTE]
-> A single item can have multiple formats.  
+> A single item can have multiple formats.
 > For example, rich text might be represented in RTF, HTML, and plain text.
 
 ### Getting values
@@ -172,7 +172,7 @@ The `IAsyncDataTransferItem` interface represents a single item inside an `IAsyn
 To read values from an `IAsyncDataTransferItem` object, call the `TryGetRawAsync(DataFormat)` method by specifying the requested data format.
 
 > [!TIP]
-> The returned value is untyped (`object`).   
+> The returned value is untyped (`object`).
 > Consider using the extension methods described below to get typed results.
 
 #### Typed

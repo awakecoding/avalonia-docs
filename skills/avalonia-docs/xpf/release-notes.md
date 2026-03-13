@@ -74,7 +74,7 @@ Known issues:
 * Remove native calls in ribbon control
 * Fix win32 shims on x86
 * Added logging for APISHIM calls
-* File ok handling 
+* File ok handling
 * Update System.IO.Packaging to 6.0.2
 * Make sure the paragraphWidth is rounded up
 * Add support for VB MsgBox function
@@ -97,7 +97,7 @@ Known issues:
 * Implement OpenFolderDialog
 * Don't call win32 `GetCursorPos` in `Popup`.
 
-## XPF 1.4.0 (2025-01-08) 
+## XPF 1.4.0 (2025-01-08)
 
 * Remove System.Configuration.ConfigurationManager usages
 * Fix ModifierKeys.MacControl value
@@ -153,7 +153,7 @@ Known issues:
 * Fix TextDecorations
 * Fix Key Mapping on macOS
 * Fix GetDpiForMonitor
-* Implement F32MonitorHandle and use new Screens APIs 
+* Implement F32MonitorHandle and use new Screens APIs
 * Hackfix for incorrect glyph run bounds
 * Don't process mouse events as touch
 * Call InternalClose from the externally available Window.Close method

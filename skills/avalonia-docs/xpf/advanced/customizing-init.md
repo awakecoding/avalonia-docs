@@ -1,6 +1,6 @@
 # Customizing Initialization
 
-Avalonia provides the [`AppBuilder`](https://docs.avaloniaui.net/docs/getting-started/application-lifetimes) API to customize various aspects of the framework. 
+Avalonia provides the [`AppBuilder`](https://docs.avaloniaui.net/docs/getting-started/application-lifetimes) API to customize various aspects of the framework.
 
 Because XPF is based upon Avalonia, it can be useful to have access to this API in an XPF application.
 

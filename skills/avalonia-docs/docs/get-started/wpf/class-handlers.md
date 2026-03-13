@@ -27,5 +27,5 @@ private void HandleMyEvent(RoutedEventArgs e)
 Notice that in WPF you have to add the class handler as a static method, whereas in Avalonia the class handler is not static: the notification is automatically directed to the correct instance. The `sender` parameter typical of event handlers is not necessary in this case and everything remains strongly typed.
 
 > [!TIP]
-> Also see the [Avalonia XPF docs](../xpf/welcome.md) for WPF migration and XPF-specific guidance.
+> Also see the [Avalonia XPF docs](../../../xpf/welcome.md) for WPF migration and XPF-specific guidance.
 

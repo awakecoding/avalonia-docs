@@ -37,7 +37,7 @@ Possible options are:
 
 1. `DeveloperToolsRunner.DotNetTool` - global .NET tool.
 2. `DeveloperToolsOptions.AppleBundle` - runs macOS bundle by its ID. To make it work, you need to run `Developer Tools` process directly at least once.
-3. `DeveloperToolsOptions.NoOp` - do nothing. This option assumes the `Developer Tools` application was started by the user manually. 
+3. `DeveloperToolsOptions.NoOp` - do nothing. This option assumes the `Developer Tools` application was started by the user manually.
 4. `DeveloperToolsRunner.CreateFromExecutable(string)` - run executable by full path. This option is not recommended, unless you prefer a custom installation of the tool.
 5. Default: `DeveloperToolsRunner.GetDefaultForPlatform()` - returns `DotNetTool` on desktop or `NoOp` on mobile/browser.
 
@@ -56,7 +56,7 @@ Possible options are:
 
 1. `DeveloperToolsProtocol.DefaultHttp` - default HTTP connection on `29414` port and 5 seconds connection timeout.
 2. `DeveloperToolsProtocol.CreateHttp(Uri, TimeSpan)` - creates HTTP connection with provided parameters. Note: you need to reconfigure `Developer Tools` listener port independently by following [Settings page](../settings.md).
-3. `DeveloperToolsProtocol.CreateHttp(IpAddress, int? port, TimeSpan)` - creates HTTP connection with provided parameters. When port is unset, default `29414` is used. 
+3. `DeveloperToolsProtocol.CreateHttp(IpAddress, int? port, TimeSpan)` - creates HTTP connection with provided parameters. When port is unset, default `29414` is used.
 4. `DeveloperToolsProtocol.CreateNamedPipe(string)` - creates Named Pipe connection. This option is only compatible with Desktop platforms and might be preferred if there are connectivity issues on the local machine. Named Pipe name will be automatically passed to the `Developer Tools` instance.
 5. Default: `DeveloperToolsProtocol.GetDefaultForPlatform()` - currently returns `DefaultHttp` on all platforms.
 

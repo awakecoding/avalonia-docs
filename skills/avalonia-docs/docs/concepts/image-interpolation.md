@@ -65,7 +65,7 @@ The interpolation mode is set per-control by design for performance reasons. Hig
   - Important UI elements like logos
   - Scaled-down images where quality is crucial
   - Photo galleries or image-focused interfaces
-  
+
 - Use default `LowQuality` for:
   - Background images
   - Decorative elements where quality is less critical

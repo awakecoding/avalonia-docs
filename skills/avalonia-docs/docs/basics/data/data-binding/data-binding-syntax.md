@@ -1,12 +1,12 @@
 # Data Binding Syntax
 
-Avalonia supports creating data bindings in XAML and code. Data bindings in XAML are typically created with the 
-`Binding` `MarkupExtension` described by this document. To create data bindings in code, 
+Avalonia supports creating data bindings in XAML and code. Data bindings in XAML are typically created with the
+`Binding` `MarkupExtension` described by this document. To create data bindings in code,
 see [here](../../../guides/data-binding/binding-from-code.md).
 
 ## Data Binding MarkupExtension
 
-The `Binding` `MarkupExtension` uses the keyword `Binding` in combination with optional parameters to define the data 
+The `Binding` `MarkupExtension` uses the keyword `Binding` in combination with optional parameters to define the data
 source and other options as shown by the following example:
 
 ```xml
@@ -28,12 +28,12 @@ source and other options as shown by the following example:
 | `TargetNullValue`     | Sets a value when the source property contains a null value.                      |
 | `UpdateSourceTrigger` | Triggers a source property update when a predefined condition happens.            |
 
-These parameters must be known and set at the time of binding creation. They are CLR properties that cannot 
+These parameters must be known and set at the time of binding creation. They are CLR properties that cannot
 be set and updated by additional bindings.
 
 ## Data Binding Path
 
-The first parameter specified is usually the `Path`. This is the name of a property in the `Source` (`DataContext` by default) 
+The first parameter specified is usually the `Path`. This is the name of a property in the `Source` (`DataContext` by default)
 that Avalonia locates when creating the binding.
 
 You can omit `Path=` when it is the first parameter. The following two bindings are equivalent:
@@ -43,8 +43,8 @@ You can omit `Path=` when it is the first parameter. The following two bindings 
 <TextBlock Text="{Binding Path=Name}"/>
 ```
 
-The binding path can be a single property or a subproperty chain. For example, if the data source has 
-a `Student` property and the object returned by that property has a property `Name`, then you can bind to the student's 
+The binding path can be a single property or a subproperty chain. For example, if the data source has
+a `Student` property and the object returned by that property has a property `Name`, then you can bind to the student's
 name using syntax like this:
 
 ```xml
@@ -59,7 +59,7 @@ If the data source can be indexed (such as an array or list), then you can add t
 
 ## Empty Binding Path
 
-You can specify data bindings without a `Path`. This binds to the `DataContext` of the `Control` itself (where the binding 
+You can specify data bindings without a `Path`. This binds to the `DataContext` of the `Control` itself (where the binding
 is defined). These two syntaxes are equivalent:
 
 ```xml
@@ -89,16 +89,16 @@ The available binding modes are:
 | `OneWayToSource` | Changes in the binding target propagate to the data source, but not the other way.                                        |
 | `Default`        | The binding mode is based on a default mode defined in the code for the property. See below.                              |
 
-When no `Mode` is specified, the `Default` is used. For a control property that does not change value due to user interaction, 
-the default mode is generally `OneWay`. For a control property that does change value due to user input, the default mode 
+When no `Mode` is specified, the `Default` is used. For a control property that does not change value due to user interaction,
+the default mode is generally `OneWay`. For a control property that does change value due to user input, the default mode
 is usually `TwoWay`.
 
 For example, the default mode for a `TextBlock.Text` property is `OneWay`, and the default mode for a `TextBox.Text` property is `TwoWay`.
 
 ## Data Binding Sources
 
-The `Source` specifies the root object instance that the `Path` is relative to. By default, this is the `DataContext` of the 
-containing `Control`. The most common scenario involves binding to another control using `ElementName` or `RelativeSource` 
+The `Source` specifies the root object instance that the `Path` is relative to. By default, this is the `DataContext` of the
+containing `Control`. The most common scenario involves binding to another control using `ElementName` or `RelativeSource`
 parameters or with their shorthand syntax as part of the `Path` (`#controlName` and `$parent[ControlType]` respectively).
 
 ```xml
@@ -116,16 +116,16 @@ parameters or with their shorthand syntax as part of the `Path` (`#controlName` 
 
 ## Converting Bound Values
 
-Bindings offer multiple approaches to convert or substitute the value supplied by a data binding into a type or value 
+Bindings offer multiple approaches to convert or substitute the value supplied by a data binding into a type or value
 that is more appropriate for the target property.
 
 ### String Formatting
 
-You can apply a pattern to a `OneWay` binding to format the bound source property as text via the `StringFormat` 
+You can apply a pattern to a `OneWay` binding to format the bound source property as text via the `StringFormat`
 parameter which uses `string.Format` internally.
 
-The pattern index is zero-based and must be inside curly braces. When the curly braces are at the beginning of 
-the pattern, even when also inside single quotes, they must be escaped. Escaping is done by adding an empty pair 
+The pattern index is zero-based and must be inside curly braces. When the curly braces are at the beginning of
+the pattern, even when also inside single quotes, they must be escaped. Escaping is done by adding an empty pair
 of curly braces at the front of the pattern or a backslash on each brace.
 
 ```xml
@@ -138,14 +138,14 @@ Alternatively, you can use backslashes to escape the curly brackets needed for t
 <TextBlock Text="{Binding FloatProperty, StringFormat=\{0:0.0\}}" />
 ```
 
-However, if your pattern does not start with a zero, you do not need the escape. Also, if you have whitespace in 
+However, if your pattern does not start with a zero, you do not need the escape. Also, if you have whitespace in
 your pattern, you must surround it with single quotes. For example:
 
 ```xml
 <TextBlock Text="{Binding Animals.Count, StringFormat='I have {0} animals.'}" />
 ```
 
-Notice that this means that if your pattern starts with the value that you are binding, then you do need the 
+Notice that this means that if your pattern starts with the value that you are binding, then you do need the
 escape. For example:
 
 ```xml
@@ -155,7 +155,7 @@ escape. For example:
 
 ### String Formatting with Multiple Parameters
 
-`MultiBinding` can be used to format a string that requires multiple bound parameters. The example below formats multiple 
+`MultiBinding` can be used to format a string that requires multiple bound parameters. The example below formats multiple
 numeric inputs as a single string to be displayed.
 
 ```xml
@@ -176,15 +176,15 @@ numeric inputs as a single string to be displayed.
 </StackPanel>
 ```
 
-`FormatString` is used internally by `NumericUpDown` to change how its value is displayed. Here, because RGB colors are 
-integers, we should not display the decimal portion so `0.` is supplied as a custom numeric format specifier 
+`FormatString` is used internally by `NumericUpDown` to change how its value is displayed. Here, because RGB colors are
+integers, we should not display the decimal portion so `0.` is supplied as a custom numeric format specifier
 that .NET understands.
 
-If the values for the inputs are `red = 100`, `green = 80`, and `blue = 255`, then the text displayed will 
+If the values for the inputs are `red = 100`, `green = 80`, and `blue = 255`, then the text displayed will
 be `(r: 100, g: 80, b: 255)`.
 
 > [!TIP]
-> An alternative is to use an `InlineCollection` of `Run` elements each with their own single parameter 
+> An alternative is to use an `InlineCollection` of `Run` elements each with their own single parameter
 > binding. This allows visual customization of each segment. See the example [here](../../../reference/controls/textblock.md#run)
 
 ### Built-in Conversions
@@ -208,7 +208,7 @@ If the built-in converters do not meet your requirements, then you can create a 
 
 `FallbackValue` is used when the property binding cannot be made or when a converter returns `AvaloniaProperty.UnsetValue`.
 
-A common use case is when a parent property in a subproperty binding is `null`. If `Student` is `null` below, 
+A common use case is when a parent property in a subproperty binding is `null`. If `Student` is `null` below,
 the `FallbackValue` will be used:
 
 ```xml
@@ -216,7 +216,7 @@ the `FallbackValue` will be used:
 ```
 
 > [!TIP]
-> `ReflectionBinding` can bind to arbitrary types without regard to compile-time safety. When the binding cannot be made, 
+> `ReflectionBinding` can bind to arbitrary types without regard to compile-time safety. When the binding cannot be made,
 > `FallbackValue` may be useful to substitute a value.
 
 ### TargetNullValue
@@ -232,10 +232,10 @@ When a binding to a property is successfully created and the property value is `
 
 ![](../../../../static/img/basics/data-binding/data-binding-syntax/targetnullvalue.gif)
 
-## UpdateSourceTrigger <MinVersion version="11.1" />
+## UpdateSourceTrigger (Avalonia 11.1+)
 
-Controls like `TextBox` will synchronize their `Text` binding to the source property on every keystroke by default. In 
-some use cases, this may trigger a long-running task or undesirable validation. `UpdateSourceTrigger` allows bindings 
+Controls like `TextBox` will synchronize their `Text` binding to the source property on every keystroke by default. In
+some use cases, this may trigger a long-running task or undesirable validation. `UpdateSourceTrigger` allows bindings
 to specify when synchronization should happen.
 
 | UpdateSourceTrigger | Description                                                                                      |

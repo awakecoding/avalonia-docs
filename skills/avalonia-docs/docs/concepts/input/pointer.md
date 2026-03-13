@@ -52,7 +52,7 @@ var point = args.GetCurrentPoint(this);
 
 ## Tap Events
 
-Controls also have special gesture events, these are: `Tapped`, `DoubleTapped` and `Holding`. The tapped event is raised after the pointer is pressed on the control and then released. Double tapped is raised after pointer is pressed twice in the same place. 
+Controls also have special gesture events, these are: `Tapped`, `DoubleTapped` and `Holding`. The tapped event is raised after the pointer is pressed on the control and then released. Double tapped is raised after pointer is pressed twice in the same place.
 
 Holding is raised after the pointer is pressed for a set duration. The duration to hold for is defined in the `HoldWaitDuration` property in `TopLevel` PlatformSettings. Holding can be enabled on a control by setting the `Gestures.IsHoldingEnabled` attached property. When the hold duration has elapsed, the control's `HoldingEvent` is raised with the args' `HoldingState` set to `HoldingState.Started`. On pointer release, the event is raised again with `HoldingState.Completed` state. If a new gesture is initiated or a second pointer is pressed while `Holding` has started, the `Holding` gesture is cancelled and a `HoldingEvent` is raised with the `HoldingState.Cancelled` state. Holding can also be initiated using the mouse pointer, by setting the `Gestures.IsHoldWithMouseEnabled` attached property on the control.
 

@@ -99,8 +99,8 @@ Add other runtime identifiers as necessary. Each one should be separated by a se
 
 ### Notes on creating icon files
 
-This type of icon file can not only be created on Apple devices, but it is also possible on Linux devices.  
-You can find more information about how you can achieve that in this blog post:  
+This type of icon file can not only be created on Apple devices, but it is also possible on Linux devices.
+You can find more information about how you can achieve that in this blog post:
 [Creating macOS Icons (icns) on Linux](https://dentrassi.de/2014/02/25/creating-mac-os-x-icons-icns-on-linux/)
 
 ### Notes on the `.app` executable file
@@ -119,12 +119,12 @@ The file that is actually executed by macOS when starting your `.app` bundle wil
 
 * Add `-p:UseAppHost=true` to your `dotnet publish` command.
 
-Additionally, you might want to add the '-p:PublishSingleFile=true' to your dotnet command, compiling most of the DLLs into a your single application, simplifying the signing and notarizing process. 
+Additionally, you might want to add the '-p:PublishSingleFile=true' to your dotnet command, compiling most of the DLLs into a your single application, simplifying the signing and notarizing process.
 
 ### dotnet-bundle
 
 > [!WARNING]
-> [dotnet-bundle is unmaintained](https://github.com/egramtel/dotnet-bundle/issues/16#issuecomment-1365767804) but should still work. 
+> [dotnet-bundle is unmaintained](https://github.com/egramtel/dotnet-bundle/issues/16#issuecomment-1365767804) but should still work.
 >
 > It is recommended that you target `net6-macos`, which will handle package generation.
 
@@ -349,9 +349,9 @@ You need a lot of things:
 
 ### Getting certificates
 
-* go to Xcode &gt; Preferences &gt; Account &gt; Manage Certificates... 
+* go to Xcode &gt; Preferences &gt; Account &gt; Manage Certificates...
 * Add them if they do not exists.
-* Export them with a password. 
+* Export them with a password.
 * Open them and import into KeyChain Access.
 * In KeyChain you should see this certificates `3rd Party Mac Developer Installer` and `Apple Distribution`. If cert names are started with another strings - you've created a wrong certificate. Try again.
 * Expand imported keys in KeyChain and double click on a private key inside.
@@ -370,7 +370,7 @@ Your app should be ready for this and do not crash if any folder is read/write p
 
 Your app content should be bundled correctly. [Here's an article from Apple with a lot of useful info](https://developer.apple.com/documentation/bundleresources/placing_content_in_a_bundle).
 
-Most important rules from the article: 
+Most important rules from the article:
 * `.dll` files are not considered as a code by Apple. So it should be placed inside `/Resources` folder and can be not signed.
 * `/MacOS` files should contain only executable mach-o - you app executable and any other helper executables
 * All other mach-o `.dylib` files should be inside `Frameworks/` folder.
@@ -604,7 +604,7 @@ jobs:
 
 When configured like this you will not have to specify a specific keychain file for `codesign` or `notarytool` to use.
 
-The next steps are to publish the app and sign it. 
+The next steps are to publish the app and sign it.
 Start by adding this environment variable to the job:
 
 ```yaml

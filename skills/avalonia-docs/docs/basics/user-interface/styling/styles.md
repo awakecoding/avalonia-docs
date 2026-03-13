@@ -1,6 +1,6 @@
 # Styles
 
-The _Avalonia UI_ style system is a mechanism that can share property settings between controls. 
+The _Avalonia UI_ style system is a mechanism that can share property settings between controls.
 
 > [!TIP]
 > A `Style` in Avalonia is more similar to a CSS style than a WPF/UWP style. The equivalent of a WPF/UWP Style in Avalonia is a [`ControlTheme`](control-themes.md).
@@ -28,7 +28,7 @@ The XAML for a style has two parts: a selector attribute, and one or more setter
 ```
 
 > [!NOTE]
-> The _Avalonia UI_ **style selector syntax** is analogous to that used by CSS (cascading style sheets). For detailed reference information, see [here](../../../reference/styles/style-selector-syntax.md). 
+> The _Avalonia UI_ **style selector syntax** is analogous to that used by CSS (cascading style sheets). For detailed reference information, see [here](../../../reference/styles/style-selector-syntax.md).
 
 ## Example
 
@@ -52,7 +52,7 @@ In this example, all `TextBlock` elements with the `h1` style class will be disp
 
 ![](../../../../static/img/basics/user-interface/styling/style-h1.png)
 
-## Where to put Styles 
+## Where to put Styles
 
 Styles are placed inside a `Styles` collection element on a `Control` or on the `Application`. For example, a window styles collection looks like this:
 

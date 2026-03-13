@@ -37,7 +37,7 @@ Resources can be edited directly in this view, allowing you to experiment with d
 > Adding new resources to the provider is not yet supported
 >
 
-## Filtering and Sorting 
+## Filtering and Sorting
 
 The Resources Tool offers several options to help you find specific resources:
 - Include Nested - When enabled, shows all resources available at the selected node and its children, simulating how resource lookup works at runtime. This helps identify which resources are accessible from a specific point in the hierarchy.

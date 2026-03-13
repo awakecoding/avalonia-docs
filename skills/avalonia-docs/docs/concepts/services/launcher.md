@@ -1,4 +1,4 @@
-# Launcher <MinVersion version="11.1" />
+# Launcher (Avalonia 11.1+)
 
 The `Launcher` allows you to open file or a URI link in the default app associated with the specified argument.
 
@@ -7,7 +7,7 @@ The `Launcher` can be access through an instance of `TopLevel` or `Window`, for 
 var launcher = TopLevel.GetTopLevel(control).Launcher;
 ```
 
-## Methods 
+## Methods
 
 ### LaunchUriAsync
 Starts the default app associated with the URI scheme name for the specified URI.
@@ -30,7 +30,7 @@ Task<bool> LaunchFileAsync(IStorageItem storageItem);
 > IStorageItem is a file or folder retrieved from sandboxed APIs such as IStorageProvider or IClipboard.
 > If you only target non-sandboxed desktop platforms, consider using extension methods accepting FileInfo or DirectoryInfo.
 
-## Extension Methods 
+## Extension Methods
 
 ### LaunchFileInfoAsync
 Starts the default app associated with the specified storage file.

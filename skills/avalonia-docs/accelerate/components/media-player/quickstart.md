@@ -222,7 +222,7 @@ The `MediaPlayer` component relies on native media playback frameworks on each s
 
 ### Windows
 
-`MediaPlayer` uses Windows's Media Foundation to render multimedia content, 
+`MediaPlayer` uses Windows's Media Foundation to render multimedia content,
 while utilizing Vulkan Graphics API whenever possible or available on the end-user's installation.
 
 For Windows 10/11:
@@ -235,9 +235,9 @@ For Windows 10N/11N or 10KN/11KN:
 
 ### macOS/iOS
 
-`MediaPlayer` uses Apple's AVFoundation to render multimedia content on macOS and iOS. 
+`MediaPlayer` uses Apple's AVFoundation to render multimedia content on macOS and iOS.
 
-For macOS 10.15 or iOS 12.0 or higher. 
+For macOS 10.15 or iOS 12.0 or higher.
 
 - No additional setup required.
 

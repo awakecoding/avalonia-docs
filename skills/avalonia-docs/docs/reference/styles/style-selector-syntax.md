@@ -210,7 +210,7 @@ This function negates the selection in the brackets. In the example above all th
 new Style(x => Selectors.Or(x.OfType<TextBlock>(), x.OfType<Button>()))
 ```
 
-You can select any element that matches a comma-separated list of selectors. Any setters in the style must change properties that are common to all the items. 
+You can select any element that matches a comma-separated list of selectors. Any setters in the style must change properties that are common to all the items.
 
 ## By Child Position Formula
 

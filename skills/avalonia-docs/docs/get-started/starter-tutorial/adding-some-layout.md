@@ -39,7 +39,7 @@ We can use the `StackPanel` layout control to place some text above the button.
 
 3. Run the app or check the previewer. You should see the text “Temperature Converter” positioned above the **Calculate** button.
 
-<Image light={TemperatureConverterTextOnly} alt="A screenshot showing a work-in-progress app, with text above a button." position="center" maxWidth={400} cornerRadius="true" margin="0,0,30,0"/>
+![A screenshot showing a work-in-progress app, with text above a button.](../../../static/img/get-started/temperature-converter-text-only.png)
 
 4. Enclose the `TextBlock` with a `<Border>...</Border>` tag. Set the attributes of the `Border` as follows:
 
@@ -63,7 +63,7 @@ We can use the `StackPanel` layout control to place some text above the button.
 
 5. Run the app or check the previewer. You should see that the text “Temperature Converter” is now inside a rounded blue box.
 
-<Image light={TemperatureConverterBlueBorder} alt="A screenshot showing a work-in-progress app, with text enclosed inside a blue border above a button." position="center" maxWidth={400} cornerRadius="true" margin="0,0,30,0"/>
+![A screenshot showing a work-in-progress app, with text enclosed inside a blue border above a button.](../../../static/img/get-started/temperature-converter-blue-border.png)
 
 > [!NOTE]
 > By default, `StackPanel` arranges elements in a vertical stack. You can change this to horizontal by setting the `Orientation` attribute to `Horizontal`.
@@ -98,7 +98,7 @@ We have specified some attributes for the `Grid`:
 - Gridlines are visible.
 - Cell height automatically scales to match the content. Because the automatic height of an empty cell is zero, the `Grid` currently appears on your previewer as a horizontal straight line.
 
-<Image light={TemperatureConverterEmptyGrid} alt="A screenshot showing a work-in-progress app, with a title, a dotted line, and a button." position="center" maxWidth={400} cornerRadius="true"/>
+![A screenshot showing a work-in-progress app, with a title, a dotted line, and a button.](../../../static/img/get-started/temperature-converter-empty-grid.png)
 
 ## Inserting controls in the grid
 
@@ -131,7 +131,7 @@ We have specified some attributes for the `Grid`:
 
 3. Run the app or check the previewer. You should see your text and input boxes added to the window, within the cells marked by the gridlines.
 
-<Image light={TemperatureConverterFilledGrid} alt="A screenshot showing a work-in-progress app, with a title, input boxes in a grid, and a button." position="center" maxWidth={400} cornerRadius="true" margin="10,0,30,0"/>
+![A screenshot showing a work-in-progress app, with a title, input boxes in a grid, and a button.](../../../static/img/get-started/temperature-converter-filled-grid.png)
 
 On the next page of this tutorial, you will learn how to adjust the size of the app window.
 

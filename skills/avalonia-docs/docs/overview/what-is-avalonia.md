@@ -1,6 +1,6 @@
 # What is Avalonia?
 
-Avalonia is an open-source, cross-platform UI framework that enables developers to create application using .NET for Windows, macOS, Linux, iOS, Android and WebAssembly. 
+Avalonia is an open-source, cross-platform UI framework that enables developers to create application using .NET for Windows, macOS, Linux, iOS, Android and WebAssembly.
 
 It uses its own rendering engine to draw UI controls, ensuring consistent appearance and behavior across all supported platforms. This means that developers can share their UI code and maintain a uniform look and feel regardless of the target platform.
 
@@ -50,7 +50,7 @@ Avalonia requires minimal platform-specific code to integrate with each supporte
 * Platform-Specific Features
 
 #### Runtime Environment
-Avalonia applications run on the .NET runtime, whether that's .NET Core, or Mono. 
+Avalonia applications run on the .NET runtime, whether that's .NET Core, or Mono.
 
 #### Comparison with Native Approaches
 While frameworks like .NET MAUI abstract over native UI controls, Avalonia takes a different approach:

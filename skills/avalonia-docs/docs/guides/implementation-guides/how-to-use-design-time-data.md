@@ -4,7 +4,7 @@ Design-time data can help you style and position your UI layer without having to
 
 The _Avalonia UI_ solution templates all add design-time code to the main window for you to copy.
 
-This guide shows you how to use design-time data with the MVVM pattern to create a realistic UI with only mock data (that is without a data service layer). 
+This guide shows you how to use design-time data with the MVVM pattern to create a realistic UI with only mock data (that is without a data service layer).
 
 ![](../../../static/img/guides/implementation-guides/design-time-mock.png)
 
@@ -53,12 +53,12 @@ public class DesignAppointmentViewModel: AppointmentViewModel
 }
 ```
 
-To continue with this example: you are next working on a user control to present the appointment card. Firstly, you must first add a reference to the view models. Next check that you have set a suitable design width and/or height. Then you can add some XAML for the design data context. 
+To continue with this example: you are next working on a user control to present the appointment card. Firstly, you must first add a reference to the view models. Next check that you have set a suitable design width and/or height. Then you can add some XAML for the design data context.
 
 As of Avalonia version 11, the default sample app is set to use Compiled bindings. This requires two declarations:
 1. Import the ViewModels namespace: this is done from the line **xmlns:vm** is to include the ViewModel namespace. In this example the project name is **AvaloniaApplication1**.
 2. Declare the ViewModel class, so that the design time environment can do a type check on the class properties. This is done through the line **x:DataType**
-   
+
 ```xml
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

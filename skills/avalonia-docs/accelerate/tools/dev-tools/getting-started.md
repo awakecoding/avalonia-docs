@@ -147,7 +147,7 @@ Once the Developer Tools has opened, you will be asked to input `AvaloniaUI Port
 
 ## Step 6: Done!
 
-After activation, the connection with the app will be resumed, and a window with tools will be opened. 
+After activation, the connection with the app will be resumed, and a window with tools will be opened.
 
 ## Further Reading
 

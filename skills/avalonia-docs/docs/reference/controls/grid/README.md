@@ -1,16 +1,16 @@
 # Grid
 
-The `Grid` control is useful for arranging child controls in columns and rows. You can define absolute, proportional, and 
+The `Grid` control is useful for arranging child controls in columns and rows. You can define absolute, proportional, and
 autosized row and column geometries for the `Grid`.
 
-Each child control in the `Grid` can be positioned in a `Grid` cell using column and row coordinates. These are 
+Each child control in the `Grid` can be positioned in a `Grid` cell using column and row coordinates. These are
 zero-based, and both have a zero default.
 
-If you position multiple child controls in the same cell, they will be drawn in that cell in the sequence they appear 
+If you position multiple child controls in the same cell, they will be drawn in that cell in the sequence they appear
 in the XAML. This is another strategy to implement layer stacking besides `Panel`.
 
 > [!WARNING]
-> If you omit column and row coordinates for the child controls of a `Grid`, they will all be drawn in the top left 
+> If you omit column and row coordinates for the child controls of a `Grid`, they will all be drawn in the top left
 > corner (column=0, row=0).
 
 It is also possible to make a child control span more than one cell in either rows or columns, or both.
@@ -34,13 +34,13 @@ You will probably use these properties most often:
 
 You can define the size of rows and columns as:
 
-* Absolute - sized in device-independent pixels (integer) 
+* Absolute - sized in device-independent pixels (integer)
 * Proportional - sized in proportion to remaining `Grid` size
 * Automatic - sized to fit the contained child control
 
 Size definitions can be written either as a list of short codes, or fully expanded using XAML elements.
 
-Full definitions support additional constraints such as `SharedSizeGroup` and specifying minimum and maximum lengths in 
+Full definitions support additional constraints such as `SharedSizeGroup` and specifying minimum and maximum lengths in
 absolute sizes.
 
 ### Absolute Size Definitions
@@ -63,7 +63,7 @@ Using full expanded XAML, this is the same as:
 
 ### Proportional Size Definitions
 
-Proportional size definitions are written as proportions of available `Grid` space using an 
+Proportional size definitions are written as proportions of available `Grid` space using an
 asterisk. For example, to create two columns with the same width and then one with twice the width:
 
 `ColumnDefinitions="*, *, 2*"`
@@ -81,8 +81,8 @@ Using full expanded XAML, this is the same as:
 ```
 
 > [!TIP]
-> Size definitions do not support percentages. One trick to overcome this is to create a definition where all proportional 
-> values sum to 100 such as `<Grid ColumnDefinitions="25*, 25*, 50*">` for 3 columns with 25%, 25%, and 50% of the remaining 
+> Size definitions do not support percentages. One trick to overcome this is to create a definition where all proportional
+> values sum to 100 such as `<Grid ColumnDefinitions="25*, 25*, 50*">` for 3 columns with 25%, 25%, and 50% of the remaining
 > available width.
 
 ### Automatic Size Definitions
@@ -104,7 +104,7 @@ Using full expanded XAML, this is the same as:
 ```
 
 > [!WARNING]
-> If a child control has its own explicitly set dimensions, these will be obeyed when it is drawn. This means that if it 
+> If a child control has its own explicitly set dimensions, these will be obeyed when it is drawn. This means that if it
 > is larger than its grid cell, it will overlap adjacent cells.
 
 ### Mixing Size Definitions
@@ -132,13 +132,13 @@ When calculating sizes, any proportional columns are made to fit in the space le
 The calculation for automatic sizing is made using the outside of the margin layout zone of a child control.
 
 > [!NOTE]
-> To review the concept of control layout zones, see [here](../../../concepts/layout/layout-zones.md). 
+> To review the concept of control layout zones, see [here](../../../concepts/layout/layout-zones.md).
 
-Child controls are drawn in their assigned grid cells in the sequence they appear in the XAML. This rule governs both 
-what happens when two child controls are assigned the same cell, and how child controls overlap when they are larger 
+Child controls are drawn in their assigned grid cells in the sequence they appear in the XAML. This rule governs both
+what happens when two child controls are assigned the same cell, and how child controls overlap when they are larger
 than their allotted cell.
 
-When a child control has its own dimensions, and is smaller than its assigned cell, it will be drawn aligned in the 
+When a child control has its own dimensions, and is smaller than its assigned cell, it will be drawn aligned in the
 cell according to its horizontal and vertical alignment properties (both are centered by default).
 
 ## Example

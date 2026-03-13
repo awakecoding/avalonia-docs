@@ -8,7 +8,7 @@ At its core, a Data Template is a reusable definition that specifies how to pres
 
 ## Applying a Data Template to a ListBox
 
-To apply a Data Template to a `ListBox`, you typically use the `ItemTemplate` property of the control. 
+To apply a Data Template to a `ListBox`, you typically use the `ItemTemplate` property of the control.
 
 For instance, if you have a `ListBox` that should display a collection of `Item` objects using the defined Data Template, you can set the `ItemTemplate` property like this:
 

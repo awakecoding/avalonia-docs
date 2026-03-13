@@ -15,7 +15,7 @@ Some of the _Avalonia UI_ built-in controls are like this. For example, the text
 
 ### Templated Custom Controls
 
-A templated custom control creates a 'look-less' control that can be styled by themes or style dictionaries included in your project. The control has code for properties and events, and processing, but no properties or instructions about how to draw. A templated control defers to a theme or styles to select properties like brush colors, line thickness, corner radius etc. The drawing instructions are in the theme. 
+A templated custom control creates a 'look-less' control that can be styled by themes or style dictionaries included in your project. The control has code for properties and events, and processing, but no properties or instructions about how to draw. A templated control defers to a theme or styles to select properties like brush colors, line thickness, corner radius etc. The drawing instructions are in the theme.
 
 The majority of the _Avalonia UI_ built-in controls are templated.
 

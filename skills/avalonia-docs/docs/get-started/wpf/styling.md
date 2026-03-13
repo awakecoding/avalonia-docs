@@ -22,5 +22,5 @@ The following code shows a `UserControl` which defines its own CSS-like style.
 ```
 
 > [!TIP]
-> Also see the [Avalonia XPF docs](../xpf/welcome.md) for WPF migration and XPF-specific guidance.
+> Also see the [Avalonia XPF docs](../../../xpf/welcome.md) for WPF migration and XPF-specific guidance.
 

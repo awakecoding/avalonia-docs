@@ -6,7 +6,7 @@ A crucial aspect of building cross-platform applications with Avalonia is creati
 2. **Separation of Responsibilities** – Every component, whether at the architectural or class level, should have a clear and defined purpose. Each component should perform its specified tasks and expose that functionality via an API accessible to other classes needing to use it.
 3. **Polymorphism** – Programming to an interface (or an abstract class) supporting multiple implementations allows core code to be written and shared across platforms while still interacting with platform-specific features offered by Avalonia.
 
-The result of these principles is an application modelled after real-world or abstract entities with distinct logical layers. 
+The result of these principles is an application modelled after real-world or abstract entities with distinct logical layers.
 
 Separating code into layers makes the application easier to understand, test, and maintain. It's advisable to keep the code in each layer physically separate (either in different directories or even separate projects for larger applications) as well as logically separate (using namespaces). With Avalonia, you can share not just the business logic, but the UI code too across platforms, reducing the need for multiple UI projects and further enhancing code reuse.
 
@@ -27,7 +27,7 @@ An application might not contain all layers – for instance, the Service Access
 
 Patterns are a well-established approach to capture recurring solutions to common problems. There are several key patterns that are valuable to comprehend when building maintainable and understandable applications with Avalonia.
 
-### Model, View, ViewModel (MVVM) 
+### Model, View, ViewModel (MVVM)
 A popular and often misunderstood pattern, MVVM is primarily employed when constructing User Interfaces and promotes a separation between the actual definition of a UI Screen (View), the logic behind it (ViewModel), and the data that populates it (Model). The ViewModel acts as an intermediary between the View and the Model. The Model, although crucial, is a distinct and optional piece, and thus, the essence of understanding this pattern resides in the relationship between the View and ViewModel.
 
 > [!NOTE]
@@ -36,7 +36,7 @@ A popular and often misunderstood pattern, MVVM is primarily employed when const
 ### Business Façade
 Also known as the Manager Pattern, this provides a simplified point of entry for intricate operations. For instance, in a Task Tracking application, you might have a TaskManager class with methods such as GetAllTasks(), GetTask(taskID), SaveTask (task), etc. The TaskManager class provides a Façade to the inner mechanisms of saving/retrieving tasks objects.
 
-### Singleton 
+### Singleton
 The Singleton pattern ensures that only a single instance of a particular object can ever exist. For example, when using SQLite in applications, you typically want only one instance of the database. The Singleton pattern is an efficient method to enforce this.
 
 ### Provider

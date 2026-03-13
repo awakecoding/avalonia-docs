@@ -1,6 +1,6 @@
 # WrapPanel
 
-The `WrapPanel` uses a default arrangement of (multiple) child elements is in sequence from left to right, while they fit in the width. It starts a new line when there is no space left (including any margins and borders). 
+The `WrapPanel` uses a default arrangement of (multiple) child elements is in sequence from left to right, while they fit in the width. It starts a new line when there is no space left (including any margins and borders).
 
 When the orientation property is set to vertical, the arrangement is top to bottom with a new column started when there is no more height remaining.
 

@@ -20,5 +20,5 @@ You will see how although _Avalonia UI_ is often very similar to WPF; there are 
 - [WPF and UWP Comparison](comparison-of-avalonia-with-wpf-and-uwp.md)
 
 > [!TIP]
-> Also see the [Avalonia XPF docs](../xpf/welcome.md) for WPF migration and XPF-specific guidance.
+> Also see the [Avalonia XPF docs](../../../xpf/welcome.md) for WPF migration and XPF-specific guidance.
 

@@ -4,7 +4,7 @@ The image can display raster images from a specified image source. The source ca
 
 * a string constant naming an application asset,
 * loaded as a bitmap from the bound name of an asset (by using a binding converter),
-* or can be loaded directly as a bitmap from a memory stream.  
+* or can be loaded directly as a bitmap from a memory stream.
 
 Images can be used to compose the content of another control. For example, you can create a graphical button using image controls.
 

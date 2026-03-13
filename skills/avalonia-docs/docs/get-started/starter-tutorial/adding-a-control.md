@@ -24,7 +24,7 @@ Let’s try replacing the text in the app with a button.
 4. Run the app or check the previewer. You should now see a **Calculate** button in the app window.
 5. You can try hovering over or clicking the button to see how its appearance changes.
 
-<Image light={CalculateButtonLeft} alt="A screenshot of an app running in a window, with the button aligned left." position="center" maxWidth={400} cornerRadius="true"/>
+![A screenshot of an app running in a window, with the button aligned left.](../../../static/img/get-started/calculate-button-left.png)
 
 ## Setting the button's attributes
 
@@ -46,7 +46,7 @@ Your **Calculate** button is currently aligned against the left edge of the wind
 
 3. Run the app or check the previewer. You should see that the Calculate button moves to the center of the window.
 
-<Image light={CalculateButtonCenter} alt="A screenshot of an app running in a window, with the button aligned center." maxWidth={400} cornerRadius="true" margin="0,0,30,0"/>
+![A screenshot of an app running in a window, with the button aligned center.](../../../static/img/get-started/calculate-button-center.png)
 
 On the next page of this tutorial, you will learn how to add multiple elements to your app using layout controls.
 

@@ -32,7 +32,7 @@ Render rich Markdown content in your Avalonia applications with custom styling a
 
 ### [Tree Data Grid](components/treedatagrid/quickstart.md)
 
-Deliver immersive multimedia experiences right out of the box. Avalonia Accelerate’s MediaPlayer module provides native playback of video and audio content, supporting various formats across Windows, macOS, and Linux, ensuring your users enjoy 
+Deliver immersive multimedia experiences right out of the box. Avalonia Accelerate’s MediaPlayer module provides native playback of video and audio content, supporting various formats across Windows, macOS, and Linux, ensuring your users enjoy
 smooth, high-quality media playback everywhere.
 
 ## How to Get Avalonia Accelerate

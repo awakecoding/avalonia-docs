@@ -13,7 +13,7 @@ You can compose the UI in both the header and content zones to suit the UI requi
 
 ## Examples
 
-This is simple tab example. The tab content is just some text: 
+This is simple tab example. The tab content is just some text:
 
 ```xml
 <TabControl Margin="5">

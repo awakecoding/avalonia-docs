@@ -32,7 +32,7 @@ Then you will need to create new Avalonia Application with XAML and code behind.
  <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Simple.xaml"/>
 ```
 
-After that you will need to create a separate class which will initialize Avalonia for your XPF project. 
+After that you will need to create a separate class which will initialize Avalonia for your XPF project.
 
 ```csharp
 public class MyXpfAvaloniaInitializer

@@ -10,18 +10,18 @@ Below is a list of key resources you can override in your theme or resource dict
 
 | Key | Type | Default | Notes |
 |---|---|---|---|
-| `KeyboardActionButtonBackground` | Brush | `Goldenrod` | 
-| `KeyboardActionButtonBackgroundPressed` | Brush | `PaleGoldenrod` | 
-| `KeyboardButtonBackground` | Brush | `GhostWhite` | 
-| `KeyboardButtonBackgroundPressed` | Brush | `FloralWhite` | 
-| `KeyboardButtonBorderBrush` | Brush | `Black` | 
+| `KeyboardActionButtonBackground` | Brush | `Goldenrod` |
+| `KeyboardActionButtonBackgroundPressed` | Brush | `PaleGoldenrod` |
+| `KeyboardButtonBackground` | Brush | `GhostWhite` |
+| `KeyboardButtonBackgroundPressed` | Brush | `FloralWhite` |
+| `KeyboardButtonBorderBrush` | Brush | `Black` |
 | `KeyboardButtonFontSize` | Double | `24` | introduced in 11.3.1 |
-| `KeyboardButtonForeground` | Brush | `Black` | 
-| `KeyboardFunctionalButtonBackground` | Brush | `LightSteelBlue` | 
-| `KeyboardFunctionalButtonBackgroundPressed` | Brush | `LightBlue` | 
-| `KeyboardPaneBackground` | Brush | `DarkGray` | 
+| `KeyboardButtonForeground` | Brush | `Black` |
+| `KeyboardFunctionalButtonBackground` | Brush | `LightSteelBlue` |
+| `KeyboardFunctionalButtonBackgroundPressed` | Brush | `LightBlue` |
+| `KeyboardPaneBackground` | Brush | `DarkGray` |
 | `KeyboardPanePadding` | Thickness |  `4` |
-| `KeyboardPopupKeySelectedBackground` | Brush | `PaleTurquoise` | 
+| `KeyboardPopupKeySelectedBackground` | Brush | `PaleTurquoise` |
 
 ## How to Override
 

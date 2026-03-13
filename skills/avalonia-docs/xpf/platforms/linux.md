@@ -21,7 +21,7 @@ While we focus our testing efforts on the distributions listed above, Avalonia X
 
 Many distributions provide a version of .NET in their package repositories, but these **should not** be used as they do not ship the required `Microsoft.NET.Sdk.WindowsDesktop` SDK.
 
-The .NET documentation provides a guide to install the Microsoft packages for Ubuntu: 
+The .NET documentation provides a guide to install the Microsoft packages for Ubuntu:
 
 [Register the Microsoft package repository](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#register-the-microsoft-package-repository)
 

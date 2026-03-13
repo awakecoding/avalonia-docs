@@ -16,11 +16,11 @@ Make the gridlines invisible in **GetStartedApp**.
 
 <details>
 	<summary>Solution</summary>
-	
+
 	In **MainWindow.axaml**, locate the `<Grid>` opening tag. Change the `ShowGridLines` attribute to `False`.
 
 	```xml
-	<Grid ShowGridLines="False" Margin="5" 
+	<Grid ShowGridLines="False" Margin="5"
       ColumnDefinitions="120, 100"
       RowDefinitions="Auto, Auto, Auto">
     ```

@@ -17,14 +17,14 @@ Avalonia provides two built-in themes:
 ## Community themes
 Several themes, in varying stages of development, have been brought to life by our dedicated community
 
-### Material.Avalonia 
+### Material.Avalonia
 
 - [Material.Avalonia](https://github.com/AvaloniaCommunity/Material.Avalonia) is a modern theme inspired by [Google's Material Design System](https://m3.material.io/).
 
 ### Semi.Avalonia
 
 - [Semi.Avalonia](https://github.com/irihitech/Semi.Avalonia) is inspired by [Semi Design](https://semi.design/en-US)
-  
+
 ### Classic.Avalonia
 
 - [Classic.Avalonia](https://github.com/BAndysc/Classic.Avalonia) is a classic theme inspired by the design of Windows 9x family.

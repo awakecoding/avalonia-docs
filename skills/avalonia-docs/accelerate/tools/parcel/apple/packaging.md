@@ -82,7 +82,7 @@ The background image for the DMG installer in TIFF format.
 Parcel uses a fixed DMG window size of **660x422** pixels with the following layout:
 
 - **App Bundle icon**: positioned at coordinates (180, 170) with 160px icon size
-- **Applications folder**: positioned at coordinates (480, 170) with 160px icon size  
+- **Applications folder**: positioned at coordinates (480, 170) with 160px icon size
 - **Text size**: 12px for icon labels
 
 Icons are positioned from the top left corner to the icon center.

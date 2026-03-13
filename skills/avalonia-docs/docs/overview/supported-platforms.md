@@ -32,7 +32,7 @@ While Avalonia apps will successfully run on Windows 7, this legacy platform rec
 Avalonia also runs on macOS 10.13 (High Sierra), but we are in the process of migrating to the Metal GPU API, which is currently disabled by default. It is planned to be enabled during one of minor updates.
 
 > [!IMPORTANT]
-> It is possible to develop for macOS on Windows, macOS and Linux using Avalonia. If you plan to sign and notarize your macOS application for distribution, you will require a Mac with XCode installed.  
+> It is possible to develop for macOS on Windows, macOS and Linux using Avalonia. If you plan to sign and notarize your macOS application for distribution, you will require a Mac with XCode installed.
 
 ## Linux
 
@@ -40,7 +40,7 @@ Avalonia also runs on macOS 10.13 (High Sierra), but we are in the process of mi
 * Ubuntu 16.04+
 * Fedora 30+
 
-Avalonia works reliably on most Linux distributions as long as they support the .NET SDK and have either X11 or framebuffer capabilities. While we officially support Debian 9+, Ubuntu 16.04+, and Fedora 30+, many other distributions run Avalonia applications without issues, and we actively work to ensure broad Linux compatibility. 
+Avalonia works reliably on most Linux distributions as long as they support the .NET SDK and have either X11 or framebuffer capabilities. While we officially support Debian 9+, Ubuntu 16.04+, and Fedora 30+, many other distributions run Avalonia applications without issues, and we actively work to ensure broad Linux compatibility.
 
 For customers with [support agreements](https://avaloniaui.net/support), we offer expanded Linux distribution coverage and can assist with specific distribution requirements. Wayland support is currently in private preview and will be available in an upcoming release.
 
@@ -49,7 +49,7 @@ WSL 2 distros are supported as well, but `libice6`, `libsm6` and `libfontconfig1
 > [!NOTE]
 > Skia is built against glibc 2.17. If your distro uses something else instead, you need to build your own libSkiaSharp.so at [SkiaSharp](https://github.com/mono/SkiaSharp). You also can visit SkiaSharp home page for more information about supported versions.
 
-## iOS 
+## iOS
 
 * iOS 13
 * iOS 14
@@ -61,7 +61,7 @@ WSL 2 distros are supported as well, but `libice6`, `libsm6` and `libfontconfig1
 > [!NOTE]
 > .NET support on iOS follows the MAUI lifecycle. See the [MAUI support policy page](https://dotnet.microsoft.com/en-us/platform/support/policy/maui) for details.
 
-## Android 
+## Android
 
 | Name                | Version Number | API Level |
 |---------------------|---------|-----|

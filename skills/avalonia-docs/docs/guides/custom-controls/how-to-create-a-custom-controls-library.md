@@ -16,7 +16,7 @@ To start, you need a **class library** project in which to collect your custom c
     4. For "Target framework", select the preferred .NET version.
     5. Click **Create**.
 
-    <Image light={NewClassLibraryRider} alt="A screenshot of the new project menu in Rider." position="center" maxWidth={400} cornerRadius="true"/>
+    ![A screenshot of the new project menu in Rider.](../../../static/img/guides/custom-controls/new-class-library-rider.png)
 
 ### Visual Studio
 
@@ -26,7 +26,7 @@ To start, you need a **class library** project in which to collect your custom c
     4. For "Target framework", select the preferred .NET version.
     5. Click **Create**.
 
-    <Image light={NewClassLibraryVS} alt="A screenshot of the new project menu in Visual Studio." position="center" maxWidth={400} cornerRadius="true"/>
+    ![A screenshot of the new project menu in Visual Studio.](../../../static/img/guides/custom-controls/new-class-library-vs.png)
 
 ### Installing Avalonia in the class library project
 
@@ -41,7 +41,7 @@ Next, you must install the Avalonia NuGet package in the class library.
     5. Select the preferred version.
     6. Click the name of your class library project at the bottom of the panel to install Avalonia to that project.
 
-    <Image light={InstallAvaloniaInClassLibraryRider} alt="A screenshot demonstrating how to install the Avalonia NuGet package in Rider." position="center" maxWidth={400} cornerRadius="true"/>
+    ![A screenshot demonstrating how to install the Avalonia NuGet package in Rider.](../../../static/img/guides/custom-controls/install-avalonia-in-class-library-rider.png)
 
 ### Visual Studio
 
@@ -52,7 +52,7 @@ Next, you must install the Avalonia NuGet package in the class library.
     5. Select the preferred version.
     6. Click **Install**.
 
-    <Image light={InstallAvaloniaInClassLibraryVS} alt="A screenshot demonstrating how to install the Avalonia NuGet package in Visual Studio." position="center" maxWidth={400} cornerRadius="true"/>
+    ![A screenshot demonstrating how to install the Avalonia NuGet package in Visual Studio.](../../../static/img/guides/custom-controls/install-avalonia-in-class-library-vs.png)
 
 ### Adding a custom control to the class library
 
@@ -110,7 +110,7 @@ Reference your custom control library in an Avalonia project to allow those cust
 
 In this example, we have created a new project using the Avalonia MVVM template titled `AvaloniaCCLib`.
 
-<Image light={CustomControlSolution} alt="A screenshot of a solution containing two projects in Visual Studio." position="center" maxWidth={400} cornerRadius="true"/>
+![A screenshot of a solution containing two projects in Visual Studio.](../../../static/img/guides/custom-controls/custom-control-solution.png)
 
 ### Add a project reference
 
@@ -154,7 +154,7 @@ You can now make a namespace declaration in .axaml files of your Avalonia projec
 3. Build the solution.
 4. Verify you can see the custom control in the running window or preview.
 
-<Image light={CustomControlPreview} alt="A screenshot of an IDE, displaying XAML code in one window and a preview of a user interface in another." position="center" maxWidth={400} cornerRadius="true"/>
+![A screenshot of an IDE, displaying XAML code in one window and a preview of a user interface in another.](../../../static/img/guides/custom-controls/custom-control-preview.png)
 
 ## XML Namespace Definitions
 

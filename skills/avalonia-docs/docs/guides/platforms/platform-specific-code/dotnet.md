@@ -1,6 +1,6 @@
 # Platform-specific .NET
 
-## Overview 
+## Overview
 
 Conditional compilation in .NET allows different parts of the code to be compiled or omitted based on certain conditions. This is particularly useful in .NET when dealing with code that needs to behave differently on various platforms or under different development environments.
 
@@ -24,7 +24,7 @@ Commonly used static methods of this class are:
 These methods do not require any changes in the project structure, and can be used anywhere.
 The disadvantage of using them, it is not possible to separate platform specific APIs in compile time. As otherwise it would require platform specific dependencies to be referenced in a common assembly.
 
-This approach is recommended for simpler scenarios, or when it's desired to keep simple project structure. In the last case, 
+This approach is recommended for simpler scenarios, or when it's desired to keep simple project structure. In the last case,
 
 > [!NOTE]
 > It's the only possible approach to write a conditional .NET code for Linux OS. As .NET doesn't have a special Target Framework for Linux.

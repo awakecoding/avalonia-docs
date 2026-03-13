@@ -1,4 +1,4 @@
-# Input Pane <MinVersion version="11.1" />
+# Input Pane (Avalonia 11.1+)
 
 The `InputPane` allows developers to listen for the platform's input pane (e.g., software keyboard or on-screen keyboard) current state and boundaries.
 
@@ -12,7 +12,7 @@ var inputPane = TopLevel.GetTopLevel(control).InputPane;
 >
 > Automatic adjustment is planned for future 11.* releases.
 
-## Properties 
+## Properties
 
 ### State
 The current input pane state.

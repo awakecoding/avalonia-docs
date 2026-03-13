@@ -19,7 +19,7 @@ For example, event breakpoints without target are considered global, and are tri
 
 On the [Properties](elements/properties.md) list each dependency property has "Set Breakpoint" context menu item.
 
-Created breakpoint is bound to the element on which it was set. 
+Created breakpoint is bound to the element on which it was set.
 
 ![Setting breakpoint on a property](../../../../static/img/dev-tools/breakpoint-set-on-propety.png)
 
@@ -27,11 +27,11 @@ Created breakpoint is bound to the element on which it was set.
 
 On the [Events](events.md) tool each raised event has an option to set a breakpoint.
 
-Setting "On a Source" will bind breakpoint to the source element this previously raised event had. Alternatively, "Globally" option will create an unbound breakpoint, which gets hit on any element with this event. 
+Setting "On a Source" will bind breakpoint to the source element this previously raised event had. Alternatively, "Globally" option will create an unbound breakpoint, which gets hit on any element with this event.
 
 ![Setting breakpoint on a raised event](../../../../static/img/dev-tools/breakpoint-set-on-raised-event.png)
 
-It's also possible to set a breakpoint bound to a specific routed chain element. Or from the "Event Listeners" flyout.  
+It's also possible to set a breakpoint bound to a specific routed chain element. Or from the "Event Listeners" flyout.
 
 ![Setting breakpoint on a chain element](../../../../static/img/dev-tools/breakpoint-set-on-chain-element.png)
 

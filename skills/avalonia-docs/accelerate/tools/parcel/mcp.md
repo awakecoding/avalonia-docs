@@ -16,7 +16,7 @@ Before setting up the MCP server, ensure you have:
 
 ## Supported AI Assistants
 
-Parcel's MCP server works with various AI assistants. 
+Parcel's MCP server works with various AI assistants.
 
 - **[VSCode with Copilot](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)**
 - **[Visual Studio with Copilot](https://learn.microsoft.com/en-us/visualstudio/ide/mcp-servers?view=vs-2022)**
@@ -99,8 +99,4 @@ Simply describe what you want to accomplish in natural language. The AI assistan
 ```
 
 The AI assistant will guide you through the process, execute commands, and help resolve any configuration issues that arise.
-
-<video controls width="90%">
-  <source src="../../../static/video/parcel/parcel_mcp.mp4" />
-</video>
 

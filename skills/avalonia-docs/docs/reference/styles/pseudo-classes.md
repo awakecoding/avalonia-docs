@@ -2,11 +2,11 @@
 
 ## Overview
 
-Pseudoclasses in Avalonia, similar to those in CSS, are keywords exposed by a `Control` that indicate a distinct control 
-state in a convenient way for Style Selectors. These states are used to conditionally style controls. For example, a 
+Pseudoclasses in Avalonia, similar to those in CSS, are keywords exposed by a `Control` that indicate a distinct control
+state in a convenient way for Style Selectors. These states are used to conditionally style controls. For example, a
 `Button` could have a different appearance while it's being pressed or a TextBox while it is disabled.
 
-Pseudoclass state is tracked by the `Control`'s `PseudoClasses` property. By convention, pseudoclass names begin with 
+Pseudoclass state is tracked by the `Control`'s `PseudoClasses` property. By convention, pseudoclass names begin with
 a `:`, such as `:pointerover` or `:pressed`.
 
 ## Selector Usage
@@ -45,13 +45,13 @@ These pseudoclasses are defined by `InputElement` and are accessible on every `C
 
 ## Accessibility
 
-The `PseudoClasses` collection is a `protected` property. This accessibility blocks the external setting of existing and custom 
+The `PseudoClasses` collection is a `protected` property. This accessibility blocks the external setting of existing and custom
 pseudoclasses via code-behind and attached behavior. As such, customizing must be implemented through inheritance.
 
 ## Custom Pseudoclass Example
 
-When creating a custom control, you can define custom pseudoclasses to expose control state. The `[PseudoClasses]` attribute 
-provides information about your pseudoclass to the IDE. This behavior is inherited, so the custom control automatically benefits from 
+When creating a custom control, you can define custom pseudoclasses to expose control state. The `[PseudoClasses]` attribute
+provides information about your pseudoclass to the IDE. This behavior is inherited, so the custom control automatically benefits from
 pseudoclasses defined and managed by more primitive controls, such as `InputElement`'s `:pointerover`.
 
 The following example defines and sets pseudoclasses when the pointer is over different regions of a `Button`.
@@ -125,7 +125,7 @@ public class AreaButton : Button
 ![](../../../static/img/reference/styles/custom-pseudoclass.gif)
 
 > [!WARNING]
-> `StyleKeyOverride` is used when creating simple, derived controls with the `ControlTheme` defined by their parent. In this 
-> case since `Button` is a `TemplatedControl`, creating a `ControlTheme` is necessary as the Selector must target `AreaButton` 
+> `StyleKeyOverride` is used when creating simple, derived controls with the `ControlTheme` defined by their parent. In this
+> case since `Button` is a `TemplatedControl`, creating a `ControlTheme` is necessary as the Selector must target `AreaButton`
 > for the new pseudoclasses.
 

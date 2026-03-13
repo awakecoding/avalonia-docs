@@ -4,19 +4,19 @@
 
 Platform differences aren't just an issue in cross-platform development; even devices within the same platform can possess diverse capabilities.
 
-Most notably, this includes differences in screen size, but numerous other device characteristics may also vary, requiring the application to verify certain capabilities and adapt its behavior based on their presence (or absence). This is especially important when designing for cross paradigm situations, with desktop and mobile operating systems providing very different interaction models.  
+Most notably, this includes differences in screen size, but numerous other device characteristics may also vary, requiring the application to verify certain capabilities and adapt its behavior based on their presence (or absence). This is especially important when designing for cross paradigm situations, with desktop and mobile operating systems providing very different interaction models.
 
-Therefore, all applications must be equipped to handle a graceful scaling back of functionality, or risk presenting a minimal feature set that does not leverage the full potential of the underlying platform. 
+Therefore, all applications must be equipped to handle a graceful scaling back of functionality, or risk presenting a minimal feature set that does not leverage the full potential of the underlying platform.
 
 ### Examples of Platform Divergence
 
 There are certain fundamental characteristics inherent to applications that are universally applicable. These are high-level concepts that hold true across all devices and platforms and can thus form the core of your application's design:
 
 * A screen, which can display your application UI.
-* Some form of input devices, typically touch for mobile and mouse and keyboard for desktop. 
+* Some form of input devices, typically touch for mobile and mouse and keyboard for desktop.
 * Display views of data.
 * Editing data.
-* Navigation capabilities. 
+* Navigation capabilities.
 
 ### Platform-Specific features
 
@@ -28,11 +28,11 @@ Beyond the universal application characteristics, you will also have to address 
 
 * **Keyboards**: Some devices may come with physical keyboards, while others only feature a software keyboard. Code that detects when a soft-keyboard is obscuring part of the screen needs to be sensitive to these differences.
 
-These platform-specific differences should be carefully considered when designing your Avalonia application to ensure a seamless user experience across all platforms. While you should strive to maximize your code reuse, you should also avoid attempting to reuse 100% of your code across all supported platforms. Instead, tailor each platform UIs to the feel at home on the device. 
+These platform-specific differences should be carefully considered when designing your Avalonia application to ensure a seamless user experience across all platforms. While you should strive to maximize your code reuse, you should also avoid attempting to reuse 100% of your code across all supported platforms. Instead, tailor each platform UIs to the feel at home on the device.
 
 ### Dealing with Platform Divergence
 
-Supporting multiple platforms from the same code-base can be achieved through abstracting platform features or [conditional code](../platforms/platform-specific-code/dotnet.md). 
+Supporting multiple platforms from the same code-base can be achieved through abstracting platform features or [conditional code](../platforms/platform-specific-code/dotnet.md).
 
 * **Platform Abstraction**: This approach leverages the Business Façade pattern to provide uniform access across platforms. It abstracts the unique platform implementations into a single, cohesive API. The primary advantage is the ability to write platform-agnostic code, enhancing code reusability and maintainability. However, this approach may not fully exploit the unique features and capabilities of each platform.
 

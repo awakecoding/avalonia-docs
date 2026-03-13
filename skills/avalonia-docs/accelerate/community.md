@@ -1,4 +1,4 @@
-# Community Edition 
+# Community Edition
 
 The Accelerate Community Edition provides free access to professional development tools for individual developers, small organizations, and educational institutions. The aim of this license is to allow the majority of Avalonia developers to benefit from significantly improved tooling at no cost while ensuring the sustainable development of the Avalonia ecosystem.
 
@@ -154,7 +154,7 @@ When a crash occurs in Parcel or Dev Tools, the following diagnostic information
 
 #### Privacy Safeguards
 
-1. **Scope**: Crash reporting only applies to Dev Tools and Parcel, **not applications you build** with Avalonia, or the Visual Studio extension. 
+1. **Scope**: Crash reporting only applies to Dev Tools and Parcel, **not applications you build** with Avalonia, or the Visual Studio extension.
 
 2. **Automatic Data Scrubbing**: We use Sentry's server-side Advanced Data Scrubbing to automatically remove common personally identifiable information (PII) patterns before or at ingestion, including:
    - Email addresses
@@ -192,7 +192,7 @@ dotnet tool uninstall -g Avalonia.DevTools
 
 ### Step 2: Remove License Data (CRITICAL)
 
-**⚠️ IMPORTANT**: Simply uninstalling the tools is **NOT sufficient** to restore pre-Accelerate telemetry settings. 
+**⚠️ IMPORTANT**: Simply uninstalling the tools is **NOT sufficient** to restore pre-Accelerate telemetry settings.
 
 Due to a general limitation of .NET tools, license data is not automatically removed during uninstallation. You must manually delete the license data directory to completely restore previous telemetry behavior.
 
@@ -234,7 +234,7 @@ rm -rf ~/.local/share/AvaloniaUI/Licensing
 
 ### Why This Manual Step Is Necessary
 
-The Avalonia telemetry task ([source code](https://github.com/AvaloniaUI/Avalonia.BuildServices/blob/main/BuildTask/AvaloniaStatsTask.cs)) looks for license keys in the `LicenseTickets` directory to determine your license tier and telemetry settings. 
+The Avalonia telemetry task ([source code](https://github.com/AvaloniaUI/Avalonia.BuildServices/blob/main/BuildTask/AvaloniaStatsTask.cs)) looks for license keys in the `LicenseTickets` directory to determine your license tier and telemetry settings.
 
 When you uninstall .NET tools, this directory is not automatically removed due to a limitation of .NET tools. This means the telemetry system continues to operate under Community License settings even after uninstalling the tools.
 

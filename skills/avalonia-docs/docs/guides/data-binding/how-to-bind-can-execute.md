@@ -76,7 +76,7 @@ In the constructor of the view model, the reactive command is created with two p
 Here the `WhenAnyValue` method takes two arguments, the first collects a value for the parameter of the validation function, and the second is the validation function that returns a Boolean result.
 
 > [!NOTE]
-> The `WhenAnyValue` method actually has overloads that can take up to 10 different value getters (for the validation function parameters), plus the validation function itself. 
+> The `WhenAnyValue` method actually has overloads that can take up to 10 different value getters (for the validation function parameters), plus the validation function itself.
 
 ![](../../../static/img/guides/data-binding/bind-canexecute.gif)
 
