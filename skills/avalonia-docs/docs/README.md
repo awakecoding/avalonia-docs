@@ -1,0 +1,54 @@
+# Avalonia Docs
+
+This index mirrors the curated sidebar order from the source Avalonia docs site and links to the locally extracted markdown files in this skill.
+
+- [Welcome](../xpf/welcome.md)
+- [Breaking changes in Avalonia 12](avalonia12-breaking-changes.md)
+- Getting started
+  - Starter tutorial
+  - Coming from WPF?
+- Stay Up-To-Date
+  - [Release notes](https://github.com/AvaloniaUI/Avalonia/releases)
+- Samples & Tutorials
+  - [Starter tutorial](https://docs.avaloniaui.net/docs/get-started/starter-tutorial)
+  - [ToDo List App](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CompleteApps/SimpleToDoList)
+  - [Music Store App](https://github.com/AvaloniaUI/Avalonia.Samples/tree/main/src/Avalonia.Samples/CompleteApps/Avalonia.MusicStore)
+- Basics
+  - User Interface
+    - Controls
+      - Creating Controls
+    - Building Layouts
+    - Styling
+      - Themes
+  - Data
+    - Data Binding
+- How-To Guides
+  - Building Cross Platform Applications
+  - Implementation Guides
+  - Data Binding
+  - Styles and Resources
+  - Graphics and Animation
+    - Page Transitions
+  - Custom Controls
+  - Development Guides
+  - Platforms
+    - Platform-Specific Code
+    - Android
+    - iOS
+    - Windows
+    - Raspberry PI
+- Deep Dives
+  - Data Templates
+  - Headless Platform
+  - Input
+  - The MVVM Pattern
+  - Markup extensions
+  - ReactiveUI
+  - Services
+    - Storage Provider
+- Deployment
+- Reference
+- [FAQ](faq.md)
+- [Community Edition](../accelerate/community.md)
+- [API Reference](https://api-docs.avaloniaui.net/docs/category/avalonia)
+

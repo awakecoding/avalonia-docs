@@ -5,8 +5,16 @@
 
 The repository holds the code and markdown source files for the Avalonia UI documentation website, which is accessible at [docs.avaloniaui.net](https://docs.avaloniaui.net)
 
+## Agent skill
+
+This branch also includes a standalone `skills/avalonia-docs` skill generated from the repository markdown.
+
+- Rebuild it locally with `pwsh ./scripts/Build-AvaloniaDocsSkill.ps1`
+- Use the generated corpus from `skills/avalonia-docs/`
+
 ## Index
 - [Index](#index)
+- [Agent skill](#agent-skill)
 - [Feedback](#feedback)
 - [Documentation Issues](#documentation-issues)
 - [Contributing](#contributing)
