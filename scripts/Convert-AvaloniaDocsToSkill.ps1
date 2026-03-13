@@ -1,7 +1,9 @@
 [CmdletBinding()]
 param(
     [string]$RepositoryRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path,
-    [string]$SkillPath = (Join-Path (Join-Path (Resolve-Path (Join-Path $PSScriptRoot '..')).Path 'skills') 'avalonia-docs')
+    [string]$SkillPath = (Join-Path (Join-Path (Resolve-Path (Join-Path $PSScriptRoot '..')).Path 'skills') 'avalonia-docs'),
+    [string]$ApiSourceRoot,
+    [string]$ApiSidebarPath
 )
 
 $ErrorActionPreference = 'Stop'
@@ -464,10 +466,11 @@ function Resolve-LinkTarget {
         $routeCandidates = New-Object System.Collections.Generic.List[string]
         $routeCandidates.Add($mainTarget)
 
-        if (-not ($mainTarget.StartsWith('/docs/') -or $mainTarget -eq '/docs' -or $mainTarget.StartsWith('/accelerate/') -or $mainTarget -eq '/accelerate' -or $mainTarget.StartsWith('/xpf/') -or $mainTarget -eq '/xpf')) {
+        if (-not ($mainTarget.StartsWith('/docs/') -or $mainTarget -eq '/docs' -or $mainTarget.StartsWith('/accelerate/') -or $mainTarget -eq '/accelerate' -or $mainTarget.StartsWith('/xpf/') -or $mainTarget -eq '/xpf' -or $mainTarget.StartsWith('/api/') -or $mainTarget -eq '/api')) {
             $routeCandidates.Add("/docs$mainTarget")
             $routeCandidates.Add("/accelerate$mainTarget")
             $routeCandidates.Add("/xpf$mainTarget")
+            $routeCandidates.Add("/api$mainTarget")
         }
 
         foreach ($routeCandidate in ($routeCandidates | Select-Object -Unique)) {
@@ -1020,6 +1023,7 @@ function New-DocRecord {
         [string]$CollectionName,
         [string]$RouteBase,
         [string]$SourceRoot,
+        [string]$OutputRootName,
         [string]$SkillRoot
     )
 
@@ -1030,7 +1034,7 @@ function New-DocRecord {
         $relativeDirectory = '.'
     }
 
-    $outputRelative = [System.IO.Path]::ChangeExtension($relativeSourcePath, '.md')
+    $outputRelative = ConvertTo-ForwardSlashes ([System.IO.Path]::ChangeExtension((Join-Path $OutputRootName $relativeWithinCollection), '.md'))
     $outputPath = Join-Path $SkillRoot $outputRelative
     $sourceText = Get-Content -LiteralPath $SourcePath -Raw -Encoding UTF8
     $parsed = Parse-FrontMatter -Text $sourceText
@@ -1086,6 +1090,7 @@ function Write-CollectionReadme {
         'docs' { 'Avalonia Docs' }
         'accelerate' { 'Avalonia Accelerate Docs' }
         'xpf' { 'Avalonia XPF Docs' }
+        'api' { 'Avalonia API Docs' }
         default { $CollectionName }
     }
 
@@ -1112,10 +1117,14 @@ $script:RepositoryRoot = Get-NormalizedPath $RepositoryRoot
 $skillRoot = Get-NormalizedPath $SkillPath
 
 $collections = @(
-    [pscustomobject]@{ Name = 'docs'; RouteBase = 'docs'; SourceRoot = Join-Path $script:RepositoryRoot 'docs'; SidebarPath = Join-Path $script:RepositoryRoot 'sidebars.js'; SidebarKey = 'documentationSidebar' },
-    [pscustomobject]@{ Name = 'accelerate'; RouteBase = 'accelerate'; SourceRoot = Join-Path $script:RepositoryRoot 'accelerate'; SidebarPath = Join-Path $script:RepositoryRoot 'accelerate-sidebar.js'; SidebarKey = 'defaultSidebar' },
-    [pscustomobject]@{ Name = 'xpf'; RouteBase = 'xpf'; SourceRoot = Join-Path $script:RepositoryRoot 'xpf'; SidebarPath = Join-Path $script:RepositoryRoot 'xpf-sidebar.js'; SidebarKey = 'defaultSidebar' }
+    [pscustomobject]@{ Name = 'docs'; RouteBase = 'docs'; OutputRoot = 'docs'; SourceRoot = Join-Path $script:RepositoryRoot 'docs'; SidebarPath = Join-Path $script:RepositoryRoot 'sidebars.js'; SidebarKey = 'documentationSidebar' },
+    [pscustomobject]@{ Name = 'accelerate'; RouteBase = 'accelerate'; OutputRoot = 'accelerate'; SourceRoot = Join-Path $script:RepositoryRoot 'accelerate'; SidebarPath = Join-Path $script:RepositoryRoot 'accelerate-sidebar.js'; SidebarKey = 'defaultSidebar' },
+    [pscustomobject]@{ Name = 'xpf'; RouteBase = 'xpf'; OutputRoot = 'xpf'; SourceRoot = Join-Path $script:RepositoryRoot 'xpf'; SidebarPath = Join-Path $script:RepositoryRoot 'xpf-sidebar.js'; SidebarKey = 'defaultSidebar' }
 )
+
+if ($ApiSourceRoot -and $ApiSidebarPath) {
+    $collections += [pscustomobject]@{ Name = 'api'; RouteBase = 'api'; OutputRoot = 'api'; SourceRoot = (Get-NormalizedPath $ApiSourceRoot); SidebarPath = (Get-NormalizedPath $ApiSidebarPath); SidebarKey = 'defaultSidebar' }
+}
 
 $sidebarData = @{}
 $categoryMaps = @{}
@@ -1137,7 +1146,7 @@ foreach ($collection in $collections) {
     $categoryMaps[$collection.Name] = $categoryMap
 
     foreach ($sourceFile in (Get-ChildItem -LiteralPath $collection.SourceRoot -Recurse -File | Where-Object { $_.Extension -in '.md', '.mdx' })) {
-        $record = New-DocRecord -SourcePath $sourceFile.FullName -CollectionName $collection.Name -RouteBase $collection.RouteBase -SourceRoot $collection.SourceRoot -SkillRoot $skillRoot
+        $record = New-DocRecord -SourcePath $sourceFile.FullName -CollectionName $collection.Name -RouteBase $collection.RouteBase -SourceRoot $collection.SourceRoot -OutputRootName $collection.OutputRoot -SkillRoot $skillRoot
         $allRecords.Add($record)
         $docSourceMap[$record.SourcePath] = $record
         $docLookupById[$record.DocId] = $record
@@ -1168,82 +1177,110 @@ foreach ($collection in $collections) {
     Write-CollectionReadme -CollectionName $collection.Name -SkillRoot $skillRoot -SidebarItems $sidebarData[$collection.Name] -DocLookup $docLookupById
 }
 
-$readmeLines = @(
-    '# Avalonia Docs Skill',
-    '',
-    'Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original `docs/`, `accelerate/`, and `xpf/` collections, rewrites internal links for local file browsing, and copies only the non-video static assets referenced by the markdown.',
-    '',
-    '## Installation',
-    '',
-    'Install from this repository with [skills.sh](https://skills.sh):',
-    '',
-    '```bash',
-    'npx skills add https://github.com/awakecoding/avalonia-docs --skill avalonia-docs -y -g',
-    '```',
-    '',
-    'Or rebuild the skill locally from a clone of this repository:',
-    '',
-    '```powershell',
-    './scripts/Build-AvaloniaDocsSkill.ps1',
-    '```',
-    '',
-    '## Corpus layout',
-    '',
-    '- [`docs/README.md`](docs/README.md) — primary Avalonia documentation index.',
-    '- [`accelerate/README.md`](accelerate/README.md) — Avalonia Accelerate documentation index.',
-    '- [`xpf/README.md`](xpf/README.md) — Avalonia XPF documentation index.',
-    '- `static/` — copied non-video static assets referenced by the markdown corpus.',
-    '',
-    '## Included collections',
-    '',
-    "- Avalonia Docs: $((($allRecords | Where-Object Collection -eq 'docs').Count)) markdown files.",
-    "- Avalonia Accelerate: $((($allRecords | Where-Object Collection -eq 'accelerate').Count)) markdown files.",
-    "- Avalonia XPF: $((($allRecords | Where-Object Collection -eq 'xpf').Count)) markdown files.",
-    '',
-    '## Source',
-    '',
-    'This skill is generated from the markdown and MDX sources in the `awakecoding/avalonia-docs` repository and is intended for local, offline use by AI agents.'
-)
-Set-Content -LiteralPath (Join-Path $skillRoot 'README.md') -Value (($readmeLines -join "`n") + "`n") -Encoding UTF8
+$includedCollectionNames = @($collections | ForEach-Object { $_.Name })
+$hasApiCollection = $includedCollectionNames -contains 'api'
+$corpusCollectionsText = if ($hasApiCollection) {
+    'docs/, accelerate/, xpf/, and api/'
+} else {
+    'docs/, accelerate/, and xpf/'
+}
 
-$skillLines = @(
-    '---',
-    'name: avalonia-docs',
-    'description: Local Avalonia documentation corpus navigator. Use this skill for framework concepts, guides, control reference, Accelerate tooling, and XPF migration questions grounded in the extracted markdown corpus.',
-    '---',
-    '',
-    '# Avalonia Docs Corpus Navigator',
-    '',
-    '## Overview',
-    '',
-    '- The markdown corpus is already extracted locally next to this file.',
-    '- Use the local files only; do not browse the network unless the user explicitly asks for newer upstream content.',
-    '- Prefer the collection indexes before deep-reading individual files.',
-    '',
-    '## Corpus layout',
-    '',
-    '- `README.md` — top-level skill overview and install notes.',
-    '- `docs/README.md` — primary Avalonia docs index in sidebar order.',
-    '- `accelerate/README.md` — Accelerate product docs index.',
-    '- `xpf/README.md` — XPF docs index.',
-    '- `docs/`, `accelerate/`, `xpf/` — cleaned GFM markdown files.',
-    '- `static/` — local non-video static assets referenced by the markdown.',
-    '',
-    '## Navigation strategy',
-    '',
-    '1. Start with the relevant collection README to find the curated section order.',
-    '2. For broad Avalonia questions, begin in `docs/`.',
-    '3. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.',
-    '4. For WPF migration and XPF-specific topics, use `xpf/`.',
-    '5. Quote the exact markdown files you used when answering detailed questions.',
-    '',
-    '## Working style',
-    '',
-    '- Answer from local markdown evidence and cite file paths.',
-    '- Keep internal links local; the corpus is intended to be portable as a zipped skill directory.',
-    '- If a topic appears in multiple collections, mention the overlap and compare the relevant files.',
-    '- If a link points outside the local corpus (for example GitHub or Microsoft downloads), state that it is an external reference.'
-)
+$corpusReadmeLines = New-Object System.Collections.Generic.List[string]
+$corpusReadmeLines.Add('# Avalonia Docs Skill')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add("Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original $corpusCollectionsText collections, rewrites internal links for local file browsing, and copies only the non-video static assets referenced by the markdown.")
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('## Installation')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('Install from this repository with [skills.sh](https://skills.sh):')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('```bash')
+$corpusReadmeLines.Add('npx skills add https://github.com/awakecoding/avalonia-docs --skill avalonia-docs -y -g')
+$corpusReadmeLines.Add('```')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('Or rebuild the skill locally from a clone of this repository:')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('```powershell')
+$corpusReadmeLines.Add('./scripts/Build-AvaloniaDocsSkill.ps1')
+if ($hasApiCollection) {
+    $corpusReadmeLines.Add('./scripts/Build-AvaloniaDocsSkill.ps1 -IncludeApiDocs')
+}
+$corpusReadmeLines.Add('```')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('## Corpus layout')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('- [`docs/README.md`](docs/README.md) — primary Avalonia documentation index.')
+$corpusReadmeLines.Add('- [`accelerate/README.md`](accelerate/README.md) — Avalonia Accelerate documentation index.')
+$corpusReadmeLines.Add('- [`xpf/README.md`](xpf/README.md) — Avalonia XPF documentation index.')
+if ($hasApiCollection) {
+    $corpusReadmeLines.Add('- [`api/README.md`](api/README.md) — generated Avalonia API reference index.')
+}
+$corpusReadmeLines.Add('- `static/` — copied non-video static assets referenced by the markdown corpus.')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('## Included collections')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add("- Avalonia Docs: $((($allRecords | Where-Object Collection -eq 'docs').Count)) markdown files.")
+$corpusReadmeLines.Add("- Avalonia Accelerate: $((($allRecords | Where-Object Collection -eq 'accelerate').Count)) markdown files.")
+$corpusReadmeLines.Add("- Avalonia XPF: $((($allRecords | Where-Object Collection -eq 'xpf').Count)) markdown files.")
+if ($hasApiCollection) {
+    $corpusReadmeLines.Add("- Avalonia API Reference: $((($allRecords | Where-Object Collection -eq 'api').Count)) markdown files.")
+}
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('## Source')
+$corpusReadmeLines.Add('')
+$corpusReadmeLines.Add('This skill is generated from the markdown and MDX sources in the `awakecoding/avalonia-docs` repository and is intended for local, offline use by AI agents.')
+Set-Content -LiteralPath (Join-Path $skillRoot 'README.md') -Value (($corpusReadmeLines -join "`n") + "`n") -Encoding UTF8
+
+$skillLines = New-Object System.Collections.Generic.List[string]
+$skillLines.Add('---')
+$skillLines.Add('name: avalonia-docs')
+$skillLines.Add('description: Local Avalonia documentation corpus navigator. Use this skill for framework concepts, guides, control reference, generated API reference, Accelerate tooling, and XPF migration questions grounded in the extracted markdown corpus.')
+$skillLines.Add('---')
+$skillLines.Add('')
+$skillLines.Add('# Avalonia Docs Corpus Navigator')
+$skillLines.Add('')
+$skillLines.Add('## Overview')
+$skillLines.Add('')
+$skillLines.Add('- The markdown corpus is already extracted locally next to this file.')
+$skillLines.Add('- Use the local files only; do not browse the network unless the user explicitly asks for newer upstream content.')
+$skillLines.Add('- Prefer the collection indexes before deep-reading individual files.')
+$skillLines.Add('')
+$skillLines.Add('## Corpus layout')
+$skillLines.Add('')
+$skillLines.Add('- `README.md` — top-level skill overview and install notes.')
+$skillLines.Add('- `docs/README.md` — primary Avalonia docs index in sidebar order.')
+$skillLines.Add('- `accelerate/README.md` — Accelerate product docs index.')
+$skillLines.Add('- `xpf/README.md` — XPF docs index.')
+if ($hasApiCollection) {
+    $skillLines.Add('- `api/README.md` — generated API reference index.')
+}
+$skillLines.Add('- `docs/`, `accelerate/`, `xpf/` — cleaned GFM markdown files.')
+if ($hasApiCollection) {
+    $skillLines.Add('- `api/` — generated API reference markdown files built from the pinned Avalonia source tag.')
+}
+$skillLines.Add('- `static/` — local non-video static assets referenced by the markdown.')
+$skillLines.Add('')
+$skillLines.Add('## Navigation strategy')
+$skillLines.Add('')
+$skillLines.Add('1. Start with the relevant collection README to find the curated section order.')
+$skillLines.Add('2. For broad Avalonia questions, begin in `docs/`.')
+if ($hasApiCollection) {
+    $skillLines.Add('3. For API surface, inheritance, members, and namespaces, use `api/`.')
+    $skillLines.Add('4. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.')
+    $skillLines.Add('5. For WPF migration and XPF-specific topics, use `xpf/`.')
+    $skillLines.Add('6. Quote the exact markdown files you used when answering detailed questions.')
+} else {
+    $skillLines.Add('3. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.')
+    $skillLines.Add('4. For WPF migration and XPF-specific topics, use `xpf/`.')
+    $skillLines.Add('5. Quote the exact markdown files you used when answering detailed questions.')
+}
+$skillLines.Add('')
+$skillLines.Add('## Working style')
+$skillLines.Add('')
+$skillLines.Add('- Answer from local markdown evidence and cite file paths.')
+$skillLines.Add('- Keep internal links local; the corpus is intended to be portable as a zipped skill directory.')
+$skillLines.Add('- If a topic appears in multiple collections, mention the overlap and compare the relevant files.')
+$skillLines.Add('- If a link points outside the local corpus (for example GitHub or Microsoft downloads), state that it is an external reference.')
 Set-Content -LiteralPath (Join-Path $skillRoot 'SKILL.md') -Value (($skillLines -join "`n") + "`n") -Encoding UTF8
 
 $legalLines = @(

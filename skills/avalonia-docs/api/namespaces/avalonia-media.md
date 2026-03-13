@@ -1,0 +1,176 @@
+# Avalonia.Media
+
+## Types
+
+- [Avalonia.Media.AcrylicBackgroundSource](../types/avalonia-media/avalonia-media-acrylicbackgroundsource.md) - Background Sources for Acrylic.
+- [Avalonia.Media.AlignmentX](../types/avalonia-media/avalonia-media-alignmentx.md) - Describes how content is positioned horizontally in a container.
+- [Avalonia.Media.AlignmentY](../types/avalonia-media/avalonia-media-alignmenty.md) - Describes how content is positioned vertically in a container.
+- [Avalonia.Media.ArcSegment](../types/avalonia-media/avalonia-media-arcsegment.md)
+- [Avalonia.Media.BackgroundSizing](../types/avalonia-media/avalonia-media-backgroundsizing.md) - Defines how a background is drawn relative to its border.
+- [Avalonia.Media.BaselineAlignment](../types/avalonia-media/avalonia-media-baselinealignment.md) - Enum specifying where a box should be positioned Vertically
+- [Avalonia.Media.BaselinePixelAlignment](../types/avalonia-media/avalonia-media-baselinepixelalignment.md) - Specifies the baseline pixel alignment options for rendering text or graphics.
+- [Avalonia.Media.BezierSegment](../types/avalonia-media/avalonia-media-beziersegment.md)
+- [Avalonia.Media.BitmapCache](../types/avalonia-media/avalonia-media-bitmapcache.md) - Represents the behavior of caching a visual element or tree of elements as bitmap surfaces.
+- [Avalonia.Media.BlurEffect](../types/avalonia-media/avalonia-media-blureffect.md)
+- [Avalonia.Media.BoxShadow](../types/avalonia-media/avalonia-media-boxshadow.md) - Represents a box shadow which can be attached to an element or control.
+- [Avalonia.Media.BoxShadows](../types/avalonia-media/avalonia-media-boxshadows.md) - Represents a collection of s.
+- [Avalonia.Media.Brush](../types/avalonia-media/avalonia-media-brush.md) - Describes how an area is painted.
+- [Avalonia.Media.BrushConverter](../types/avalonia-media/avalonia-media-brushconverter.md) - Creates an from a string representation.
+- [Avalonia.Media.Brushes](../types/avalonia-media/avalonia-media-brushes.md) - Predefined brushes.
+- [Avalonia.Media.BrushExtensions](../types/avalonia-media/avalonia-media-brushextensions.md) - Extension methods for brush classes.
+- [Avalonia.Media.BrushMappingMode](../types/avalonia-media/avalonia-media-brushmappingmode.md)
+- [Avalonia.Media.CacheMode](../types/avalonia-media/avalonia-media-cachemode.md) - Represents cached content modes for graphics acceleration features.
+- [Avalonia.Media.CharacterHit](../types/avalonia-media/avalonia-media-characterhit.md) - Represents information about a character hit within a glyph run.
+- [Avalonia.Media.Color](../types/avalonia-media/avalonia-media-color.md) - An ARGB color.
+- [Avalonia.Media.Colors](../types/avalonia-media/avalonia-media-colors.md) - Defines a set of predefined colors.
+- [Avalonia.Media.CombinedGeometry](../types/avalonia-media/avalonia-media-combinedgeometry.md) - Represents a 2-D geometric shape defined by the combination of two Geometry objects.
+- [Avalonia.Media.ConicGradientBrush](../types/avalonia-media/avalonia-media-conicgradientbrush.md) - Paints an area with a swept circular gradient.
+- [Avalonia.Media.DashStyle](../types/avalonia-media/avalonia-media-dashstyle.md) - Represents the sequence of dashes and gaps that will be applied by a .
+- [Avalonia.Media.Drawing](../types/avalonia-media/avalonia-media-drawing.md) - Abstract class that describes a 2-D drawing.
+- [Avalonia.Media.DrawingBrush](../types/avalonia-media/avalonia-media-drawingbrush.md) - Paints an area with an .
+- [Avalonia.Media.DrawingCollection](../types/avalonia-media/avalonia-media-drawingcollection.md)
+- [Avalonia.Media.DrawingContext](../types/avalonia-media/avalonia-media-drawingcontext.md)
+- [Avalonia.Media.DrawingContext.PushedState](../types/avalonia-media/avalonia-media-drawingcontext-pushedstate.md)
+- [Avalonia.Media.DrawingGroup](../types/avalonia-media/avalonia-media-drawinggroup.md)
+- [Avalonia.Media.DrawingImage](../types/avalonia-media/avalonia-media-drawingimage.md) - An that uses a for content.
+- [Avalonia.Media.DropShadowDirectionEffect](../types/avalonia-media/avalonia-media-dropshadowdirectioneffect.md) - This class is compatible with WPF's DropShadowEffect and provides Direction and ShadowDepth properties instead of OffsetX/OffsetY
+- [Avalonia.Media.DropShadowEffect](../types/avalonia-media/avalonia-media-dropshadoweffect.md)
+- [Avalonia.Media.DropShadowEffectBase](../types/avalonia-media/avalonia-media-dropshadoweffectbase.md)
+- [Avalonia.Media.EdgeMode](../types/avalonia-media/avalonia-media-edgemode.md)
+- [Avalonia.Media.Effect](../types/avalonia-media/avalonia-media-effect.md)
+- [Avalonia.Media.EffectConverter](../types/avalonia-media/avalonia-media-effectconverter.md)
+- [Avalonia.Media.EffectExtensions](../types/avalonia-media/avalonia-media-effectextensions.md)
+- [Avalonia.Media.EllipseGeometry](../types/avalonia-media/avalonia-media-ellipsegeometry.md) - Represents the geometry of an ellipse or circle.
+- [Avalonia.Media.ExperimentalAcrylicMaterial](../types/avalonia-media/avalonia-media-experimentalacrylicmaterial.md)
+- [Avalonia.Media.FillRule](../types/avalonia-media/avalonia-media-fillrule.md)
+- [Avalonia.Media.FlowDirection](../types/avalonia-media/avalonia-media-flowdirection.md) - The 'flow-direction' property specifies whether the primary text advance direction shall be left-to-right or right-to-left.
+- [Avalonia.Media.FontFallback](../types/avalonia-media/avalonia-media-fontfallback.md) - Font fallback definition that is used to override the default fallback lookup of the current
+- [Avalonia.Media.FontFamily](../types/avalonia-media/avalonia-media-fontfamily.md)
+- [Avalonia.Media.FontFeature](../types/avalonia-media/avalonia-media-fontfeature.md) - Font feature
+- [Avalonia.Media.FontFeatureCollection](../types/avalonia-media/avalonia-media-fontfeaturecollection.md) - List of font feature settings
+- [Avalonia.Media.FontManager](../types/avalonia-media/avalonia-media-fontmanager.md) - The font manager is used to query the system's installed fonts and is responsible for caching loaded fonts. It is also responsible for the font fallback.
+- [Avalonia.Media.FontManagerOptions](../types/avalonia-media/avalonia-media-fontmanageroptions.md)
+- [Avalonia.Media.FontMetrics](../types/avalonia-media/avalonia-media-fontmetrics.md) - The font metrics is holding information about a font's ascent, descent, etc. in design em units.
+- [Avalonia.Media.FontSimulations](../types/avalonia-media/avalonia-media-fontsimulations.md) - Specifies algorithmic style simulations to be applied to the typeface. Bold and oblique simulations can be combined via bitwise OR operation.
+- [Avalonia.Media.FontStretch](../types/avalonia-media/avalonia-media-fontstretch.md) - FontStretch describes relative change from the normal aspect ratio as specified by a font designer for the glyphs in a font.
+- [Avalonia.Media.FontStyle](../types/avalonia-media/avalonia-media-fontstyle.md) - Defines the available font styles.
+- [Avalonia.Media.FontWeight](../types/avalonia-media/avalonia-media-fontweight.md) - Defines a set of predefined font weights.
+- [Avalonia.Media.FormattedText](../types/avalonia-media/avalonia-media-formattedtext.md) - The FormattedText class is targeted at programmers needing to add some simple text to a MIL visual.
+- [Avalonia.Media.Geometry](../types/avalonia-media/avalonia-media-geometry.md) - Defines a geometric shape.
+- [Avalonia.Media.GeometryCollection](../types/avalonia-media/avalonia-media-geometrycollection.md)
+- [Avalonia.Media.GeometryCombineMode](../types/avalonia-media/avalonia-media-geometrycombinemode.md)
+- [Avalonia.Media.GeometryDrawing](../types/avalonia-media/avalonia-media-geometrydrawing.md) - Represents a drawing operation that combines a geometry with and brush and/or pen to produce rendered content.
+- [Avalonia.Media.GeometryGroup](../types/avalonia-media/avalonia-media-geometrygroup.md) - Represents a composite geometry, composed of other objects.
+- [Avalonia.Media.GeometryTypeConverter](../types/avalonia-media/avalonia-media-geometrytypeconverter.md)
+- [Avalonia.Media.GlyphMetrics](../types/avalonia-media/avalonia-media-glyphmetrics.md)
+- [Avalonia.Media.GlyphRun](../types/avalonia-media/avalonia-media-glyphrun.md) - Represents a sequence of glyphs from a single face of a single font at a single size, and with a single rendering style.
+- [Avalonia.Media.GlyphRunDrawing](../types/avalonia-media/avalonia-media-glyphrundrawing.md)
+- [Avalonia.Media.GlyphRunMetrics](../types/avalonia-media/avalonia-media-glyphrunmetrics.md)
+- [Avalonia.Media.GlyphTypeface](../types/avalonia-media/avalonia-media-glyphtypeface.md) - Represents a glyph typeface, providing access to font metrics, glyph mappings, and other font-related properties.
+- [Avalonia.Media.GradientBrush](../types/avalonia-media/avalonia-media-gradientbrush.md) - Base class for brushes that draw with a gradient.
+- [Avalonia.Media.GradientSpreadMethod](../types/avalonia-media/avalonia-media-gradientspreadmethod.md)
+- [Avalonia.Media.GradientStop](../types/avalonia-media/avalonia-media-gradientstop.md) - Describes the location and color of a transition point in a gradient.
+- [Avalonia.Media.GradientStops](../types/avalonia-media/avalonia-media-gradientstops.md) - A collection of s.
+- [Avalonia.Media.HslColor](../types/avalonia-media/avalonia-media-hslcolor.md) - Defines a color using the hue/saturation/lightness (HSL) model. This uses a cylindrical-coordinate representation of a color.
+- [Avalonia.Media.HsvColor](../types/avalonia-media/avalonia-media-hsvcolor.md) - Defines a color using the hue/saturation/value (HSV) model. This uses a cylindrical-coordinate representation of a color.
+- [Avalonia.Media.IBlurEffect](../types/avalonia-media/avalonia-media-iblureffect.md)
+- [Avalonia.Media.IBrush](../types/avalonia-media/avalonia-media-ibrush.md) - Describes how an area is painted.
+- [Avalonia.Media.IConicGradientBrush](../types/avalonia-media/avalonia-media-iconicgradientbrush.md) - Paints an area with a conic gradient.
+- [Avalonia.Media.IDashStyle](../types/avalonia-media/avalonia-media-idashstyle.md) - Represents the sequence of dashes and gaps that will be applied by a .
+- [Avalonia.Media.IDropShadowEffect](../types/avalonia-media/avalonia-media-idropshadoweffect.md)
+- [Avalonia.Media.IEffect](../types/avalonia-media/avalonia-media-ieffect.md)
+- [Avalonia.Media.IExperimentalAcrylicMaterial](../types/avalonia-media/avalonia-media-iexperimentalacrylicmaterial.md) - Experimental Interface for producing Acrylic-like materials.
+- [Avalonia.Media.IFontMemory](../types/avalonia-media/avalonia-media-ifontmemory.md)
+- [Avalonia.Media.IGradientBrush](../types/avalonia-media/avalonia-media-igradientbrush.md) - A brush that draws with a gradient.
+- [Avalonia.Media.IGradientStop](../types/avalonia-media/avalonia-media-igradientstop.md) - Describes the location and color of a transition point in a gradient.
+- [Avalonia.Media.IImage](../types/avalonia-media/avalonia-media-iimage.md) - Represents a raster or vector image.
+- [Avalonia.Media.IImageBrush](../types/avalonia-media/avalonia-media-iimagebrush.md) - Paints an area with an .
+- [Avalonia.Media.IImageBrushSource](../types/avalonia-media/avalonia-media-iimagebrushsource.md)
+- [Avalonia.Media.IImmutableBrush](../types/avalonia-media/avalonia-media-iimmutablebrush.md) - Represents an immutable brush which can be safely used with various threading contexts
+- [Avalonia.Media.IImmutableEffect](../types/avalonia-media/avalonia-media-iimmutableeffect.md)
+- [Avalonia.Media.IImmutableGlyphRunReference](../types/avalonia-media/avalonia-media-iimmutableglyphrunreference.md)
+- [Avalonia.Media.IImmutableSolidColorBrush](../types/avalonia-media/avalonia-media-iimmutablesolidcolorbrush.md) - Fills an area with a solid color.
+- [Avalonia.Media.ILinearGradientBrush](../types/avalonia-media/avalonia-media-ilineargradientbrush.md) - A brush that draws with a linear gradient.
+- [Avalonia.Media.ImageBrush](../types/avalonia-media/avalonia-media-imagebrush.md) - Paints an area with an .
+- [Avalonia.Media.ImageDrawing](../types/avalonia-media/avalonia-media-imagedrawing.md) - Draws an image within a region defined by a .
+- [Avalonia.Media.ImmediateDrawingContext](../types/avalonia-media/avalonia-media-immediatedrawingcontext.md)
+- [Avalonia.Media.ImmediateDrawingContext.PushedState](../types/avalonia-media/avalonia-media-immediatedrawingcontext-pushedstate.md)
+- [Avalonia.Media.ImmediateDrawingContext.PushedState.PushedStateType](../types/avalonia-media/avalonia-media-immediatedrawingcontext-pushedstate-pushedstatetype.md)
+- [Avalonia.Media.ImmutableBlurEffect](../types/avalonia-media/avalonia-media-immutableblureffect.md)
+- [Avalonia.Media.ImmutableDropShadowDirectionEffect](../types/avalonia-media/avalonia-media-immutabledropshadowdirectioneffect.md)
+- [Avalonia.Media.ImmutableDropShadowEffect](../types/avalonia-media/avalonia-media-immutabledropshadoweffect.md)
+- [Avalonia.Media.ImmutableExperimentalAcrylicMaterial](../types/avalonia-media/avalonia-media-immutableexperimentalacrylicmaterial.md)
+- [Avalonia.Media.IMutableEffect](../types/avalonia-media/avalonia-media-imutableeffect.md)
+- [Avalonia.Media.IMutableExperimentalAcrylicMaterial](../types/avalonia-media/avalonia-media-imutableexperimentalacrylicmaterial.md) - Represents a mutable brush which can return an immutable clone of itself.
+- [Avalonia.Media.IMutableTransform](../types/avalonia-media/avalonia-media-imutabletransform.md)
+- [Avalonia.Media.IPen](../types/avalonia-media/avalonia-media-ipen.md) - Describes how a stroke is drawn.
+- [Avalonia.Media.IPlatformTypeface](../types/avalonia-media/avalonia-media-iplatformtypeface.md)
+- [Avalonia.Media.IRadialGradientBrush](../types/avalonia-media/avalonia-media-iradialgradientbrush.md) - Paints an area with a radial gradient.
+- [Avalonia.Media.ISceneBrush](../types/avalonia-media/avalonia-media-iscenebrush.md)
+- [Avalonia.Media.ISceneBrushContent](../types/avalonia-media/avalonia-media-iscenebrushcontent.md)
+- [Avalonia.Media.ISolidColorBrush](../types/avalonia-media/avalonia-media-isolidcolorbrush.md) - Fills an area with a solid color.
+- [Avalonia.Media.ITextShaperTypeface](../types/avalonia-media/avalonia-media-itextshapertypeface.md)
+- [Avalonia.Media.ITileBrush](../types/avalonia-media/avalonia-media-itilebrush.md) - A brush which displays a repeating image.
+- [Avalonia.Media.ITransform](../types/avalonia-media/avalonia-media-itransform.md)
+- [Avalonia.Media.LinearGradientBrush](../types/avalonia-media/avalonia-media-lineargradientbrush.md) - A brush that draws with a linear gradient.
+- [Avalonia.Media.LineGeometry](../types/avalonia-media/avalonia-media-linegeometry.md) - Represents the geometry of a line.
+- [Avalonia.Media.LineSegment](../types/avalonia-media/avalonia-media-linesegment.md)
+- [Avalonia.Media.MaterialExtensions](../types/avalonia-media/avalonia-media-materialextensions.md)
+- [Avalonia.Media.MatrixTransform](../types/avalonia-media/avalonia-media-matrixtransform.md) - Transforms an according to a .
+- [Avalonia.Media.MediaExtensions](../types/avalonia-media/avalonia-media-mediaextensions.md) - Provides extension methods for Avalonia media.
+- [Avalonia.Media.PathFigure](../types/avalonia-media/avalonia-media-pathfigure.md)
+- [Avalonia.Media.PathFigures](../types/avalonia-media/avalonia-media-pathfigures.md)
+- [Avalonia.Media.PathGeometry](../types/avalonia-media/avalonia-media-pathgeometry.md)
+- [Avalonia.Media.PathMarkupParser](../types/avalonia-media/avalonia-media-pathmarkupparser.md) - Parses a path markup string.
+- [Avalonia.Media.PathSegment](../types/avalonia-media/avalonia-media-pathsegment.md)
+- [Avalonia.Media.PathSegments](../types/avalonia-media/avalonia-media-pathsegments.md) - Represents a collection of objects that can be individually accessed by index.
+- [Avalonia.Media.Pen](../types/avalonia-media/avalonia-media-pen.md) - Describes how a stroke is drawn.
+- [Avalonia.Media.PenLineCap](../types/avalonia-media/avalonia-media-penlinecap.md)
+- [Avalonia.Media.PenLineJoin](../types/avalonia-media/avalonia-media-penlinejoin.md)
+- [Avalonia.Media.PolyBezierSegment](../types/avalonia-media/avalonia-media-polybeziersegment.md) - PolyBezierSegment
+- [Avalonia.Media.PolylineGeometry](../types/avalonia-media/avalonia-media-polylinegeometry.md) - Represents the geometry of an polyline or polygon.
+- [Avalonia.Media.PolyLineSegment](../types/avalonia-media/avalonia-media-polylinesegment.md) - Represents a set of line segments defined by a points collection with each Point specifying the end point of a line segment.
+- [Avalonia.Media.QuadraticBezierSegment](../types/avalonia-media/avalonia-media-quadraticbeziersegment.md)
+- [Avalonia.Media.RadialGradientBrush](../types/avalonia-media/avalonia-media-radialgradientbrush.md) - Paints an area with a radial gradient.
+- [Avalonia.Media.RectangleGeometry](../types/avalonia-media/avalonia-media-rectanglegeometry.md) - Represents the geometry of a rectangle.
+- [Avalonia.Media.RenderOptions](../types/avalonia-media/avalonia-media-renderoptions.md) - Provides a set of options that control rendering behavior for visuals, including text rendering, bitmap interpolation, edge rendering, blending, and opacity handling.
+- [Avalonia.Media.Rotate3DTransform](../types/avalonia-media/avalonia-media-rotate3dtransform.md) - Non-Affine 3D transformation for rotating a visual around a definable axis
+- [Avalonia.Media.RotateTransform](../types/avalonia-media/avalonia-media-rotatetransform.md) - Rotates a .
+- [Avalonia.Media.ScaleTransform](../types/avalonia-media/avalonia-media-scaletransform.md) - Scale an .
+- [Avalonia.Media.SkewTransform](../types/avalonia-media/avalonia-media-skewtransform.md) - Skews an .
+- [Avalonia.Media.SolidColorBrush](../types/avalonia-media/avalonia-media-solidcolorbrush.md) - Fills an area with a solid color.
+- [Avalonia.Media.StreamGeometry](../types/avalonia-media/avalonia-media-streamgeometry.md) - Represents the geometry of an arbitrarily complex shape.
+- [Avalonia.Media.StreamGeometryContext](../types/avalonia-media/avalonia-media-streamgeometrycontext.md) - Describes a geometry using drawing commands.
+- [Avalonia.Media.Stretch](../types/avalonia-media/avalonia-media-stretch.md) - Describes how content is resized to fill its allocated space.
+- [Avalonia.Media.StretchDirection](../types/avalonia-media/avalonia-media-stretchdirection.md) - Describes the type of scaling that can be used when scaling content.
+- [Avalonia.Media.SweepDirection](../types/avalonia-media/avalonia-media-sweepdirection.md) - Defines the direction an which elliptical arc is drawn.
+- [Avalonia.Media.TextAlignment](../types/avalonia-media/avalonia-media-textalignment.md) - Defines how text is aligned.
+- [Avalonia.Media.TextCollapsingCreateInfo](../types/avalonia-media/avalonia-media-textcollapsingcreateinfo.md)
+- [Avalonia.Media.TextDecoration](../types/avalonia-media/avalonia-media-textdecoration.md) - Represents a text decoration, which is a visual ornamentation that is added to text (such as an underline).
+- [Avalonia.Media.TextDecorationCollection](../types/avalonia-media/avalonia-media-textdecorationcollection.md) - A collection that holds objects.
+- [Avalonia.Media.TextDecorationLocation](../types/avalonia-media/avalonia-media-textdecorationlocation.md) - Specifies the vertical position of a object.
+- [Avalonia.Media.TextDecorations](../types/avalonia-media/avalonia-media-textdecorations.md) - Defines a set of commonly used text decorations.
+- [Avalonia.Media.TextDecorationUnit](../types/avalonia-media/avalonia-media-textdecorationunit.md) - Specifies the unit type of either a or a value.
+- [Avalonia.Media.TextHintingMode](../types/avalonia-media/avalonia-media-texthintingmode.md) - Specifies the level of hinting applied to text glyphs during rendering. Text hinting adjusts glyph outlines to improve readability and crispness, especially at small font sizes or low DPI. This enum controls the amount of grid-fitting and outline adjustment performed.
+- [Avalonia.Media.TextHitTestResult](../types/avalonia-media/avalonia-media-texthittestresult.md) - Holds a hit test result from a .
+- [Avalonia.Media.TextLeadingPrefixTrimming](../types/avalonia-media/avalonia-media-textleadingprefixtrimming.md)
+- [Avalonia.Media.TextOptions](../types/avalonia-media/avalonia-media-textoptions.md) - Provides options for controlling text rendering behavior, including rendering mode, hinting mode, and baseline pixel alignment. Used to configure how text appears within visual elements.
+- [Avalonia.Media.TextPathSegmentEllipsis](../types/avalonia-media/avalonia-media-textpathsegmentellipsis.md) - Provides text collapsing properties that replace the middle segments of a file path with an ellipsis symbol when the rendered width exceeds a specified limit.
+- [Avalonia.Media.TextPathSegmentTrimming](../types/avalonia-media/avalonia-media-textpathsegmenttrimming.md) - Provides a text trimming strategy that collapses overflowing text by replacing path segments with an ellipsis string.
+- [Avalonia.Media.TextRenderingMode](../types/avalonia-media/avalonia-media-textrenderingmode.md) - Specifies how text glyphs are rendered in Avalonia. Controls the smoothing and antialiasing applied during text rasterization.
+- [Avalonia.Media.TextTrailingTrimming](../types/avalonia-media/avalonia-media-texttrailingtrimming.md)
+- [Avalonia.Media.TextTrimming](../types/avalonia-media/avalonia-media-texttrimming.md) - Describes how text is trimmed when it overflows.
+- [Avalonia.Media.TextWrapping](../types/avalonia-media/avalonia-media-textwrapping.md) - Controls the wrapping mode of text.
+- [Avalonia.Media.TileBrush](../types/avalonia-media/avalonia-media-tilebrush.md) - Base class for brushes which display repeating images.
+- [Avalonia.Media.TileMode](../types/avalonia-media/avalonia-media-tilemode.md) - Describes how a is tiled.
+- [Avalonia.Media.Transform](../types/avalonia-media/avalonia-media-transform.md) - Represents a transform on an .
+- [Avalonia.Media.TransformConverter](../types/avalonia-media/avalonia-media-transformconverter.md) - Creates an from a string representation.
+- [Avalonia.Media.TransformExtensions](../types/avalonia-media/avalonia-media-transformextensions.md) - Extension methods for transform classes.
+- [Avalonia.Media.TransformGroup](../types/avalonia-media/avalonia-media-transformgroup.md)
+- [Avalonia.Media.Transforms](../types/avalonia-media/avalonia-media-transforms.md)
+- [Avalonia.Media.TranslateTransform](../types/avalonia-media/avalonia-media-translatetransform.md) - Translates (moves) an .
+- [Avalonia.Media.Typeface](../types/avalonia-media/avalonia-media-typeface.md) - Represents a typeface.
+- [Avalonia.Media.UnicodeRange](../types/avalonia-media/avalonia-media-unicoderange.md) - The descripes a set of Unicode characters.
+- [Avalonia.Media.UnicodeRangeSegment](../types/avalonia-media/avalonia-media-unicoderangesegment.md)
+- [Avalonia.Media.VisualBrush](../types/avalonia-media/avalonia-media-visualbrush.md) - Paints an area with an .
+

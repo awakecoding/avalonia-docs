@@ -1,0 +1,103 @@
+# Avalonia.Input
+
+## Types
+
+- [Avalonia.Input.AsyncDataTransferExtensions](../types/avalonia-input/avalonia-input-asyncdatatransferextensions.md) - Contains extension methods for .
+- [Avalonia.Input.AsyncDataTransferItemExtensions](../types/avalonia-input/avalonia-input-asyncdatatransferitemextensions.md) - Contains extension methods for .
+- [Avalonia.Input.ContextRequestedEventArgs](../types/avalonia-input/avalonia-input-contextrequestedeventargs.md) - Provides event data for the ContextRequested event.
+- [Avalonia.Input.Cursor](../types/avalonia-input/avalonia-input-cursor.md)
+- [Avalonia.Input.DataFormat](../types/avalonia-input/avalonia-input-dataformat.md) - Represents a format usable with the clipboard and drag-and-drop.
+- [Avalonia.Input.DataFormat<T>](../types/avalonia-input/avalonia-input-dataformat-1.md) - Represents a format usable with the clipboard and drag-and-drop, with a data type.
+- [Avalonia.Input.DataFormatKind](../types/avalonia-input/avalonia-input-dataformatkind.md) - Represents the kind of a .
+- [Avalonia.Input.DataFormats](../types/avalonia-input/avalonia-input-dataformats.md) - This class does not do anything anymore. Use instead.
+- [Avalonia.Input.DataObject](../types/avalonia-input/avalonia-input-dataobject.md) - This class does not do anything anymore. Use instead.
+- [Avalonia.Input.DataTransfer](../types/avalonia-input/avalonia-input-datatransfer.md) - A mutable implementation of and .
+- [Avalonia.Input.DataTransferExtensions](../types/avalonia-input/avalonia-input-datatransferextensions.md) - Contains extension methods for .
+- [Avalonia.Input.DataTransferItem](../types/avalonia-input/avalonia-input-datatransferitem.md) - A mutable implementation of and . This class also provides several static methods to easily create a for common usages.
+- [Avalonia.Input.DataTransferItemExtensions](../types/avalonia-input/avalonia-input-datatransferitemextensions.md) - Contains extension methods for .
+- [Avalonia.Input.DragDrop](../types/avalonia-input/avalonia-input-dragdrop.md)
+- [Avalonia.Input.DragDropDevice](../types/avalonia-input/avalonia-input-dragdropdevice.md)
+- [Avalonia.Input.DragDropEffects](../types/avalonia-input/avalonia-input-dragdropeffects.md)
+- [Avalonia.Input.DragEventArgs](../types/avalonia-input/avalonia-input-drageventargs.md)
+- [Avalonia.Input.FindNextElementOptions](../types/avalonia-input/avalonia-input-findnextelementoptions.md)
+- [Avalonia.Input.FocusChangingEventArgs](../types/avalonia-input/avalonia-input-focuschangingeventargs.md)
+- [Avalonia.Input.FocusManager](../types/avalonia-input/avalonia-input-focusmanager.md) - Manages focus for the application.
+- [Avalonia.Input.GotFocusEventArgs](../types/avalonia-input/avalonia-input-gotfocuseventargs.md) - Holds arguments for a .
+- [Avalonia.Input.HoldingRoutedEventArgs](../types/avalonia-input/avalonia-input-holdingroutedeventargs.md)
+- [Avalonia.Input.HoldingState](../types/avalonia-input/avalonia-input-holdingstate.md)
+- [Avalonia.Input.IAsyncDataTransfer](../types/avalonia-input/avalonia-input-iasyncdatatransfer.md) - Represents an object providing a list of usable by the clipboard.
+- [Avalonia.Input.IAsyncDataTransferItem](../types/avalonia-input/avalonia-input-iasyncdatatransferitem.md) - Represent an item inside a . An item may support several formats and can return the value of a given format on demand.
+- [Avalonia.Input.ICloseable](../types/avalonia-input/avalonia-input-icloseable.md)
+- [Avalonia.Input.ICommandSource](../types/avalonia-input/avalonia-input-icommandsource.md) - An interface for classes that know how to invoke a Command.
+- [Avalonia.Input.ICustomKeyboardNavigation](../types/avalonia-input/avalonia-input-icustomkeyboardnavigation.md) - Designates a control as handling its own keyboard navigation.
+- [Avalonia.Input.IDataTransfer](../types/avalonia-input/avalonia-input-idatatransfer.md) - Represents an object providing a list of usableduring a drag and drop operation.
+- [Avalonia.Input.IDataTransferItem](../types/avalonia-input/avalonia-input-idatatransferitem.md) - Represent an item inside a . An item may support several formats and can return the value of a given format on demand.
+- [Avalonia.Input.IFocusManager](../types/avalonia-input/avalonia-input-ifocusmanager.md) - Manages focus for the application.
+- [Avalonia.Input.IFocusScope](../types/avalonia-input/avalonia-input-ifocusscope.md)
+- [Avalonia.Input.IInputDevice](../types/avalonia-input/avalonia-input-iinputdevice.md)
+- [Avalonia.Input.IInputElement](../types/avalonia-input/avalonia-input-iinputelement.md) - Defines input-related functionality for a control.
+- [Avalonia.Input.IInputManager](../types/avalonia-input/avalonia-input-iinputmanager.md) - Receives input from the windowing subsystem and dispatches it to interested parties for processing.
+- [Avalonia.Input.IInputRoot](../types/avalonia-input/avalonia-input-iinputroot.md) - Defines the interface for top-level input elements.
+- [Avalonia.Input.IKeyboardDevice](../types/avalonia-input/avalonia-input-ikeyboarddevice.md)
+- [Avalonia.Input.IKeyModifiersEventArgs](../types/avalonia-input/avalonia-input-ikeymodifierseventargs.md) - Represents an event associated with a set of .
+- [Avalonia.Input.IMouseDevice](../types/avalonia-input/avalonia-input-imousedevice.md) - Represents a mouse device.
+- [Avalonia.Input.INavigableContainer](../types/avalonia-input/avalonia-input-inavigablecontainer.md) - Defines a container in which the child controls can be navigated by keyboard.
+- [Avalonia.Input.InputElement](../types/avalonia-input/avalonia-input-inputelement.md) - Implements input-related functionality for a control.
+- [Avalonia.Input.InputExtensions](../types/avalonia-input/avalonia-input-inputextensions.md) - Defines extensions for the interface.
+- [Avalonia.Input.InputMethod](../types/avalonia-input/avalonia-input-inputmethod.md)
+- [Avalonia.Input.IPenDevice](../types/avalonia-input/avalonia-input-ipendevice.md) - Represents a pen/stylus device.
+- [Avalonia.Input.IPointer](../types/avalonia-input/avalonia-input-ipointer.md) - Identifies specific pointer generated by input device.
+- [Avalonia.Input.IPointerDevice](../types/avalonia-input/avalonia-input-ipointerdevice.md)
+- [Avalonia.Input.Key](../types/avalonia-input/avalonia-input-key.md) - Defines the keys available on a keyboard.
+- [Avalonia.Input.KeyBinding](../types/avalonia-input/avalonia-input-keybinding.md)
+- [Avalonia.Input.KeyboardDevice](../types/avalonia-input/avalonia-input-keyboarddevice.md)
+- [Avalonia.Input.KeyboardNavigation](../types/avalonia-input/avalonia-input-keyboardnavigation.md) - Defines attached properties that control keyboard navigation behaviour for a container.
+- [Avalonia.Input.KeyboardNavigationMode](../types/avalonia-input/avalonia-input-keyboardnavigationmode.md) - Defines the mode of keyboard traversal within a container when the tab or arrow keys are pressed.
+- [Avalonia.Input.KeyDeviceType](../types/avalonia-input/avalonia-input-keydevicetype.md) - Enumerates key device types.
+- [Avalonia.Input.KeyEventArgs](../types/avalonia-input/avalonia-input-keyeventargs.md) - Provides information specific to a keyboard event.
+- [Avalonia.Input.KeyGesture](../types/avalonia-input/avalonia-input-keygesture.md) - Defines a keyboard input combination.
+- [Avalonia.Input.KeyModifiers](../types/avalonia-input/avalonia-input-keymodifiers.md)
+- [Avalonia.Input.KeyStates](../types/avalonia-input/avalonia-input-keystates.md)
+- [Avalonia.Input.MouseButton](../types/avalonia-input/avalonia-input-mousebutton.md)
+- [Avalonia.Input.MouseDevice](../types/avalonia-input/avalonia-input-mousedevice.md) - Represents a mouse device.
+- [Avalonia.Input.NavigationDirection](../types/avalonia-input/avalonia-input-navigationdirection.md) - Describes how focus should be moved by directional or tab keys.
+- [Avalonia.Input.NavigationDirectionExtensions](../types/avalonia-input/avalonia-input-navigationdirectionextensions.md)
+- [Avalonia.Input.NavigationMethod](../types/avalonia-input/avalonia-input-navigationmethod.md) - Defines the method by which a focus change occurred.
+- [Avalonia.Input.PenDevice](../types/avalonia-input/avalonia-input-pendevice.md) - Represents a pen/stylus device.
+- [Avalonia.Input.PhysicalKey](../types/avalonia-input/avalonia-input-physicalkey.md) - Represents a keyboard physical key.
+- [Avalonia.Input.PhysicalKeyExtensions](../types/avalonia-input/avalonia-input-physicalkeyextensions.md) - Contains extension methods related to .
+- [Avalonia.Input.PinchEndedEventArgs](../types/avalonia-input/avalonia-input-pinchendedeventargs.md)
+- [Avalonia.Input.PinchEventArgs](../types/avalonia-input/avalonia-input-pincheventargs.md)
+- [Avalonia.Input.PinchGestureRecognizer](../types/avalonia-input/avalonia-input-pinchgesturerecognizer.md)
+- [Avalonia.Input.Pointer](../types/avalonia-input/avalonia-input-pointer.md)
+- [Avalonia.Input.PointerCaptureLostEventArgs](../types/avalonia-input/avalonia-input-pointercapturelosteventargs.md)
+- [Avalonia.Input.PointerDeltaEventArgs](../types/avalonia-input/avalonia-input-pointerdeltaeventargs.md)
+- [Avalonia.Input.PointerEventArgs](../types/avalonia-input/avalonia-input-pointereventargs.md)
+- [Avalonia.Input.PointerPoint](../types/avalonia-input/avalonia-input-pointerpoint.md) - Provides basic properties for the input pointer associated with a single mouse, pen/stylus, or touch contact.
+- [Avalonia.Input.PointerPointProperties](../types/avalonia-input/avalonia-input-pointerpointproperties.md) - Describes the state of a pointer device when it generated a specific input.
+- [Avalonia.Input.PointerPressedEventArgs](../types/avalonia-input/avalonia-input-pointerpressedeventargs.md)
+- [Avalonia.Input.PointerReleasedEventArgs](../types/avalonia-input/avalonia-input-pointerreleasedeventargs.md)
+- [Avalonia.Input.PointerType](../types/avalonia-input/avalonia-input-pointertype.md) - Enumerates pointer device types.
+- [Avalonia.Input.PointerUpdateKind](../types/avalonia-input/avalonia-input-pointerupdatekind.md)
+- [Avalonia.Input.PointerUpdateKindExtensions](../types/avalonia-input/avalonia-input-pointerupdatekindextensions.md)
+- [Avalonia.Input.PointerWheelEventArgs](../types/avalonia-input/avalonia-input-pointerwheeleventargs.md)
+- [Avalonia.Input.PullDirection](../types/avalonia-input/avalonia-input-pulldirection.md)
+- [Avalonia.Input.PullGestureEndedEventArgs](../types/avalonia-input/avalonia-input-pullgestureendedeventargs.md)
+- [Avalonia.Input.PullGestureEventArgs](../types/avalonia-input/avalonia-input-pullgestureeventargs.md)
+- [Avalonia.Input.PullGestureRecognizer](../types/avalonia-input/avalonia-input-pullgesturerecognizer.md)
+- [Avalonia.Input.RawInputModifiers](../types/avalonia-input/avalonia-input-rawinputmodifiers.md)
+- [Avalonia.Input.ScrollGestureEndedEventArgs](../types/avalonia-input/avalonia-input-scrollgestureendedeventargs.md)
+- [Avalonia.Input.ScrollGestureEventArgs](../types/avalonia-input/avalonia-input-scrollgestureeventargs.md)
+- [Avalonia.Input.ScrollGestureInertiaStartingEventArgs](../types/avalonia-input/avalonia-input-scrollgestureinertiastartingeventargs.md)
+- [Avalonia.Input.StandardCursorType](../types/avalonia-input/avalonia-input-standardcursortype.md)
+- [Avalonia.Input.SwipeDirection](../types/avalonia-input/avalonia-input-swipedirection.md) - Specifies the direction of a swipe gesture.
+- [Avalonia.Input.SwipeGestureEventArgs](../types/avalonia-input/avalonia-input-swipegestureeventargs.md) - Provides data for the routed event.
+- [Avalonia.Input.TappedEventArgs](../types/avalonia-input/avalonia-input-tappedeventargs.md)
+- [Avalonia.Input.TextInputEventArgs](../types/avalonia-input/avalonia-input-textinputeventargs.md)
+- [Avalonia.Input.TouchDevice](../types/avalonia-input/avalonia-input-touchdevice.md) - Handles raw touch events
+- [Avalonia.Input.VectorEventArgs](../types/avalonia-input/avalonia-input-vectoreventargs.md)
+- [Avalonia.Input.WindowDecorationsElementRole](../types/avalonia-input/avalonia-input-windowdecorationselementrole.md) - Defines the cross-platform role of a visual element for non-client hit-testing. Used to mark elements as titlebar drag areas, resize grips, etc.
+- [Avalonia.Input.XYFocus](../types/avalonia-input/avalonia-input-xyfocus.md)
+- [Avalonia.Input.XYFocusNavigationModes](../types/avalonia-input/avalonia-input-xyfocusnavigationmodes.md) - Specifies the 2D directional navigation behavior when using different key devices.
+- [Avalonia.Input.XYFocusNavigationStrategy](../types/avalonia-input/avalonia-input-xyfocusnavigationstrategy.md) - Specifies the disambiguation strategy used for navigating between multiple candidate targets using , , , and .
+

@@ -1,0 +1,77 @@
+# Avalonia
+
+## Types
+
+- [Avalonia.AppBuilder](../types/avalonia/avalonia-appbuilder.md) - Initializes platform-specific services for an .
+- [Avalonia.AppBuilder.AppMainDelegate](../types/avalonia/avalonia-appbuilder-appmaindelegate.md)
+- [Avalonia.AppBuilderDesktopExtensions](../types/avalonia/avalonia-appbuilderdesktopextensions.md)
+- [Avalonia.AppBuilderExtension](../types/avalonia/avalonia-appbuilderextension.md)
+- [Avalonia.Application](../types/avalonia/avalonia-application.md) - Encapsulates a Avalonia application.
+- [Avalonia.AttachedProperty<TValue>](../types/avalonia/avalonia-attachedproperty-1.md) - An attached avalonia property.
+- [Avalonia.AvaloniaInternalException](../types/avalonia/avalonia-avaloniainternalexception.md) - Exception signifying an internal logic error in Avalonia.
+- [Avalonia.AvaloniaLocator](../types/avalonia/avalonia-avalonialocator.md)
+- [Avalonia.AvaloniaLocator.RegistrationHelper<TService>](../types/avalonia/avalonia-avalonialocator-registrationhelper-1.md)
+- [Avalonia.AvaloniaNativePlatformExtensions](../types/avalonia/avalonia-avalonianativeplatformextensions.md)
+- [Avalonia.AvaloniaNativePlatformOptions](../types/avalonia/avalonia-avalonianativeplatformoptions.md) - OSX backend options.
+- [Avalonia.AvaloniaNativeRenderingMode](../types/avalonia/avalonia-avalonianativerenderingmode.md) - Represents the rendering mode for platform graphics.
+- [Avalonia.AvaloniaObject](../types/avalonia/avalonia-avaloniaobject.md) - An object with support.
+- [Avalonia.AvaloniaObjectExtensions](../types/avalonia/avalonia-avaloniaobjectextensions.md) - Provides extension methods for and related classes.
+- [Avalonia.AvaloniaProperty](../types/avalonia/avalonia-avaloniaproperty.md) - Base class for avalonia properties.
+- [Avalonia.AvaloniaProperty<TValue>](../types/avalonia/avalonia-avaloniaproperty-1.md) - A typed avalonia property.
+- [Avalonia.AvaloniaPropertyChangedEventArgs](../types/avalonia/avalonia-avaloniapropertychangedeventargs.md) - Provides information for a avalonia property change.
+- [Avalonia.AvaloniaPropertyChangedEventArgs<T>](../types/avalonia/avalonia-avaloniapropertychangedeventargs-1.md) - Provides information for an Avalonia property change.
+- [Avalonia.AvaloniaPropertyChangedExtensions](../types/avalonia/avalonia-avaloniapropertychangedextensions.md) - Provides extensions for .
+- [Avalonia.AvaloniaPropertyMetadata](../types/avalonia/avalonia-avaloniapropertymetadata.md) - Base class for avalonia property metadata.
+- [Avalonia.AvaloniaPropertyRegistry](../types/avalonia/avalonia-avaloniapropertyregistry.md) - Tracks registered instances.
+- [Avalonia.ClassicDesktopStyleApplicationLifetimeExtensions](../types/avalonia/avalonia-classicdesktopstyleapplicationlifetimeextensions.md) - IClassicDesktopStyleApplicationLifetime related AppBuilder extensions.
+- [Avalonia.CornerRadius](../types/avalonia/avalonia-cornerradius.md) - Represents the radii of a rectangle's corners.
+- [Avalonia.DirectProperty<TOwner, TValue>](../types/avalonia/avalonia-directproperty-2.md) - A direct avalonia property.
+- [Avalonia.DirectPropertyBase<TValue>](../types/avalonia/avalonia-directpropertybase-1.md) - Base class for direct properties.
+- [Avalonia.DirectPropertyMetadata<TValue>](../types/avalonia/avalonia-directpropertymetadata-1.md) - Metadata for direct avalonia properties.
+- [Avalonia.HarfBuzzApplicationExtensions](../types/avalonia/avalonia-harfbuzzapplicationextensions.md) - Configures the application to use HarfBuzz for text shaping.
+- [Avalonia.HeadlessVncPlatformExtensions](../types/avalonia/avalonia-headlessvncplatformextensions.md)
+- [Avalonia.IAvaloniaDependencyResolver](../types/avalonia/avalonia-iavaloniadependencyresolver.md)
+- [Avalonia.IDataContextProvider](../types/avalonia/avalonia-idatacontextprovider.md) - Defines an element with a data context that can be used for binding.
+- [Avalonia.IDescription](../types/avalonia/avalonia-idescription.md) - Interface for objects with a .
+- [Avalonia.IDirectPropertyMetadata](../types/avalonia/avalonia-idirectpropertymetadata.md) - Untyped interface to
+- [Avalonia.INamed](../types/avalonia/avalonia-inamed.md) - Objects implementing this interface and providing a value for will be registered in the relevant namescope when constructed in XAML.
+- [Avalonia.IOptionalFeatureProvider](../types/avalonia/avalonia-ioptionalfeatureprovider.md)
+- [Avalonia.IStyledPropertyMetadata](../types/avalonia/avalonia-istyledpropertymetadata.md) - Untyped interface to
+- [Avalonia.LocatorExtensions](../types/avalonia/avalonia-locatorextensions.md)
+- [Avalonia.LoggingExtensions](../types/avalonia/avalonia-loggingextensions.md)
+- [Avalonia.MacOSPlatformOptions](../types/avalonia/avalonia-macosplatformoptions.md) - OSX front-end options.
+- [Avalonia.Matrix](../types/avalonia/avalonia-matrix.md) - A 3x3 matrix.
+- [Avalonia.Matrix.Decomposed](../types/avalonia/avalonia-matrix-decomposed.md)
+- [Avalonia.OptionalFeatureProviderExtensions](../types/avalonia/avalonia-optionalfeatureproviderextensions.md)
+- [Avalonia.PixelPoint](../types/avalonia/avalonia-pixelpoint.md) - Represents a point in device pixels.
+- [Avalonia.PixelRect](../types/avalonia/avalonia-pixelrect.md) - Represents a rectangle in device pixels.
+- [Avalonia.PixelSize](../types/avalonia/avalonia-pixelsize.md) - Represents a size in device pixels.
+- [Avalonia.PixelVector](../types/avalonia/avalonia-pixelvector.md) - Defines a vector.
+- [Avalonia.Point](../types/avalonia/avalonia-point.md) - Defines a point.
+- [Avalonia.Points](../types/avalonia/avalonia-points.md) - Represents a collection of values that can be individually accessed by index.
+- [Avalonia.Rect](../types/avalonia/avalonia-rect.md) - Defines a rectangle.
+- [Avalonia.RelativePoint](../types/avalonia/avalonia-relativepoint.md) - Defines a point that may be defined relative to a containing element.
+- [Avalonia.RelativeRect](../types/avalonia/avalonia-relativerect.md) - Defines a rectangle that may be defined relative to a containing element.
+- [Avalonia.RelativeScalar](../types/avalonia/avalonia-relativescalar.md) - Defines a scalar value that may be defined relative to a containing element.
+- [Avalonia.RelativeUnit](../types/avalonia/avalonia-relativeunit.md) - Defines the reference point units of an or .
+- [Avalonia.RenderTargetCorruptedException](../types/avalonia/avalonia-rendertargetcorruptedexception.md)
+- [Avalonia.RenderTargetNotReadyException](../types/avalonia/avalonia-rendertargetnotreadyexception.md)
+- [Avalonia.RoundedRect](../types/avalonia/avalonia-roundedrect.md)
+- [Avalonia.Size](../types/avalonia/avalonia-size.md) - Defines a size.
+- [Avalonia.SkiaApplicationExtensions](../types/avalonia/avalonia-skiaapplicationextensions.md) - Skia application extensions.
+- [Avalonia.SkiaOptions](../types/avalonia/avalonia-skiaoptions.md) - Options for Skia rendering subsystem.
+- [Avalonia.StreamBindingExtensions](../types/avalonia/avalonia-streambindingextensions.md)
+- [Avalonia.StyledElement](../types/avalonia/avalonia-styledelement.md) - Extends an with the following features: - An inherited . - Implements to form part of a logical tree. - A collection of class strings for custom styling.
+- [Avalonia.StyledElementExtensions](../types/avalonia/avalonia-styledelementextensions.md)
+- [Avalonia.StyledProperty<TValue>](../types/avalonia/avalonia-styledproperty-1.md) - A styled avalonia property.
+- [Avalonia.StyledPropertyMetadata<TValue>](../types/avalonia/avalonia-styledpropertymetadata-1.md) - Metadata for styled avalonia properties.
+- [Avalonia.SystemFontAppBuilderExtension](../types/avalonia/avalonia-systemfontappbuilderextension.md)
+- [Avalonia.Thickness](../types/avalonia/avalonia-thickness.md) - Describes the thickness of a frame around a rectangle.
+- [Avalonia.UnsetValueType](../types/avalonia/avalonia-unsetvaluetype.md) - Class representing the .
+- [Avalonia.UrlOpenedEventArgs](../types/avalonia/avalonia-urlopenedeventargs.md)
+- [Avalonia.Vector](../types/avalonia/avalonia-vector.md) - Defines a vector.
+- [Avalonia.Vector3D](../types/avalonia/avalonia-vector3d.md)
+- [Avalonia.Visual](../types/avalonia/avalonia-visual.md) - Base class for controls that provides rendering and related visual properties.
+- [Avalonia.VisualExtensions](../types/avalonia/avalonia-visualextensions.md) - Extension methods for .
+- [Avalonia.VisualTreeAttachmentEventArgs](../types/avalonia/avalonia-visualtreeattachmenteventargs.md) - Holds the event arguments for the and events.
+

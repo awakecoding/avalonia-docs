@@ -1,0 +1,92 @@
+# Avalonia.Platform
+
+## Types
+
+- [Avalonia.Platform.AlphaFormat](../types/avalonia-platform/avalonia-platform-alphaformat.md) - Describes how to interpret the alpha component of a pixel.
+- [Avalonia.Platform.AssetLoader](../types/avalonia-platform/avalonia-platform-assetloader.md) - Loads assets compiled into the application binary.
+- [Avalonia.Platform.ColorContrastPreference](../types/avalonia-platform/avalonia-platform-colorcontrastpreference.md) - System high contrast preference.
+- [Avalonia.Platform.DefaultPlatformSettings](../types/avalonia-platform/avalonia-platform-defaultplatformsettings.md) - A default implementation of for platforms.
+- [Avalonia.Platform.DrawingContextImplExtensions](../types/avalonia-platform/avalonia-platform-drawingcontextimplextensions.md)
+- [Avalonia.Platform.FormFactorType](../types/avalonia-platform/avalonia-platform-formfactortype.md)
+- [Avalonia.Platform.IAssetLoader](../types/avalonia-platform/avalonia-platform-iassetloader.md) - Loads assets compiled into the application binary.
+- [Avalonia.Platform.IBitmapImpl](../types/avalonia-platform/avalonia-platform-ibitmapimpl.md) - Defines the platform-specific interface for a .
+- [Avalonia.Platform.ICursorFactory](../types/avalonia-platform/avalonia-platform-icursorfactory.md)
+- [Avalonia.Platform.ICursorImpl](../types/avalonia-platform/avalonia-platform-icursorimpl.md) - Represents a platform implementation of a .
+- [Avalonia.Platform.IDrawingContextImpl](../types/avalonia-platform/avalonia-platform-idrawingcontextimpl.md) - Defines the interface through which drawing occurs.
+- [Avalonia.Platform.IDrawingContextImplWithEffects](../types/avalonia-platform/avalonia-platform-idrawingcontextimplwitheffects.md)
+- [Avalonia.Platform.IDrawingContextLayerImpl](../types/avalonia-platform/avalonia-platform-idrawingcontextlayerimpl.md)
+- [Avalonia.Platform.IDrawingContextLayerWithRenderContextAffinityImpl](../types/avalonia-platform/avalonia-platform-idrawingcontextlayerwithrendercontextaffinityimpl.md)
+- [Avalonia.Platform.IDrawingContextWithAcrylicLikeSupport](../types/avalonia-platform/avalonia-platform-idrawingcontextwithacryliclikesupport.md)
+- [Avalonia.Platform.IExternalObjectsHandleWrapRenderInterfaceContextFeature](../types/avalonia-platform/avalonia-platform-iexternalobjectshandlewraprenderinterfacecontextfeature.md) - This interface allows proper management of ref-counted platform handles. If we immediately wrap the handle, the caller can destroy its copy immediately after the call This is needed for MoltenVK-based users that can e.g. get an MTLSharedEvent from a VkSemaphore. This does NOT actually increase the ref-counter of MTLSharedEvent, since it's declared as __unsafe_unretained in vulkan headers. Same happens with exporting an IOSurfaceRef from a VkImage. So in a case when the VkSemaphore or VkImage is destroyed, the "handle" which is actually a pointer will be pointing to a dead object. To prevent this we need to increase the reference counter in a handle-specific means synchronously before returning control back to the user. This is not needed for fds or DXGI handles, since those are _created_ on demand as proper NT handles
+- [Avalonia.Platform.IExternalObjectsRenderInterfaceContextFeature](../types/avalonia-platform/avalonia-platform-iexternalobjectsrenderinterfacecontextfeature.md)
+- [Avalonia.Platform.IExternalObjectsWrappedGpuHandle](../types/avalonia-platform/avalonia-platform-iexternalobjectswrappedgpuhandle.md)
+- [Avalonia.Platform.IFontManagerImpl](../types/avalonia-platform/avalonia-platform-ifontmanagerimpl.md)
+- [Avalonia.Platform.IGeometryContext](../types/avalonia-platform/avalonia-platform-igeometrycontext.md) - Describes a geometry using drawing commands.
+- [Avalonia.Platform.IGeometryImpl](../types/avalonia-platform/avalonia-platform-igeometryimpl.md) - Defines the platform-specific interface for a .
+- [Avalonia.Platform.IGlyphRunImpl](../types/avalonia-platform/avalonia-platform-iglyphrunimpl.md) - An immutable platform representation of a .
+- [Avalonia.Platform.ILockedFramebuffer](../types/avalonia-platform/avalonia-platform-ilockedframebuffer.md)
+- [Avalonia.Platform.IMacOSTopLevelPlatformHandle](../types/avalonia-platform/avalonia-platform-imacostoplevelplatformhandle.md)
+- [Avalonia.Platform.INativePlatformHandleSurface](../types/avalonia-platform/avalonia-platform-inativeplatformhandlesurface.md)
+- [Avalonia.Platform.IPlatformBehaviorInhibition](../types/avalonia-platform/avalonia-platform-iplatformbehaviorinhibition.md) - Allows to inhibit platform specific behavior.
+- [Avalonia.Platform.IPlatformGraphics](../types/avalonia-platform/avalonia-platform-iplatformgraphics.md)
+- [Avalonia.Platform.IPlatformGraphicsContext](../types/avalonia-platform/avalonia-platform-iplatformgraphicscontext.md)
+- [Avalonia.Platform.IPlatformGraphicsReadyStateFeature](../types/avalonia-platform/avalonia-platform-iplatformgraphicsreadystatefeature.md)
+- [Avalonia.Platform.IPlatformGraphicsWithFeatures](../types/avalonia-platform/avalonia-platform-iplatformgraphicswithfeatures.md)
+- [Avalonia.Platform.IPlatformHandle](../types/avalonia-platform/avalonia-platform-iplatformhandle.md) - Represents a platform-specific handle.
+- [Avalonia.Platform.IPlatformIconLoader](../types/avalonia-platform/avalonia-platform-iplatformiconloader.md)
+- [Avalonia.Platform.IPlatformLifetimeEventsImpl](../types/avalonia-platform/avalonia-platform-iplatformlifetimeeventsimpl.md)
+- [Avalonia.Platform.IPlatformRenderInterface](../types/avalonia-platform/avalonia-platform-iplatformrenderinterface.md) - Defines the main platform-specific interface for the rendering subsystem.
+- [Avalonia.Platform.IPlatformRenderInterfaceContext](../types/avalonia-platform/avalonia-platform-iplatformrenderinterfacecontext.md)
+- [Avalonia.Platform.IPlatformRenderInterfaceImportedImage](../types/avalonia-platform/avalonia-platform-iplatformrenderinterfaceimportedimage.md)
+- [Avalonia.Platform.IPlatformRenderInterfaceImportedObject](../types/avalonia-platform/avalonia-platform-iplatformrenderinterfaceimportedobject.md)
+- [Avalonia.Platform.IPlatformRenderInterfaceImportedSemaphore](../types/avalonia-platform/avalonia-platform-iplatformrenderinterfaceimportedsemaphore.md)
+- [Avalonia.Platform.IPlatformRenderInterfaceRegion](../types/avalonia-platform/avalonia-platform-iplatformrenderinterfaceregion.md)
+- [Avalonia.Platform.IPlatformSettings](../types/avalonia-platform/avalonia-platform-iplatformsettings.md) - The interface represents a contract for accessing platform-specific settings and information. Some of these settings might be changed by used globally in the OS in runtime.
+- [Avalonia.Platform.IPlatformThreadingInterface](../types/avalonia-platform/avalonia-platform-iplatformthreadinginterface.md) - Provides platform-specific services relating to threading.
+- [Avalonia.Platform.IPopupImpl](../types/avalonia-platform/avalonia-platform-ipopupimpl.md) - Defines a platform-specific popup window implementation.
+- [Avalonia.Platform.IReadableBitmapImpl](../types/avalonia-platform/avalonia-platform-ireadablebitmapimpl.md)
+- [Avalonia.Platform.IRenderTarget](../types/avalonia-platform/avalonia-platform-irendertarget.md) - Defines a render target
+- [Avalonia.Platform.IRenderTarget.RenderTargetSceneInfo](../types/avalonia-platform/avalonia-platform-irendertarget-rendertargetsceneinfo.md)
+- [Avalonia.Platform.IRenderTargetBitmapImpl](../types/avalonia-platform/avalonia-platform-irendertargetbitmapimpl.md) - Defines the platform-specific interface for a .
+- [Avalonia.Platform.IRuntimePlatform](../types/avalonia-platform/avalonia-platform-iruntimeplatform.md)
+- [Avalonia.Platform.IScopedResource<T>](../types/avalonia-platform/avalonia-platform-iscopedresource-1.md)
+- [Avalonia.Platform.IScreenImpl](../types/avalonia-platform/avalonia-platform-iscreenimpl.md)
+- [Avalonia.Platform.IStreamGeometryContextImpl](../types/avalonia-platform/avalonia-platform-istreamgeometrycontextimpl.md) - Describes a geometry using drawing commands.
+- [Avalonia.Platform.IStreamGeometryImpl](../types/avalonia-platform/avalonia-platform-istreamgeometryimpl.md) - Defines the platform-specific interface for a .
+- [Avalonia.Platform.ISystemNavigationManagerImpl](../types/avalonia-platform/avalonia-platform-isystemnavigationmanagerimpl.md)
+- [Avalonia.Platform.ITextShaperImpl](../types/avalonia-platform/avalonia-platform-itextshaperimpl.md) - An abstraction that is used produce shaped text.
+- [Avalonia.Platform.ITopLevelImpl](../types/avalonia-platform/avalonia-platform-itoplevelimpl.md) - Defines a platform-specific top-level window implementation.
+- [Avalonia.Platform.ITransformedGeometryImpl](../types/avalonia-platform/avalonia-platform-itransformedgeometryimpl.md) - Represents a geometry with a transform applied.
+- [Avalonia.Platform.ITrayIconImpl](../types/avalonia-platform/avalonia-platform-itrayiconimpl.md)
+- [Avalonia.Platform.ITrayIconWithIsTemplateImpl](../types/avalonia-platform/avalonia-platform-itrayiconwithistemplateimpl.md)
+- [Avalonia.Platform.IWindowBaseImpl](../types/avalonia-platform/avalonia-platform-iwindowbaseimpl.md)
+- [Avalonia.Platform.IWindowIconImpl](../types/avalonia-platform/avalonia-platform-iwindowiconimpl.md)
+- [Avalonia.Platform.IWindowImpl](../types/avalonia-platform/avalonia-platform-iwindowimpl.md) - Defines a platform-specific window implementation.
+- [Avalonia.Platform.IWindowingPlatform](../types/avalonia-platform/avalonia-platform-iwindowingplatform.md)
+- [Avalonia.Platform.IWriteableBitmapImpl](../types/avalonia-platform/avalonia-platform-iwriteablebitmapimpl.md) - Defines the platform-specific interface for a .
+- [Avalonia.Platform.KnownPlatformGraphicsExternalImageHandleTypes](../types/avalonia-platform/avalonia-platform-knownplatformgraphicsexternalimagehandletypes.md) - Describes various GPU memory handle types that are currently supported by Avalonia graphics backends
+- [Avalonia.Platform.KnownPlatformGraphicsExternalSemaphoreHandleTypes](../types/avalonia-platform/avalonia-platform-knownplatformgraphicsexternalsemaphorehandletypes.md) - Describes various GPU semaphore handle types that are currently supported by Avalonia graphics backends
+- [Avalonia.Platform.LockedFramebuffer](../types/avalonia-platform/avalonia-platform-lockedframebuffer.md)
+- [Avalonia.Platform.LtrbPixelRect](../types/avalonia-platform/avalonia-platform-ltrbpixelrect.md) - This struct is essentially the same thing as RECT from win32 API Unlike our "normal" PixelRect which is more human-readable and human-usable this struct is optimized for actual processing that doesn't really care about Width and Height but pretty much always only cares about Right and Bottom edge coordinates Not having to constantly convert between Width/Height and Right/Bottom for no actual reason saves us some perf This structure is intended to be mostly internal, but it's exposed as a PrivateApi type so it can be passed to the drawing backend when needed
+- [Avalonia.Platform.LtrbRect](../types/avalonia-platform/avalonia-platform-ltrbrect.md) - This struct is essentially the same thing as MilRectD Unlike our "normal" Rect which is more human-readable and human-usable this struct is optimized for actual processing that doesn't really care about Width and Height but pretty much always only cares about Right and Bottom edge coordinates Not having to constantly convert between Width/Height and Right/Bottom for no actual reason saves us some perf This structure is intended to be mostly internal, but it's exposed as a PrivateApi type so it can be passed to the drawing backend when needed
+- [Avalonia.Platform.PixelFormat](../types/avalonia-platform/avalonia-platform-pixelformat.md)
+- [Avalonia.Platform.PixelFormats](../types/avalonia-platform/avalonia-platform-pixelformats.md)
+- [Avalonia.Platform.PlatformColorValues](../types/avalonia-platform/avalonia-platform-platformcolorvalues.md) - Information about current system color values, including information about dark mode and accent colors.
+- [Avalonia.Platform.PlatformGraphicsContextLostException](../types/avalonia-platform/avalonia-platform-platformgraphicscontextlostexception.md)
+- [Avalonia.Platform.PlatformGraphicsDeviceAdapterDescription](../types/avalonia-platform/avalonia-platform-platformgraphicsdeviceadapterdescription.md)
+- [Avalonia.Platform.PlatformGraphicsExternalImageFormat](../types/avalonia-platform/avalonia-platform-platformgraphicsexternalimageformat.md)
+- [Avalonia.Platform.PlatformGraphicsExternalImageProperties](../types/avalonia-platform/avalonia-platform-platformgraphicsexternalimageproperties.md)
+- [Avalonia.Platform.PlatformHandle](../types/avalonia-platform/avalonia-platform-platformhandle.md) - Represents a platform-specific handle.
+- [Avalonia.Platform.PlatformScreen](../types/avalonia-platform/avalonia-platform-platformscreen.md)
+- [Avalonia.Platform.PlatformThemeVariant](../types/avalonia-platform/avalonia-platform-platformthemevariant.md) - System theme variant or mode.
+- [Avalonia.Platform.RenderTargetDrawingContextProperties](../types/avalonia-platform/avalonia-platform-rendertargetdrawingcontextproperties.md)
+- [Avalonia.Platform.RenderTargetProperties](../types/avalonia-platform/avalonia-platform-rendertargetproperties.md)
+- [Avalonia.Platform.RuntimePlatformInfo](../types/avalonia-platform/avalonia-platform-runtimeplatforminfo.md)
+- [Avalonia.Platform.ScopedResource<T>](../types/avalonia-platform/avalonia-platform-scopedresource-1.md)
+- [Avalonia.Platform.Screen](../types/avalonia-platform/avalonia-platform-screen.md) - Represents a single display screen.
+- [Avalonia.Platform.ScreenOrientation](../types/avalonia-platform/avalonia-platform-screenorientation.md) - Describes the orientation of a screen.
+- [Avalonia.Platform.ScreensBase<TKey, TScreen>](../types/avalonia-platform/avalonia-platform-screensbase-2.md)
+- [Avalonia.Platform.StandardAssetLoader](../types/avalonia-platform/avalonia-platform-standardassetloader.md) - Loads assets compiled into the application binary.
+- [Avalonia.Platform.StandardRuntimePlatform](../types/avalonia-platform/avalonia-platform-standardruntimeplatform.md)
+- [Avalonia.Platform.SurfaceOrientation](../types/avalonia-platform/avalonia-platform-surfaceorientation.md)
+

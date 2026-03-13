@@ -1,0 +1,264 @@
+# Avalonia.Controls
+
+## Types
+
+- [Avalonia.Controls.AcrylicPlatformCompensationLevels](../types/avalonia-controls/avalonia-controls-acrylicplatformcompensationlevels.md) - Defines compensation levels for the platform depending on the transparency level. It controls the base opacity level of the 'tracing paper' layer that compensates for low blur radius.
+- [Avalonia.Controls.AlphaComponentPosition](../types/avalonia-controls/avalonia-controls-alphacomponentposition.md) - Defines the position of a color's alpha component relative to all other components.
+- [Avalonia.Controls.AppBarButton](../types/avalonia-controls/avalonia-controls-appbarbutton.md) - A button for use in a .
+- [Avalonia.Controls.AppBarSeparator](../types/avalonia-controls/avalonia-controls-appbarseparator.md) - A visual separator for use in a .
+- [Avalonia.Controls.AppBarToggleButton](../types/avalonia-controls/avalonia-controls-appbartogglebutton.md) - A toggle button for use in a .
+- [Avalonia.Controls.AutoCompleteBox](../types/avalonia-controls/avalonia-controls-autocompletebox.md) - Represents a control that provides a text box for user input and a drop-down that contains possible matches based on the input in the text box.
+- [Avalonia.Controls.AutoCompleteFilterMode](../types/avalonia-controls/avalonia-controls-autocompletefiltermode.md) - Specifies how text in the text box portion of the control is used to filter items specified by the property for display in the drop-down.
+- [Avalonia.Controls.AutoCompleteFilterPredicate<T>](../types/avalonia-controls/avalonia-controls-autocompletefilterpredicate-1.md) - Represents the filter used by the control to determine whether an item is a possible match for the specified text.
+- [Avalonia.Controls.AutoCompleteSelector<T>](../types/avalonia-controls/avalonia-controls-autocompleteselector-1.md) - Represents the selector used by the control to determine how the specified text should be modified with an item.
+- [Avalonia.Controls.BarLayoutBehavior](../types/avalonia-controls/avalonia-controls-barlayoutbehavior.md) - Controls how the navigation bar interacts with the page content area.
+- [Avalonia.Controls.Border](../types/avalonia-controls/avalonia-controls-border.md) - A control which decorates a child with a border and background.
+- [Avalonia.Controls.Button](../types/avalonia-controls/avalonia-controls-button.md) - A standard button control.
+- [Avalonia.Controls.ButtonSpinner](../types/avalonia-controls/avalonia-controls-buttonspinner.md) - Represents a spinner control that includes two Buttons.
+- [Avalonia.Controls.Calendar](../types/avalonia-controls/avalonia-controls-calendar.md) - Represents a control that enables a user to select a date by using a visual calendar display.
+- [Avalonia.Controls.CalendarDateChangedEventArgs](../types/avalonia-controls/avalonia-controls-calendardatechangedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.CalendarDatePicker](../types/avalonia-controls/avalonia-controls-calendardatepicker.md) - A date selection control that allows the user to select dates from a drop down calendar.
+- [Avalonia.Controls.CalendarDatePickerDateValidationErrorEventArgs](../types/avalonia-controls/avalonia-controls-calendardatepickerdatevalidationerroreventargs.md) - Provides data for the event.
+- [Avalonia.Controls.CalendarDatePickerFormat](../types/avalonia-controls/avalonia-controls-calendardatepickerformat.md) - Specifies date formats for a .
+- [Avalonia.Controls.CalendarDateRange](../types/avalonia-controls/avalonia-controls-calendardaterange.md)
+- [Avalonia.Controls.CalendarMode](../types/avalonia-controls/avalonia-controls-calendarmode.md) - Specifies values for the different modes of operation of a .
+- [Avalonia.Controls.CalendarModeChangedEventArgs](../types/avalonia-controls/avalonia-controls-calendarmodechangedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.CalendarSelectionMode](../types/avalonia-controls/avalonia-controls-calendarselectionmode.md) - Specifies values that describe the available selection modes for a .
+- [Avalonia.Controls.Canvas](../types/avalonia-controls/avalonia-controls-canvas.md) - A panel that displays child controls at arbitrary locations.
+- [Avalonia.Controls.Carousel](../types/avalonia-controls/avalonia-controls-carousel.md) - An items control that displays its items as pages that fill the control.
+- [Avalonia.Controls.CheckBox](../types/avalonia-controls/avalonia-controls-checkbox.md) - A check box control.
+- [Avalonia.Controls.Classes](../types/avalonia-controls/avalonia-controls-classes.md) - Holds a collection of style classes for an .
+- [Avalonia.Controls.ClickMode](../types/avalonia-controls/avalonia-controls-clickmode.md) - Defines how a reacts to clicks.
+- [Avalonia.Controls.ColorChangedEventArgs](../types/avalonia-controls/avalonia-controls-colorchangedeventargs.md) - Holds the details of a ColorChanged event.
+- [Avalonia.Controls.ColorComponent](../types/avalonia-controls/avalonia-controls-colorcomponent.md) - Defines a specific component within a color model.
+- [Avalonia.Controls.ColorModel](../types/avalonia-controls/avalonia-controls-colormodel.md) - Defines the model used to represent colors.
+- [Avalonia.Controls.ColorPicker](../types/avalonia-controls/avalonia-controls-colorpicker.md) - Presents a color for user editing using a spectrum, palette and component sliders within a drop down. Editing is available when the drop down flyout is opened; otherwise, only the preview content area is shown.
+- [Avalonia.Controls.ColorSpectrumComponents](../types/avalonia-controls/avalonia-controls-colorspectrumcomponents.md) - Defines the two HSV color components displayed by a .
+- [Avalonia.Controls.ColorSpectrumShape](../types/avalonia-controls/avalonia-controls-colorspectrumshape.md) - Defines the shape of a .
+- [Avalonia.Controls.ColorView](../types/avalonia-controls/avalonia-controls-colorview.md) - Presents a color for user editing using a spectrum, palette and component sliders.
+- [Avalonia.Controls.ColorViewTab](../types/avalonia-controls/avalonia-controls-colorviewtab.md) - Defines a specific tab/page (subview) within the .
+- [Avalonia.Controls.ColumnDefinition](../types/avalonia-controls/avalonia-controls-columndefinition.md) - Holds a column definitions for a .
+- [Avalonia.Controls.ColumnDefinitions](../types/avalonia-controls/avalonia-controls-columndefinitions.md) - A collection of s.
+- [Avalonia.Controls.ComboBox](../types/avalonia-controls/avalonia-controls-combobox.md) - A drop-down list control.
+- [Avalonia.Controls.ComboBoxItem](../types/avalonia-controls/avalonia-controls-comboboxitem.md) - A selectable item in a .
+- [Avalonia.Controls.CommandBar](../types/avalonia-controls/avalonia-controls-commandbar.md) - A command bar that provides primary commands displayed inline and secondary commands accessible via an overflow menu.
+- [Avalonia.Controls.CommandBarDefaultLabelPosition](../types/avalonia-controls/avalonia-controls-commandbardefaultlabelposition.md) - Defines how labels are positioned for command bar buttons.
+- [Avalonia.Controls.CommandBarOverflowButtonVisibility](../types/avalonia-controls/avalonia-controls-commandbaroverflowbuttonvisibility.md) - Defines the visibility of the overflow button in a .
+- [Avalonia.Controls.ContainerClearingEventArgs](../types/avalonia-controls/avalonia-controls-containerclearingeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.ContainerIndexChangedEventArgs](../types/avalonia-controls/avalonia-controls-containerindexchangedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.ContainerPreparedEventArgs](../types/avalonia-controls/avalonia-controls-containerpreparedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.ContentControl](../types/avalonia-controls/avalonia-controls-contentcontrol.md) - Displays according to an .
+- [Avalonia.Controls.ContentPage](../types/avalonia-controls/avalonia-controls-contentpage.md) - A page that displays a single piece of content with optional top and bottom command bars.
+- [Avalonia.Controls.ContextMenu](../types/avalonia-controls/avalonia-controls-contextmenu.md) - A control context menu.
+- [Avalonia.Controls.Control](../types/avalonia-controls/avalonia-controls-control.md) - Base class for Avalonia controls.
+- [Avalonia.Controls.ControlExtensions](../types/avalonia-controls/avalonia-controls-controlextensions.md) - Adds common functionality to .
+- [Avalonia.Controls.Controls](../types/avalonia-controls/avalonia-controls-controls.md) - A collection of s.
+- [Avalonia.Controls.DataValidationErrors](../types/avalonia-controls/avalonia-controls-datavalidationerrors.md) - A control which displays an error notifier when there is a DataValidationError. Provides attached properties to track errors on a control
+- [Avalonia.Controls.DatePicker](../types/avalonia-controls/avalonia-controls-datepicker.md) - A control to allow the user to select a date
+- [Avalonia.Controls.DatePickerPresenter](../types/avalonia-controls/avalonia-controls-datepickerpresenter.md) - Defines the presenter used for selecting a date for a
+- [Avalonia.Controls.DatePickerSelectedValueChangedEventArgs](../types/avalonia-controls/avalonia-controls-datepickerselectedvaluechangedeventargs.md) - Defines the argument passed when the SelectedDate changes
+- [Avalonia.Controls.Decorator](../types/avalonia-controls/avalonia-controls-decorator.md) - Base class for controls which decorate a single child control.
+- [Avalonia.Controls.DefinitionBase](../types/avalonia-controls/avalonia-controls-definitionbase.md) - DefinitionBase provides core functionality used internally by Grid and ColumnDefinitionCollection / RowDefinitionCollection
+- [Avalonia.Controls.DefinitionList<T>](../types/avalonia-controls/avalonia-controls-definitionlist-1.md)
+- [Avalonia.Controls.Design](../types/avalonia-controls/avalonia-controls-design.md) - Provides attached properties and helpers for design-time support.
+- [Avalonia.Controls.DesktopApplicationExtensions](../types/avalonia-controls/avalonia-controls-desktopapplicationextensions.md)
+- [Avalonia.Controls.Dock](../types/avalonia-controls/avalonia-controls-dock.md) - Defines the available docking modes for a control in a .
+- [Avalonia.Controls.DockPanel](../types/avalonia-controls/avalonia-controls-dockpanel.md) - A panel which arranges its children at the top, bottom, left, right or center.
+- [Avalonia.Controls.DrawerBehavior](../types/avalonia-controls/avalonia-controls-drawerbehavior.md) - Defines the behavior of the drawer pane.
+- [Avalonia.Controls.DrawerClosingEventArgs](../types/avalonia-controls/avalonia-controls-drawerclosingeventargs.md) - Provides data for the routed event.
+- [Avalonia.Controls.DrawerLayoutBehavior](../types/avalonia-controls/avalonia-controls-drawerlayoutbehavior.md) - Defines the layout behavior of the drawer page.
+- [Avalonia.Controls.DrawerPage](../types/avalonia-controls/avalonia-controls-drawerpage.md) - A page that provides a drawer pattern.
+- [Avalonia.Controls.DrawerPlacement](../types/avalonia-controls/avalonia-controls-drawerplacement.md) - Defines which edge of the the drawer pane slides in from.
+- [Avalonia.Controls.DropDownButton](../types/avalonia-controls/avalonia-controls-dropdownbutton.md) - A button with an added drop-down chevron to visually indicate it has a flyout with additional actions.
+- [Avalonia.Controls.ExpandDirection](../types/avalonia-controls/avalonia-controls-expanddirection.md) - Direction in which an control opens.
+- [Avalonia.Controls.Expander](../types/avalonia-controls/avalonia-controls-expander.md) - A control with a header that has a collapsible content section.
+- [Avalonia.Controls.ExperimentalAcrylicBorder](../types/avalonia-controls/avalonia-controls-experimentalacrylicborder.md)
+- [Avalonia.Controls.FlatColorPalette](../types/avalonia-controls/avalonia-controls-flatcolorpalette.md) - Implements a reduced flat design or flat UI color palette.
+- [Avalonia.Controls.FlatColorPalette.FlatColor](../types/avalonia-controls/avalonia-controls-flatcolorpalette-flatcolor.md) - Defines all colors in the .
+- [Avalonia.Controls.FlatHalfColorPalette](../types/avalonia-controls/avalonia-controls-flathalfcolorpalette.md) - Implements half of the for improved usability.
+- [Avalonia.Controls.FluentColorPalette](../types/avalonia-controls/avalonia-controls-fluentcolorpalette.md) - Implements the standard Windows 10 color palette.
+- [Avalonia.Controls.Flyout](../types/avalonia-controls/avalonia-controls-flyout.md)
+- [Avalonia.Controls.FlyoutPresenter](../types/avalonia-controls/avalonia-controls-flyoutpresenter.md)
+- [Avalonia.Controls.FlyoutShowMode](../types/avalonia-controls/avalonia-controls-flyoutshowmode.md)
+- [Avalonia.Controls.Grid](../types/avalonia-controls/avalonia-controls-grid.md) - Defines a flexible grid area that consists of columns and rows.
+- [Avalonia.Controls.GridLength](../types/avalonia-controls/avalonia-controls-gridlength.md) - Holds the width or height of a 's column and row definitions.
+- [Avalonia.Controls.GridResizeBehavior](../types/avalonia-controls/avalonia-controls-gridresizebehavior.md) - Enum to indicate what Columns or Rows the resizes.
+- [Avalonia.Controls.GridResizeDirection](../types/avalonia-controls/avalonia-controls-gridresizedirection.md) - Enum to indicate whether resizes Columns or Rows.
+- [Avalonia.Controls.GridSplitter](../types/avalonia-controls/avalonia-controls-gridsplitter.md) - Represents the control that redistributes space between columns or rows of a control.
+- [Avalonia.Controls.GridUnitType](../types/avalonia-controls/avalonia-controls-gridunittype.md) - Defines the valid units for a .
+- [Avalonia.Controls.GroupBox](../types/avalonia-controls/avalonia-controls-groupbox.md)
+- [Avalonia.Controls.HotKeyManager](../types/avalonia-controls/avalonia-controls-hotkeymanager.md)
+- [Avalonia.Controls.HsvComponent](../types/avalonia-controls/avalonia-controls-hsvcomponent.md) - Defines a specific component in the HSV color model.
+- [Avalonia.Controls.HyperlinkButton](../types/avalonia-controls/avalonia-controls-hyperlinkbutton.md) - A button control that functions as a navigateable hyperlink.
+- [Avalonia.Controls.IColorPalette](../types/avalonia-controls/avalonia-controls-icolorpalette.md) - Interface to define a color palette.
+- [Avalonia.Controls.ICommandBarElement](../types/avalonia-controls/avalonia-controls-icommandbarelement.md) - Interface implemented by all command bar elements.
+- [Avalonia.Controls.IconElement](../types/avalonia-controls/avalonia-controls-iconelement.md)
+- [Avalonia.Controls.IDeferredContent](../types/avalonia-controls/avalonia-controls-ideferredcontent.md) - Represents a deferred content.
+- [Avalonia.Controls.IGlobalDataTemplates](../types/avalonia-controls/avalonia-controls-iglobaldatatemplates.md) - Defines the application-global data templates.
+- [Avalonia.Controls.Image](../types/avalonia-controls/avalonia-controls-image.md) - Displays a image.
+- [Avalonia.Controls.INameScope](../types/avalonia-controls/avalonia-controls-inamescope.md) - Defines a name scope.
+- [Avalonia.Controls.INativeMenuExporterEventsImplBridge](../types/avalonia-controls/avalonia-controls-inativemenuexportereventsimplbridge.md)
+- [Avalonia.Controls.INativeMenuItemExporterEventsImplBridge](../types/avalonia-controls/avalonia-controls-inativemenuitemexportereventsimplbridge.md)
+- [Avalonia.Controls.INavigation](../types/avalonia-controls/avalonia-controls-inavigation.md) - Provides navigation operations for stack-based and modal page navigation. Exposed via when a page is hosted in a NavigationPage.
+- [Avalonia.Controls.IPseudoClasses](../types/avalonia-controls/avalonia-controls-ipseudoclasses.md) - Exposes an interface for setting pseudoclasses on a collection.
+- [Avalonia.Controls.IResourceDictionary](../types/avalonia-controls/avalonia-controls-iresourcedictionary.md) - An indexed dictionary of resources.
+- [Avalonia.Controls.IResourceHost](../types/avalonia-controls/avalonia-controls-iresourcehost.md) - Represents an element which hosts resources.
+- [Avalonia.Controls.IResourceNode](../types/avalonia-controls/avalonia-controls-iresourcenode.md) - Represents an object that can be queried for resources.
+- [Avalonia.Controls.IResourceProvider](../types/avalonia-controls/avalonia-controls-iresourceprovider.md) - Represents an object that can be queried for resources but does not appear in the logical tree.
+- [Avalonia.Controls.IScrollAnchorProvider](../types/avalonia-controls/avalonia-controls-iscrollanchorprovider.md) - Specifies a contract for a scrolling control that supports scroll anchoring.
+- [Avalonia.Controls.ISelectable](../types/avalonia-controls/avalonia-controls-iselectable.md) - An interface that is implemented by objects that expose their selection state via a boolean property.
+- [Avalonia.Controls.ISetInheritanceParent](../types/avalonia-controls/avalonia-controls-isetinheritanceparent.md) - Defines an interface through which a 's inheritance parent can be set.
+- [Avalonia.Controls.ISetLogicalParent](../types/avalonia-controls/avalonia-controls-isetlogicalparent.md) - Defines an interface through which a 's logical parent can be set.
+- [Avalonia.Controls.ItemCollection](../types/avalonia-controls/avalonia-controls-itemcollection.md) - Holds the list of items that constitute the content of an .
+- [Avalonia.Controls.ITemplate<TControl>](../types/avalonia-controls/avalonia-controls-itemplate-1.md) - Creates a control.
+- [Avalonia.Controls.ItemsControl](../types/avalonia-controls/avalonia-controls-itemscontrol.md) - Displays a collection of items.
+- [Avalonia.Controls.ItemsSourceView](../types/avalonia-controls/avalonia-controls-itemssourceview.md) - Represents a standardized view of the supported interactions between an items collection and an items control.
+- [Avalonia.Controls.ItemsSourceView<T>](../types/avalonia-controls/avalonia-controls-itemssourceview-1.md)
+- [Avalonia.Controls.IThemeVariantProvider](../types/avalonia-controls/avalonia-controls-ithemevariantprovider.md) - Resource provider with theme variant awareness. Can be used with .
+- [Avalonia.Controls.Label](../types/avalonia-controls/avalonia-controls-label.md) - Label control. Focuses on pointer click or access key press (Alt + accessKey)
+- [Avalonia.Controls.LayoutTransformControl](../types/avalonia-controls/avalonia-controls-layouttransformcontrol.md) - Control that implements support for transformations as if applied by LayoutTransform.
+- [Avalonia.Controls.ListBox](../types/avalonia-controls/avalonia-controls-listbox.md) - An in which individual items can be selected.
+- [Avalonia.Controls.ListBoxItem](../types/avalonia-controls/avalonia-controls-listboxitem.md) - A selectable item in a .
+- [Avalonia.Controls.Location](../types/avalonia-controls/avalonia-controls-location.md)
+- [Avalonia.Controls.MacOSProperties](../types/avalonia-controls/avalonia-controls-macosproperties.md) - Set of MacOS specific attached properties that allow deeper customization of the application per platform.
+- [Avalonia.Controls.MaskedTextBox](../types/avalonia-controls/avalonia-controls-maskedtextbox.md)
+- [Avalonia.Controls.MaterialColorPalette](../types/avalonia-controls/avalonia-controls-materialcolorpalette.md) - Implements a reduced version of the 2014 Material Design color palette.
+- [Avalonia.Controls.MaterialColorPalette.MaterialColor](../types/avalonia-controls/avalonia-controls-materialcolorpalette-materialcolor.md) - Defines all colors in the .
+- [Avalonia.Controls.MaterialHalfColorPalette](../types/avalonia-controls/avalonia-controls-materialhalfcolorpalette.md) - Implements half of the for improved usability.
+- [Avalonia.Controls.Menu](../types/avalonia-controls/avalonia-controls-menu.md) - A top-level menu control.
+- [Avalonia.Controls.MenuBase](../types/avalonia-controls/avalonia-controls-menubase.md) - Base class for menu controls.
+- [Avalonia.Controls.MenuFlyout](../types/avalonia-controls/avalonia-controls-menuflyout.md)
+- [Avalonia.Controls.MenuFlyoutPresenter](../types/avalonia-controls/avalonia-controls-menuflyoutpresenter.md)
+- [Avalonia.Controls.MenuItem](../types/avalonia-controls/avalonia-controls-menuitem.md) - A menu item control.
+- [Avalonia.Controls.MenuItemToggleType](../types/avalonia-controls/avalonia-controls-menuitemtoggletype.md) - Defines how a or reacts to clicks.
+- [Avalonia.Controls.ModalPoppedEventArgs](../types/avalonia-controls/avalonia-controls-modalpoppedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.ModalPushedEventArgs](../types/avalonia-controls/avalonia-controls-modalpushedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.MultiPage](../types/avalonia-controls/avalonia-controls-multipage.md) - Abstract base class for pages that host a collection of child pages.
+- [Avalonia.Controls.NameScope](../types/avalonia-controls/avalonia-controls-namescope.md) - Implements a name scope.
+- [Avalonia.Controls.NameScopeExtensions](../types/avalonia-controls/avalonia-controls-namescopeextensions.md) - Extension methods for .
+- [Avalonia.Controls.NameScopeLocator](../types/avalonia-controls/avalonia-controls-namescopelocator.md)
+- [Avalonia.Controls.NativeControlHost](../types/avalonia-controls/avalonia-controls-nativecontrolhost.md)
+- [Avalonia.Controls.NativeDock](../types/avalonia-controls/avalonia-controls-nativedock.md) - Allows native menu support on platforms where a can be attached to the dock.
+- [Avalonia.Controls.NativeMenu](../types/avalonia-controls/avalonia-controls-nativemenu.md)
+- [Avalonia.Controls.NativeMenuBar](../types/avalonia-controls/avalonia-controls-nativemenubar.md)
+- [Avalonia.Controls.NativeMenuItem](../types/avalonia-controls/avalonia-controls-nativemenuitem.md)
+- [Avalonia.Controls.NativeMenuItemBase](../types/avalonia-controls/avalonia-controls-nativemenuitembase.md)
+- [Avalonia.Controls.NativeMenuItemSeparator](../types/avalonia-controls/avalonia-controls-nativemenuitemseparator.md)
+- [Avalonia.Controls.NavigatedFromEventArgs](../types/avalonia-controls/avalonia-controls-navigatedfromeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.NavigatedToEventArgs](../types/avalonia-controls/avalonia-controls-navigatedtoeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.NavigatingFromEventArgs](../types/avalonia-controls/avalonia-controls-navigatingfromeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.NavigationEventArgs](../types/avalonia-controls/avalonia-controls-navigationeventargs.md) - Provides data for push and pop events.
+- [Avalonia.Controls.NavigationPage](../types/avalonia-controls/avalonia-controls-navigationpage.md) - A navigation page that supports simple stack-based navigation.
+- [Avalonia.Controls.NavigationType](../types/avalonia-controls/avalonia-controls-navigationtype.md) - Specifies the type of navigation that occurred.
+- [Avalonia.Controls.NumericUpDown](../types/avalonia-controls/avalonia-controls-numericupdown.md) - Control that represents a TextBox with button spinners that allow incrementing and decrementing numeric values.
+- [Avalonia.Controls.NumericUpDownValueChangedEventArgs](../types/avalonia-controls/avalonia-controls-numericupdownvaluechangedeventargs.md)
+- [Avalonia.Controls.Page](../types/avalonia-controls/avalonia-controls-page.md) - Abstract base class for all page types.
+- [Avalonia.Controls.PageInsertedEventArgs](../types/avalonia-controls/avalonia-controls-pageinsertedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.PageNavigationHost](../types/avalonia-controls/avalonia-controls-pagenavigationhost.md) - A content control that hosts a root , wires up safe-area insets, and forwards the system back-button event into the page tree.
+- [Avalonia.Controls.PageRemovedEventArgs](../types/avalonia-controls/avalonia-controls-pageremovedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.PageSelectionChangedEventArgs](../types/avalonia-controls/avalonia-controls-pageselectionchangedeventargs.md) - Provides data for a page selection-changed event.
+- [Avalonia.Controls.Panel](../types/avalonia-controls/avalonia-controls-panel.md) - Base class for controls that can contain multiple children.
+- [Avalonia.Controls.PathIcon](../types/avalonia-controls/avalonia-controls-pathicon.md)
+- [Avalonia.Controls.PixelPointEventArgs](../types/avalonia-controls/avalonia-controls-pixelpointeventargs.md) - Provides data for events.
+- [Avalonia.Controls.PlacementMode](../types/avalonia-controls/avalonia-controls-placementmode.md) - Defines the placement for a control.
+- [Avalonia.Controls.PlatformInhibitionType](../types/avalonia-controls/avalonia-controls-platforminhibitiontype.md) - A platform specific behavior that can be inhibited.
+- [Avalonia.Controls.PopulatedEventArgs](../types/avalonia-controls/avalonia-controls-populatedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.PopulatingEventArgs](../types/avalonia-controls/avalonia-controls-populatingeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.ProgressBar](../types/avalonia-controls/avalonia-controls-progressbar.md) - A control used to indicate the progress of an operation.
+- [Avalonia.Controls.ProgressBar.ProgressBarTemplateSettings](../types/avalonia-controls/avalonia-controls-progressbar-progressbartemplatesettings.md) - Provides calculated values for use with the 's control theme or template.
+- [Avalonia.Controls.PseudoClassesExtensions](../types/avalonia-controls/avalonia-controls-pseudoclassesextensions.md)
+- [Avalonia.Controls.RadioButton](../types/avalonia-controls/avalonia-controls-radiobutton.md) - Represents a button that allows a user to select a single option from a group of options.
+- [Avalonia.Controls.RefreshCompletionDeferral](../types/avalonia-controls/avalonia-controls-refreshcompletiondeferral.md) - Deferral class for notify that a work done in RefreshRequested event is done.
+- [Avalonia.Controls.RefreshContainer](../types/avalonia-controls/avalonia-controls-refreshcontainer.md) - Represents a container control that provides a and pull-to-refresh functionality for scrollable content.
+- [Avalonia.Controls.RefreshRequestedEventArgs](../types/avalonia-controls/avalonia-controls-refreshrequestedeventargs.md) - Provides event data for RefreshRequested events.
+- [Avalonia.Controls.RefreshVisualizer](../types/avalonia-controls/avalonia-controls-refreshvisualizer.md)
+- [Avalonia.Controls.RefreshVisualizerOrientation](../types/avalonia-controls/avalonia-controls-refreshvisualizerorientation.md) - Defines constants that specify the orientation of a RefreshVisualizer.
+- [Avalonia.Controls.RefreshVisualizerState](../types/avalonia-controls/avalonia-controls-refreshvisualizerstate.md) - Defines constants that specify the state of a RefreshVisualizer
+- [Avalonia.Controls.RelativePanel](../types/avalonia-controls/avalonia-controls-relativepanel.md) - Defines an area within which you can position and align child objects in relation to each other or the parent panel.
+- [Avalonia.Controls.RepeatButton](../types/avalonia-controls/avalonia-controls-repeatbutton.md) - Represents a control that raises its event repeatedly when it is pressed and held.
+- [Avalonia.Controls.RequestBringIntoViewEventArgs](../types/avalonia-controls/avalonia-controls-requestbringintovieweventargs.md)
+- [Avalonia.Controls.ResolveByNameAttribute](../types/avalonia-controls/avalonia-controls-resolvebynameattribute.md) - Indicates that the property resolves an element by Name or x:Name. When applying this to attached properties, ensure to put on both the Getter and Setter methods.
+- [Avalonia.Controls.ResourceDictionary](../types/avalonia-controls/avalonia-controls-resourcedictionary.md) - An indexed dictionary of resources.
+- [Avalonia.Controls.ResourceNodeExtensions](../types/avalonia-controls/avalonia-controls-resourcenodeextensions.md)
+- [Avalonia.Controls.ResourceProvider](../types/avalonia-controls/avalonia-controls-resourceprovider.md) - Base implementation for IResourceProvider interface. Includes Owner property management.
+- [Avalonia.Controls.ResourcesChangedEventArgs](../types/avalonia-controls/avalonia-controls-resourceschangedeventargs.md) - Represents the event arguments of . The identifies the changes.
+- [Avalonia.Controls.ReversibleStackPanel](../types/avalonia-controls/avalonia-controls-reversiblestackpanel.md) - Implements a where the flow direction of its items can be reversed.
+- [Avalonia.Controls.RgbComponent](../types/avalonia-controls/avalonia-controls-rgbcomponent.md) - Defines a specific component in the RGB color model.
+- [Avalonia.Controls.RowDefinition](../types/avalonia-controls/avalonia-controls-rowdefinition.md) - Holds a row definitions for a .
+- [Avalonia.Controls.RowDefinitions](../types/avalonia-controls/avalonia-controls-rowdefinitions.md) - A collection of s.
+- [Avalonia.Controls.Screens](../types/avalonia-controls/avalonia-controls-screens.md) - Represents all screens available on a device.
+- [Avalonia.Controls.ScrollChangedEventArgs](../types/avalonia-controls/avalonia-controls-scrollchangedeventargs.md) - Describes a change in scrolling state.
+- [Avalonia.Controls.ScrollViewer](../types/avalonia-controls/avalonia-controls-scrollviewer.md) - A control which scrolls its content if the content is bigger than the space available.
+- [Avalonia.Controls.SelectableTextBlock](../types/avalonia-controls/avalonia-controls-selectabletextblock.md) - A control that displays a block of formatted text.
+- [Avalonia.Controls.SelectingMultiPage](../types/avalonia-controls/avalonia-controls-selectingmultipage.md) - Base class for multi-page controls with index-based selection.
+- [Avalonia.Controls.SelectionChangedEventArgs](../types/avalonia-controls/avalonia-controls-selectionchangedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.SelectionMode](../types/avalonia-controls/avalonia-controls-selectionmode.md) - Defines the selection mode for a control which can select multiple items.
+- [Avalonia.Controls.Separator](../types/avalonia-controls/avalonia-controls-separator.md) - A separator control.
+- [Avalonia.Controls.ShutdownMode](../types/avalonia-controls/avalonia-controls-shutdownmode.md) - Describes the possible values for .
+- [Avalonia.Controls.SixteenColorPalette](../types/avalonia-controls/avalonia-controls-sixteencolorpalette.md) - Implements the standard sixteen color palette from the HTML 4.01 specification.
+- [Avalonia.Controls.SizeChangedEventArgs](../types/avalonia-controls/avalonia-controls-sizechangedeventargs.md) - Provides data specific to a SizeChanged event.
+- [Avalonia.Controls.SizeToContent](../types/avalonia-controls/avalonia-controls-sizetocontent.md) - Determines how a will size itself to fit its content.
+- [Avalonia.Controls.Slider](../types/avalonia-controls/avalonia-controls-slider.md) - A control that lets the user select from a range of values by moving a Thumb control along a Track.
+- [Avalonia.Controls.SpinDirection](../types/avalonia-controls/avalonia-controls-spindirection.md) - Represents spin directions that could be initiated by the end-user.
+- [Avalonia.Controls.SpinEventArgs](../types/avalonia-controls/avalonia-controls-spineventargs.md) - Provides data for the Spinner.Spin event.
+- [Avalonia.Controls.Spinner](../types/avalonia-controls/avalonia-controls-spinner.md) - Base class for controls that represents controls that can spin.
+- [Avalonia.Controls.SplitButton](../types/avalonia-controls/avalonia-controls-splitbutton.md) - A button with primary and secondary parts that can each be pressed separately. The primary part behaves like a and the secondary part opens a flyout.
+- [Avalonia.Controls.SplitView](../types/avalonia-controls/avalonia-controls-splitview.md) - A control with two views: A collapsible pane and an area for content
+- [Avalonia.Controls.SplitViewDisplayMode](../types/avalonia-controls/avalonia-controls-splitviewdisplaymode.md) - Defines constants for how the SplitView Pane should display
+- [Avalonia.Controls.SplitViewPanePlacement](../types/avalonia-controls/avalonia-controls-splitviewpaneplacement.md) - Defines constants for where the Pane should appear
+- [Avalonia.Controls.StackPanel](../types/avalonia-controls/avalonia-controls-stackpanel.md) - A panel which lays out its children horizontally or vertically.
+- [Avalonia.Controls.TabbedPage](../types/avalonia-controls/avalonia-controls-tabbedpage.md) - A page that displays its child pages through a tab strip.
+- [Avalonia.Controls.TabControl](../types/avalonia-controls/avalonia-controls-tabcontrol.md) - A tab control that displays a tab strip along with the content of the selected tab.
+- [Avalonia.Controls.TabItem](../types/avalonia-controls/avalonia-controls-tabitem.md) - An item in a .
+- [Avalonia.Controls.TabPlacement](../types/avalonia-controls/avalonia-controls-tabplacement.md) - Specifies the position of the tab strip within a layout.
+- [Avalonia.Controls.TextBlock](../types/avalonia-controls/avalonia-controls-textblock.md) - A control that displays a block of text.
+- [Avalonia.Controls.TextBlock.InlinesTextSource](../types/avalonia-controls/avalonia-controls-textblock-inlinestextsource.md)
+- [Avalonia.Controls.TextBlock.SimpleTextSource](../types/avalonia-controls/avalonia-controls-textblock-simpletextsource.md)
+- [Avalonia.Controls.TextBox](../types/avalonia-controls/avalonia-controls-textbox.md) - Represents a control that can be used to display or edit unformatted text.
+- [Avalonia.Controls.TextChangedEventArgs](../types/avalonia-controls/avalonia-controls-textchangedeventargs.md) - Provides data specific to a event.
+- [Avalonia.Controls.TextChangingEventArgs](../types/avalonia-controls/avalonia-controls-textchangingeventargs.md) - Provides data specific to a event.
+- [Avalonia.Controls.ThemeVariantScope](../types/avalonia-controls/avalonia-controls-themevariantscope.md) - Decorator control that isolates controls subtree with locally defined .
+- [Avalonia.Controls.TickBar](../types/avalonia-controls/avalonia-controls-tickbar.md) - An element that is used for drawing 's Ticks.
+- [Avalonia.Controls.TickBarPlacement](../types/avalonia-controls/avalonia-controls-tickbarplacement.md) - Enum which describes how to position the TickBar.
+- [Avalonia.Controls.TickPlacement](../types/avalonia-controls/avalonia-controls-tickplacement.md) - Enum which describes how to position the ticks in a .
+- [Avalonia.Controls.TimePicker](../types/avalonia-controls/avalonia-controls-timepicker.md) - A control to allow the user to select a time.
+- [Avalonia.Controls.TimePickerPresenter](../types/avalonia-controls/avalonia-controls-timepickerpresenter.md) - Defines the presenter used for selecting a time. Intended for use with but can be used independently
+- [Avalonia.Controls.TimePickerSelectedValueChangedEventArgs](../types/avalonia-controls/avalonia-controls-timepickerselectedvaluechangedeventargs.md)
+- [Avalonia.Controls.ToggleSplitButton](../types/avalonia-controls/avalonia-controls-togglesplitbutton.md) - A button with primary and secondary parts that can each be pressed separately. The primary part behaves like a with two states and the secondary part opens a flyout.
+- [Avalonia.Controls.ToggleSwitch](../types/avalonia-controls/avalonia-controls-toggleswitch.md) - A Toggle Switch control.
+- [Avalonia.Controls.ToolTip](../types/avalonia-controls/avalonia-controls-tooltip.md) - A control which pops up a hint when a control is hovered.
+- [Avalonia.Controls.TopLevel](../types/avalonia-controls/avalonia-controls-toplevel.md) - Base class for top-level widgets.
+- [Avalonia.Controls.TransitionCompletedEventArgs](../types/avalonia-controls/avalonia-controls-transitioncompletedeventargs.md) - Represents the event arguments for .
+- [Avalonia.Controls.TransitioningContentControl](../types/avalonia-controls/avalonia-controls-transitioningcontentcontrol.md) - Displays according to an , using a to move between the old and new content.
+- [Avalonia.Controls.TrayIcon](../types/avalonia-controls/avalonia-controls-trayicon.md)
+- [Avalonia.Controls.TrayIcons](../types/avalonia-controls/avalonia-controls-trayicons.md)
+- [Avalonia.Controls.TreeView](../types/avalonia-controls/avalonia-controls-treeview.md) - Displays a hierarchical tree of data.
+- [Avalonia.Controls.TreeViewItem](../types/avalonia-controls/avalonia-controls-treeviewitem.md) - An item in a .
+- [Avalonia.Controls.UserControl](../types/avalonia-controls/avalonia-controls-usercontrol.md) - Provides the base class for defining a new control that encapsulates related existing controls and provides its own logic.
+- [Avalonia.Controls.ValidSpinDirections](../types/avalonia-controls/avalonia-controls-validspindirections.md) - Represents spin directions that are valid.
+- [Avalonia.Controls.Viewbox](../types/avalonia-controls/avalonia-controls-viewbox.md) - Viewbox is used to scale single child to fit in the available space.
+- [Avalonia.Controls.VirtualizingCarouselPanel](../types/avalonia-controls/avalonia-controls-virtualizingcarouselpanel.md) - A panel used by to display the current item.
+- [Avalonia.Controls.VirtualizingPanel](../types/avalonia-controls/avalonia-controls-virtualizingpanel.md) - Base class for panels that can be used to virtualize items for an .
+- [Avalonia.Controls.VirtualizingStackPanel](../types/avalonia-controls/avalonia-controls-virtualizingstackpanel.md) - Arranges and virtualizes content on a single line that is oriented either horizontally or vertically.
+- [Avalonia.Controls.Win32Properties](../types/avalonia-controls/avalonia-controls-win32properties.md) - Set of Win32 specific properties and events that allow deeper customization of the application per platform.
+- [Avalonia.Controls.Win32Properties.CustomWindowStylesCallback](../types/avalonia-controls/avalonia-controls-win32properties-customwindowstylescallback.md)
+- [Avalonia.Controls.Win32Properties.CustomWndProcHookCallback](../types/avalonia-controls/avalonia-controls-win32properties-customwndprochookcallback.md)
+- [Avalonia.Controls.Win32Properties.Win32HitTestValue](../types/avalonia-controls/avalonia-controls-win32properties-win32hittestvalue.md)
+- [Avalonia.Controls.Window](../types/avalonia-controls/avalonia-controls-window.md) - A top-level window.
+- [Avalonia.Controls.WindowBase](../types/avalonia-controls/avalonia-controls-windowbase.md) - Base class for top-level windows.
+- [Avalonia.Controls.WindowCloseReason](../types/avalonia-controls/avalonia-controls-windowclosereason.md) - Specifies the reason that a window was closed.
+- [Avalonia.Controls.WindowClosingBehavior](../types/avalonia-controls/avalonia-controls-windowclosingbehavior.md) - Describes how the event behaves in the presence of child windows.
+- [Avalonia.Controls.WindowClosingEventArgs](../types/avalonia-controls/avalonia-controls-windowclosingeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.WindowDecorations](../types/avalonia-controls/avalonia-controls-windowdecorations.md) - Determines window decorations (title bar, border, etc) for a
+- [Avalonia.Controls.WindowEdge](../types/avalonia-controls/avalonia-controls-windowedge.md)
+- [Avalonia.Controls.WindowIcon](../types/avalonia-controls/avalonia-controls-windowicon.md) - Represents an icon for a window.
+- [Avalonia.Controls.WindowResizedEventArgs](../types/avalonia-controls/avalonia-controls-windowresizedeventargs.md) - Provides data for the event.
+- [Avalonia.Controls.WindowResizeReason](../types/avalonia-controls/avalonia-controls-windowresizereason.md) - Describes the reason for a event.
+- [Avalonia.Controls.WindowStartupLocation](../types/avalonia-controls/avalonia-controls-windowstartuplocation.md) - Determines the startup location of the window.
+- [Avalonia.Controls.WindowState](../types/avalonia-controls/avalonia-controls-windowstate.md) - Defines the minimized/maximized state of a .
+- [Avalonia.Controls.WindowTransparencyLevel](../types/avalonia-controls/avalonia-controls-windowtransparencylevel.md)
+- [Avalonia.Controls.WindowTransparencyLevelCollection](../types/avalonia-controls/avalonia-controls-windowtransparencylevelcollection.md)
+- [Avalonia.Controls.WrapPanel](../types/avalonia-controls/avalonia-controls-wrappanel.md) - Positions child elements in sequential position from left to right, breaking content to the next line at the edge of the containing box. Subsequent ordering happens sequentially from top to bottom or from right to left, depending on the value of the property.
+- [Avalonia.Controls.WrapPanelItemsAlignment](../types/avalonia-controls/avalonia-controls-wrappanelitemsalignment.md)
+- [Avalonia.Controls.X11Properties](../types/avalonia-controls/avalonia-controls-x11properties.md) - Set of X11 specific properties and events that allow deeper customization of the application per platform.
+

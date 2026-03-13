@@ -1,6 +1,6 @@
 # Avalonia Docs Skill
 
-Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original `docs/`, `accelerate/`, and `xpf/` collections, rewrites internal links for local file browsing, and copies only the non-video static assets referenced by the markdown.
+Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original docs/, accelerate/, xpf/, and api/ collections, rewrites internal links for local file browsing, and copies only the non-video static assets referenced by the markdown.
 
 ## Installation
 
@@ -14,6 +14,7 @@ Or rebuild the skill locally from a clone of this repository:
 
 ```powershell
 ./scripts/Build-AvaloniaDocsSkill.ps1
+./scripts/Build-AvaloniaDocsSkill.ps1 -IncludeApiDocs
 ```
 
 ## Corpus layout
@@ -21,6 +22,7 @@ Or rebuild the skill locally from a clone of this repository:
 - [`docs/README.md`](docs/README.md) — primary Avalonia documentation index.
 - [`accelerate/README.md`](accelerate/README.md) — Avalonia Accelerate documentation index.
 - [`xpf/README.md`](xpf/README.md) — Avalonia XPF documentation index.
+- [`api/README.md`](api/README.md) — generated Avalonia API reference index.
 - `static/` — copied non-video static assets referenced by the markdown corpus.
 
 ## Included collections
@@ -28,6 +30,7 @@ Or rebuild the skill locally from a clone of this repository:
 - Avalonia Docs: 302 markdown files.
 - Avalonia Accelerate: 71 markdown files.
 - Avalonia XPF: 22 markdown files.
+- Avalonia API Reference: 1755 markdown files.
 
 ## Source
 

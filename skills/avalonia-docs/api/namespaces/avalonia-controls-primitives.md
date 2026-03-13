@@ -1,0 +1,55 @@
+# Avalonia.Controls.Primitives
+
+## Types
+
+- [Avalonia.Controls.Primitives.AccessText](../types/avalonia-controls-primitives/avalonia-controls-primitives-accesstext.md) - A text block that displays a character prefixed with an underscore as an access key.
+- [Avalonia.Controls.Primitives.AdornerLayer](../types/avalonia-controls-primitives/avalonia-controls-primitives-adornerlayer.md) - Represents a surface for showing adorners. Adorners are always on top of the adorned element and are positioned to stay relative to the adorned element.
+- [Avalonia.Controls.Primitives.CalendarBlackoutDatesCollection](../types/avalonia-controls-primitives/avalonia-controls-primitives-calendarblackoutdatescollection.md)
+- [Avalonia.Controls.Primitives.CalendarButton](../types/avalonia-controls-primitives/avalonia-controls-primitives-calendarbutton.md) - Represents a button on a .
+- [Avalonia.Controls.Primitives.CalendarDayButton](../types/avalonia-controls-primitives/avalonia-controls-primitives-calendardaybutton.md)
+- [Avalonia.Controls.Primitives.CalendarItem](../types/avalonia-controls-primitives/avalonia-controls-primitives-calendaritem.md) - Represents the currently displayed month or year on a .
+- [Avalonia.Controls.Primitives.ColorHelper](../types/avalonia-controls-primitives/avalonia-controls-primitives-colorhelper.md) - Contains helpers useful when working with colors.
+- [Avalonia.Controls.Primitives.ColorPreviewer](../types/avalonia-controls-primitives/avalonia-controls-primitives-colorpreviewer.md) - Presents a preview color with optional accent colors.
+- [Avalonia.Controls.Primitives.ColorSlider](../types/avalonia-controls-primitives/avalonia-controls-primitives-colorslider.md) - A slider with a background that represents a single color component.
+- [Avalonia.Controls.Primitives.ColorSpectrum](../types/avalonia-controls-primitives/avalonia-controls-primitives-colorspectrum.md) - A two dimensional spectrum for color selection.
+- [Avalonia.Controls.Primitives.DateTimePickerPanel](../types/avalonia-controls-primitives/avalonia-controls-primitives-datetimepickerpanel.md)
+- [Avalonia.Controls.Primitives.DateTimePickerPanelType](../types/avalonia-controls-primitives/avalonia-controls-primitives-datetimepickerpaneltype.md)
+- [Avalonia.Controls.Primitives.FlyoutBase](../types/avalonia-controls-primitives/avalonia-controls-primitives-flyoutbase.md)
+- [Avalonia.Controls.Primitives.HeaderedContentControl](../types/avalonia-controls-primitives/avalonia-controls-primitives-headeredcontentcontrol.md) - A with a header.
+- [Avalonia.Controls.Primitives.HeaderedItemsControl](../types/avalonia-controls-primitives/avalonia-controls-primitives-headereditemscontrol.md) - Represents an with a related header.
+- [Avalonia.Controls.Primitives.HeaderedSelectingItemsControl](../types/avalonia-controls-primitives/avalonia-controls-primitives-headeredselectingitemscontrol.md) - Represents a with a related header.
+- [Avalonia.Controls.Primitives.ILogicalScrollable](../types/avalonia-controls-primitives/avalonia-controls-primitives-ilogicalscrollable.md) - Interface implemented by controls that handle their own scrolling when placed inside a .
+- [Avalonia.Controls.Primitives.IScrollable](../types/avalonia-controls-primitives/avalonia-controls-primitives-iscrollable.md) - Interface implemented by scrollable controls.
+- [Avalonia.Controls.Primitives.IScrollSnapPointsInfo](../types/avalonia-controls-primitives/avalonia-controls-primitives-iscrollsnappointsinfo.md) - Describes snap point behavior for objects that contain and present items.
+- [Avalonia.Controls.Primitives.ItemSelectionEventTriggers](../types/avalonia-controls-primitives/avalonia-controls-primitives-itemselectioneventtriggers.md) - Defines standard logic for selecting items via user input. Behaviour differs between input devices.
+- [Avalonia.Controls.Primitives.OverlayLayer](../types/avalonia-controls-primitives/avalonia-controls-primitives-overlaylayer.md) - Represents a surface for showing overlays. Overlays are displayed on top of other elements, but behind popups.
+- [Avalonia.Controls.Primitives.OverlayPopupHost](../types/avalonia-controls-primitives/avalonia-controls-primitives-overlaypopuphost.md)
+- [Avalonia.Controls.Primitives.PickerPresenterBase](../types/avalonia-controls-primitives/avalonia-controls-primitives-pickerpresenterbase.md) - Defines the base class for Date and Time PickerPresenters
+- [Avalonia.Controls.Primitives.Popup](../types/avalonia-controls-primitives/avalonia-controls-primitives-popup.md) - Displays a popup window.
+- [Avalonia.Controls.Primitives.PopupFlyoutBase](../types/avalonia-controls-primitives/avalonia-controls-primitives-popupflyoutbase.md)
+- [Avalonia.Controls.Primitives.PopupRoot](../types/avalonia-controls-primitives/avalonia-controls-primitives-popuproot.md) - The root window of a .
+- [Avalonia.Controls.Primitives.RangeBase](../types/avalonia-controls-primitives/avalonia-controls-primitives-rangebase.md) - Base class for controls that display a value within a range.
+- [Avalonia.Controls.Primitives.RangeBaseValueChangedEventArgs](../types/avalonia-controls-primitives/avalonia-controls-primitives-rangebasevaluechangedeventargs.md) - Provides data specific to a event.
+- [Avalonia.Controls.Primitives.ScrollBar](../types/avalonia-controls-primitives/avalonia-controls-primitives-scrollbar.md) - A scrollbar control.
+- [Avalonia.Controls.Primitives.ScrollBarVisibility](../types/avalonia-controls-primitives/avalonia-controls-primitives-scrollbarvisibility.md) - Specifies the visibility of a for scrollable content.
+- [Avalonia.Controls.Primitives.ScrollEventArgs](../types/avalonia-controls-primitives/avalonia-controls-primitives-scrolleventargs.md)
+- [Avalonia.Controls.Primitives.ScrollEventType](../types/avalonia-controls-primitives/avalonia-controls-primitives-scrolleventtype.md) - Specifies the type of Avalonia.Controls.Primitives.ScrollBar.Scroll event that occurred.
+- [Avalonia.Controls.Primitives.SelectedDatesCollection](../types/avalonia-controls-primitives/avalonia-controls-primitives-selecteddatescollection.md)
+- [Avalonia.Controls.Primitives.SelectingItemsControl](../types/avalonia-controls-primitives/avalonia-controls-primitives-selectingitemscontrol.md) - An that maintains a selection.
+- [Avalonia.Controls.Primitives.SelectionHandleType](../types/avalonia-controls-primitives/avalonia-controls-primitives-selectionhandletype.md) - Represents which part of the selection the TextSelectionHandle controls.
+- [Avalonia.Controls.Primitives.SnapPointsAlignment](../types/avalonia-controls-primitives/avalonia-controls-primitives-snappointsalignment.md) - Specify options for snap point alignment relative to an edge. Which edge depends on the orientation of the object where the alignment is applied
+- [Avalonia.Controls.Primitives.SnapPointsType](../types/avalonia-controls-primitives/avalonia-controls-primitives-snappointstype.md) - Specify how panning snap points are processed for gesture input.
+- [Avalonia.Controls.Primitives.SplitViewTemplateSettings](../types/avalonia-controls-primitives/avalonia-controls-primitives-splitviewtemplatesettings.md) - Provides calculated values for use with the 's control theme or template.
+- [Avalonia.Controls.Primitives.TabStrip](../types/avalonia-controls-primitives/avalonia-controls-primitives-tabstrip.md)
+- [Avalonia.Controls.Primitives.TabStripItem](../types/avalonia-controls-primitives/avalonia-controls-primitives-tabstripitem.md) - Represents a tab in a .
+- [Avalonia.Controls.Primitives.TemplateAppliedEventArgs](../types/avalonia-controls-primitives/avalonia-controls-primitives-templateappliedeventargs.md) - Holds the details of the event.
+- [Avalonia.Controls.Primitives.TemplatedControl](../types/avalonia-controls-primitives/avalonia-controls-primitives-templatedcontrol.md) - A lookless control whose visual appearance is defined by its .
+- [Avalonia.Controls.Primitives.TextSearch](../types/avalonia-controls-primitives/avalonia-controls-primitives-textsearch.md) - Allows to customize text searching in .
+- [Avalonia.Controls.Primitives.TextSelectionHandle](../types/avalonia-controls-primitives/avalonia-controls-primitives-textselectionhandle.md) - A controls that enables easy control over text selection using touch based input
+- [Avalonia.Controls.Primitives.TextSelectorLayer](../types/avalonia-controls-primitives/avalonia-controls-primitives-textselectorlayer.md)
+- [Avalonia.Controls.Primitives.Thumb](../types/avalonia-controls-primitives/avalonia-controls-primitives-thumb.md)
+- [Avalonia.Controls.Primitives.ToggleButton](../types/avalonia-controls-primitives/avalonia-controls-primitives-togglebutton.md) - Represents a control that a user can select (check) or clear (uncheck). Base class for controls that can switch states.
+- [Avalonia.Controls.Primitives.Track](../types/avalonia-controls-primitives/avalonia-controls-primitives-track.md)
+- [Avalonia.Controls.Primitives.UniformGrid](../types/avalonia-controls-primitives/avalonia-controls-primitives-uniformgrid.md) - A with uniform column and row sizes.
+- [Avalonia.Controls.Primitives.VisualLayerManager](../types/avalonia-controls-primitives/avalonia-controls-primitives-visuallayermanager.md)
+

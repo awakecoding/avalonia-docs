@@ -10,7 +10,10 @@ The repository holds the code and markdown source files for the Avalonia UI docu
 This branch also includes a standalone `skills/avalonia-docs` skill generated from the repository markdown.
 
 - Rebuild it locally with `pwsh ./scripts/Build-AvaloniaDocsSkill.ps1`
+- Generate the pinned Avalonia API corpus as part of the skill with `pwsh ./scripts/Build-AvaloniaDocsSkill.ps1 -IncludeApiDocs`
 - Use the generated corpus from `skills/avalonia-docs/`
+
+The API generation flow is PowerShell-based, fetches `AvaloniaUI/Avalonia` automatically, and targets the `12.0.0-preview2` tag. Generated API metadata and markdown are treated as build artifacts under `artifacts/` and are not committed.
 
 ## Index
 - [Index](#index)
@@ -73,6 +76,7 @@ The two suggested workflows are:
 ### Requirements
 
 - **Node version >= 18**
+- **.NET SDK** for PowerShell-driven API corpus generation
 
 ### Setup
 

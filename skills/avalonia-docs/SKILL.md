@@ -1,6 +1,6 @@
 ---
 name: avalonia-docs
-description: Local Avalonia documentation corpus navigator. Use this skill for framework concepts, guides, control reference, Accelerate tooling, and XPF migration questions grounded in the extracted markdown corpus.
+description: Local Avalonia documentation corpus navigator. Use this skill for framework concepts, guides, control reference, generated API reference, Accelerate tooling, and XPF migration questions grounded in the extracted markdown corpus.
 ---
 
 # Avalonia Docs Corpus Navigator
@@ -17,16 +17,19 @@ description: Local Avalonia documentation corpus navigator. Use this skill for f
 - `docs/README.md` — primary Avalonia docs index in sidebar order.
 - `accelerate/README.md` — Accelerate product docs index.
 - `xpf/README.md` — XPF docs index.
+- `api/README.md` — generated API reference index.
 - `docs/`, `accelerate/`, `xpf/` — cleaned GFM markdown files.
+- `api/` — generated API reference markdown files built from the pinned Avalonia source tag.
 - `static/` — local non-video static assets referenced by the markdown.
 
 ## Navigation strategy
 
 1. Start with the relevant collection README to find the curated section order.
 2. For broad Avalonia questions, begin in `docs/`.
-3. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.
-4. For WPF migration and XPF-specific topics, use `xpf/`.
-5. Quote the exact markdown files you used when answering detailed questions.
+3. For API surface, inheritance, members, and namespaces, use `api/`.
+4. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.
+5. For WPF migration and XPF-specific topics, use `xpf/`.
+6. Quote the exact markdown files you used when answering detailed questions.
 
 ## Working style
 
