@@ -47,10 +47,21 @@ description: Local Avalonia documentation corpus navigator. Use this skill for f
 6. For release behavior, upgrade notes, and Avalonia 12 changes, use `docs/stay-up-to-date/` and `docs/avalonia12-breaking-changes.md`.
 7. For exact API surface, inheritance, assemblies, constructors, properties, methods, events, fields, and namespace membership, pivot to `api/`.
 8. When a prose page says “see the API docs” or links to api-docs.avaloniaui.net, replace that link with the local `api/` page instead of using the network URL.
-9. For commercial tooling, previewer, Parcel, Dev Tools, and paid Avalonia components, use `accelerate/`.
-10. For XPF, WPF migration gaps, embedding, platform support, or advanced interoperability, use `xpf/`.
-11. If a question asks both “how do I use it?” and “what API does it expose?”, answer from both the conceptual docs and the relevant local API page.
-12. Quote the exact markdown files you used when answering detailed questions.
+9. For Developer Tools MCP setup, app instrumentation, live previewer attachment, or AI-assisted UI inspection, start with `accelerate/tools/dev-tools/mcp.md` and `accelerate/tools/dev-tools/getting-started.md`.
+10. For commercial tooling, previewer, Parcel, Dev Tools, and paid Avalonia components, use `accelerate/`.
+11. For XPF, WPF migration gaps, embedding, platform support, or advanced interoperability, use `xpf/`.
+12. If a question asks both “how do I use it?” and “what API does it expose?”, answer from both the conceptual docs and the relevant local API page.
+13. Quote the exact markdown files you used when answering detailed questions.
+
+## Developer Tools MCP
+
+- Separate DevTools MCP questions into two halves: editor-side MCP server setup and app-side instrumentation.
+- For editor-side MCP setup, read `accelerate/tools/dev-tools/mcp.md`. It documents the `avdt mcp` server command, supported AI editors, and the `mcp.json` configuration shape.
+- For app-side instrumentation, read `accelerate/tools/dev-tools/getting-started.md`. The essential steps are: install the DevTools .NET tool, add `AvaloniaUI.DiagnosticsSupport`, remove legacy `Avalonia.Diagnostics`, and enable diagnostics in startup with either `this.AttachDeveloperTools()` or `.WithDeveloperTools()`.
+- A running Avalonia app is not inspectable through the DevTools MCP server unless `AvaloniaUI.DiagnosticsSupport` is referenced and enabled from application startup.
+- After instrumentation, run the app and initialize the connection, typically via `F12`. `Diagnostics Support` will then launch or connect to the `Developer Tools` process.
+- DevTools MCP itself requires a full Accelerate license; if MCP setup looks correct but the tool is unavailable, verify licensing before troubleshooting the app hookup.
+- For connection customization or non-default environments, continue into `accelerate/tools/dev-tools/advanced/options-reference.md`, `advanced/attaching-to-the-remote-tool.md`, `advanced/attaching-wsl.md`, or `advanced/attaching-to-the-previewer.md`.
 
 ## Reading Strategy
 
@@ -81,6 +92,7 @@ description: Local Avalonia documentation corpus navigator. Use this skill for f
 - Answer from local markdown evidence and cite file paths.
 - Keep internal links local; the corpus is intended to be portable as a zipped skill directory.
 - Prefer local corpus evidence over memory. If you have not opened the relevant page yet, open it before asserting details.
+- If a running-app inspection request depends on Developer Tools MCP, verify `AvaloniaUI.DiagnosticsSupport` plus either `this.AttachDeveloperTools()` or `.WithDeveloperTools()` before blaming editor MCP configuration.
 - If a topic appears in multiple collections, mention the overlap and compare the relevant files.
 - When you cite an external link from the corpus, state that it is an external reference and not part of the offline skill payload.
 - Use `LEGAL.md` only for attribution, provenance, or redistribution questions; do not treat it as technical product documentation.
