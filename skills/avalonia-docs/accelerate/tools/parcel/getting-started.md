@@ -26,14 +26,11 @@ If you are upgrading app from .NET 8/9 installation, you should first uninstall 
 
 Parcel can then be updated by running the `dotnet tool update` command.
 
-<details>
-<summary>Parcel update command</summary>
+#### Parcel update command
 
 ```bash
 dotnet tool update --global AvaloniaUI.Parcel
 ```
-
-</details>
 
 ### .NET 8/9
 
@@ -59,8 +56,7 @@ dotnet tool install --global AvaloniaUI.Parcel.Linux
 
 Parcel can then be updated by running the `dotnet tool update` command.
 
-<details>
-<summary>Parcel update commands</summary>
+#### Parcel update commands
 
 **Windows:**
 
@@ -79,8 +75,6 @@ dotnet tool update --global AvaloniaUI.Parcel.macOS
 ```bash
 dotnet tool update --global AvaloniaUI.Parcel.Linux
 ```
-
-</details>
 
 ## Step 2: Run the tool
 

@@ -8,9 +8,9 @@ Follow through this tutorial to create the app. As you do so, you will learn abo
 
 - [Adding a control](adding-a-control.md)
 - [Adding some layout](adding-some-layout.md)
-- [Converting data](converting-data.md)
 - [Customizing the Avalonia window](customizing-the-avalonia-window.md)
 - [Establishing events and responses](establishing-events-and-responses.md)
+- [Converting data](converting-data.md)
 - [Exercises](exercises.md)
 
 ![A screenshot of a completed app that converts temperatures from Celsius to Fahrenheit.](../../../static/img/get-started/temperature-converter-complete.png)

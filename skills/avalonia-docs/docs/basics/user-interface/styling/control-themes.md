@@ -70,7 +70,7 @@ The following example shows a simple `Button` theme which displays a button with
 </Window>
 ```
 
-<p>![Ellipse Button](../../../../static/img/basics/user-interface/styling/ellipse-button.png)</p>
+![Ellipse Button](../../../../static/img/basics/user-interface/styling/ellipse-button.png)
 
 ## Interaction in Control Themes
 

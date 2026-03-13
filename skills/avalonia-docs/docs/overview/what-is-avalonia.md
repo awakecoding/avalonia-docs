@@ -4,7 +4,7 @@ Avalonia is an open-source, cross-platform UI framework that enables developers 
 
 It uses its own rendering engine to draw UI controls, ensuring consistent appearance and behavior across all supported platforms. This means that developers can share their UI code and maintain a uniform look and feel regardless of the target platform.
 
-<p>![](../../static/img/overview/Architecture.png)</p>
+![](../../static/img/overview/Architecture.png)
 
 ## Who Avalonia is for?
 
@@ -55,7 +55,7 @@ Avalonia applications run on the .NET runtime, whether that's .NET Core, or Mono
 #### Comparison with Native Approaches
 While frameworks like .NET MAUI abstract over native UI controls, Avalonia takes a different approach:
 
-<p>![](../../static/img/overview/MAUI-Comparision.png)</p>
+![](../../static/img/overview/MAUI-Comparision.png)
 
 This architectural difference provides several benefits:
 

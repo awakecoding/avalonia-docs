@@ -7,16 +7,16 @@ You will see how although _Avalonia UI_ is often very similar to WPF; there are 
 * Styling
 * Data Templates
 
-- [Class Handlers](class-handlers.md)
+- [Styling](styling.md)
 - [Data Templates](datatemplates.md)
+- [HierarchicalDataTemplate](hierarchicaldatatemplate.md)
+- [UIElement, FrameworkElement and Control](uielement-frameworkelement-and-control.md)
 - [DependencyProperty](dependencyproperty.md)
 - [Grid](grid.md)
-- [HierarchicalDataTemplate](hierarchicaldatatemplate.md)
+- [Tunnelling Events](tunnelling-events.md)
+- [Class Handlers](class-handlers.md)
 - [PropertyChangedCallback](propertychangedcallback.md)
 - [RenderTransforms and RenderTransformOrigin](rendertransforms-and-rendertransformorigin.md)
-- [Styling](styling.md)
-- [Tunnelling Events](tunnelling-events.md)
-- [UIElement, FrameworkElement and Control](uielement-frameworkelement-and-control.md)
 - [WPF and UWP Comparison](comparison-of-avalonia-with-wpf-and-uwp.md)
 
 > [!TIP]

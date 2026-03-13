@@ -4,7 +4,7 @@
 
 Avalonia Fluent theme is inspired by Microsoft's Fluent Design System, which is a set of design guidelines and components for creating visually appealing and interactive user interfaces. The Fluent Design System emphasizes modern, clean aesthetics, smooth animations, and intuitive interactions. It provides a consistent and polished look-and-feel across different platforms, while giving developers flexibility with our styling system.
 
-<p>![Fluent Theme](../../../../../static/img/basics/user-interface/styling/fluent-theme-normal.png)</p>
+![Fluent Theme](../../../../../static/img/basics/user-interface/styling/fluent-theme-normal.png)
 
 ## How to use
 
@@ -96,5 +96,5 @@ It is available on https://theme.xaml.live/ page and supports following features
 6. Couple of quick start presets.
 
 Example of FluentTheme with a Forest palette preset available on the web app:
-<p>![Fluent Theme Forest Palette](../../../../../static/img/basics/user-interface/styling/fluent-theme-forest.png)</p>
+![Fluent Theme Forest Palette](../../../../../static/img/basics/user-interface/styling/fluent-theme-forest.png)
 

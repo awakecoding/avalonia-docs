@@ -17,7 +17,7 @@ Parcel provides comprehensive macOS application packaging with cross-platform su
 - **Linux**: Complete support including DMG creation
 - **Windows**: Full support with WSL2 required for DMG creation
 
+- [macOS Packaging](packaging.md)
 - [macOS Code Signing](signing.md)
 - [macOS Notarization](notary.md)
-- [macOS Packaging](packaging.md)
 

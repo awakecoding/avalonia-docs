@@ -2,3 +2,101 @@
 
 This index mirrors the curated sidebar order from the source Avalonia docs site and links to the locally extracted markdown files in this skill.
 
+## Key Starting Points
+
+- [Welcome](welcome.md)
+- [Installation](installation.md)
+- [Getting Started](tools/dev-tools/getting-started.md)
+- [Getting Started](tools/parcel/getting-started.md)
+- [Avalonia Visual Studio Extension](tools/vs-extension/getting-started.md)
+- [MediaPlayer Quick Start Guide](components/media-player/quickstart.md)
+- [TreeDataGrid Quick Start Guide](components/treedatagrid/quickstart.md)
+- [WebView Quick Start Guide](components/webview/quickstart.md)
+- [Virtual Keyboard Quick Start Guide](components/virtual-keyboard/getting-started.md)
+- [Markdown Quick Start Guide](components/markdown/quickstart.md)
+- [Community Edition](community.md)
+
+- [Welcome](welcome.md)
+- [Installation](installation.md)
+- Dev Tools
+  - [Getting Started](tools/dev-tools/getting-started.md)
+  - [Developer Tools Settings](tools/dev-tools/settings.md)
+  - Tools
+    - Elements
+      - [Application Elements Tool](tools/dev-tools/tools/elements/elements.md)
+      - [Element Properties](tools/dev-tools/tools/elements/properties.md)
+      - [In-App Overlay](tools/dev-tools/tools/elements/overlay.md)
+      - [Element 3D Viewer](tools/dev-tools/tools/elements/3d-viewer.md)
+    - [Application Assets Tool](tools/dev-tools/tools/assets.md)
+    - [Application Resources Tool](tools/dev-tools/tools/resources.md)
+    - [Application Logs Tool](tools/dev-tools/tools/logs.md)
+    - [Application Events Tool](tools/dev-tools/tools/events.md)
+    - [Application Breakpoints Tool](tools/dev-tools/tools/breakpoints.md)
+    - [Application Metrics Tool](tools/dev-tools/tools/metrics.md)
+    - [Application Profiler Tool](tools/dev-tools/tools/profiler.md)
+  - [Model Context Protocol](tools/dev-tools/mcp.md)
+  - [Developer Tools Shortcuts](tools/dev-tools/shortcuts.md)
+  - Advanced Tools
+    - [Reference to DeveloperToolsOptions](tools/dev-tools/advanced/options-reference.md)
+    - [Attaching Browser or Mobile application](tools/dev-tools/advanced/attaching-browser-or-mobile.md)
+    - [Attaching to the Previewer](tools/dev-tools/advanced/attaching-to-the-previewer.md)
+    - [Attaching to the remote tool](tools/dev-tools/advanced/attaching-to-the-remote-tool.md)
+    - [Attaching WSL2 application](tools/dev-tools/advanced/attaching-wsl.md)
+  - [Frequently Asked Questions](tools/dev-tools/faq.md)
+  - [Reporting Issue](tools/dev-tools/reporting-issues.md)
+- Parcel
+  - [Getting Started](tools/parcel/getting-started.md)
+  - [Parcel CLI reference](tools/parcel/cli-reference.md)
+  - [Model Context Protocol](tools/parcel/mcp.md)
+  - [macOS](tools/parcel/apple/index.md)
+    - [macOS Packaging](tools/parcel/apple/packaging.md)
+    - [macOS Code Signing](tools/parcel/apple/signing.md)
+    - [macOS Notarization](tools/parcel/apple/notary.md)
+  - [Windows](tools/parcel/windows/index.md)
+    - [Windows Code Signing](tools/parcel/windows/signing.md)
+    - [Windows Packaging](tools/parcel/windows/installer.md)
+  - [Linux](tools/parcel/linux/index.md)
+    - [Linux Packaging](tools/parcel/linux/packaging.md)
+- VS Extension
+  - [Avalonia Visual Studio Extension](tools/vs-extension/getting-started.md)
+  - [Avalonia Visual Studio Extension - Settings](tools/vs-extension/settings.md)
+  - [Avalonia Visual Studio Extension - Previewer](tools/vs-extension/previewer.md)
+- Media Player
+  - [MediaPlayer Quick Start Guide](components/media-player/quickstart.md)
+  - [MediaPlayer](components/media-player/mediaplayer.md)
+  - [MediaPlayerControl](components/media-player/mediaplayercontrol.md)
+  - [MediaSource](components/media-player/mediasource.md)
+- TreeDataGrid
+  - [TreeDataGrid Quick Start Guide](components/treedatagrid/quickstart.md)
+  - [Flat TreeDataGrid](components/treedatagrid/quickstart-flat.md)
+  - [Hierarchical TreeDataGrid](components/treedatagrid/quickstart-hierarchical.md)
+  - [Column Types](components/treedatagrid/column-types.md)
+  - [Selection](components/treedatagrid/selection.md)
+  - [Expanding and Collapsing Rows](components/treedatagrid/expanding-collapsing.md)
+  - [Sorting](components/treedatagrid/sorting.md)
+  - [Filtering](components/treedatagrid/filtering.md)
+  - [Frequently Asked Questions](components/treedatagrid/faq.md)
+- Web View
+  - [WebView Quick Start Guide](components/webview/quickstart.md)
+  - [NativeWebView](components/webview/nativewebview.md)
+  - [NativeWebDialog](components/webview/nativewebdialog.md)
+  - [WebAuthenticationBroker](components/webview/webauthenticationbroker.md)
+  - [Frequently Asked Questions](components/webview/faq.md)
+  - Interop
+    - [WebView Environment Options](components/webview/interop/environment-options.md)
+    - [Native Browser interop](components/webview/interop/native-browser-interop.md)
+- Virtual Keyboard
+  - [Virtual Keyboard Quick Start Guide](components/virtual-keyboard/getting-started.md)
+  - [VirtualKeyboardScope](components/virtual-keyboard/virtual-keyboard-scope.md)
+  - [VirtualKeyboard](components/virtual-keyboard/virtual-keyboard.md)
+  - [Virtual Keyboard Styling](components/virtual-keyboard/styling.md)
+  - [Available input methods](components/virtual-keyboard/input-method-identifiers.md)
+- Markdown
+  - [Markdown Quick Start Guide](components/markdown/quickstart.md)
+  - [Markdown](components/markdown/markdown.md)
+  - Advanced Markdown
+    - [Markdown Styling and Customization](components/markdown/styling.md)
+    - [Customizing Image Loading in Markdown](components/markdown/custom-image-loader.md)
+    - [`CodeHighlighter`](components/markdown/code-highlighter.md)
+- [Community Edition](community.md)
+

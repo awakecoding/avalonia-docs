@@ -31,6 +31,12 @@ function Get-RelativePathSafe {
     return ConvertTo-ForwardSlashes ([System.IO.Path]::GetRelativePath($BasePath, $TargetPath))
 }
 
+function Remove-PathExtension {
+    param([string]$Path)
+
+    return ($Path -replace '\.[^./\\]+$', '')
+}
+
 function Get-AttributeValue {
     param(
         [string]$Attributes,
@@ -126,6 +132,17 @@ function Get-MarkdownTitle {
     return $FallbackName
 }
 
+function Normalize-DocTitle {
+    param([string]$Title)
+
+    if ([string]::IsNullOrWhiteSpace($Title)) {
+        return $Title
+    }
+
+    $normalized = [regex]::Replace($Title, '\s*<[^>]+>\s*', ' ')
+    return (($normalized -replace '\s+', ' ').Trim())
+}
+
 function Invoke-NodeJsonFile {
     param([string]$Path)
 
@@ -170,7 +187,8 @@ function Get-NavLines {
         [object[]]$Items,
         [hashtable]$DocLookup,
         [int]$Indent = 0,
-        [string]$BaseDirectory
+        [string]$BaseDirectory,
+        [hashtable]$AbsoluteRouteMap = $null
     )
 
     $lines = New-Object System.Collections.Generic.List[string]
@@ -199,7 +217,11 @@ function Get-NavLines {
                 $label = if ($item.ContainsKey('label')) { $item.label } else { $item.href }
                 $href = if ($item.ContainsKey('href')) { $item.href } else { $null }
                 if ($href) {
-                    $lines.Add("$prefix[$label]($href)")
+                    $target = Resolve-SidebarLinkTarget -Href $href -BaseDirectory $BaseDirectory -AbsoluteRouteMap $AbsoluteRouteMap
+                    if (-not $target) {
+                        $target = $href
+                    }
+                    $lines.Add("$prefix[$label]($target)")
                 }
             }
             'category' {
@@ -215,7 +237,7 @@ function Get-NavLines {
                 }
 
                 if ($itemsValue) {
-                    foreach ($childLine in (Get-NavLines -Items $itemsValue -DocLookup $DocLookup -Indent ($Indent + 1) -BaseDirectory $BaseDirectory)) {
+                    foreach ($childLine in (Get-NavLines -Items $itemsValue -DocLookup $DocLookup -Indent ($Indent + 1) -BaseDirectory $BaseDirectory -AbsoluteRouteMap $AbsoluteRouteMap)) {
                         $lines.Add($childLine)
                     }
                 }
@@ -224,6 +246,71 @@ function Get-NavLines {
     }
 
     return $lines
+}
+
+function Resolve-SidebarLinkTarget {
+    param(
+        [string]$Href,
+        [string]$BaseDirectory,
+        [hashtable]$AbsoluteRouteMap
+    )
+
+    if (-not $Href -or -not $BaseDirectory -or -not $AbsoluteRouteMap) {
+        return $null
+    }
+
+    $candidateRoutes = New-Object System.Collections.Generic.List[string]
+
+    if ($Href -match '^https?://docs\.avaloniaui\.net(?<path>/.*)$') {
+        $candidateRoutes.Add($matches['path'])
+    } elseif ($Href -match '^https?://api-docs\.avaloniaui\.net(?:/docs/category/avalonia)?/?$') {
+        $candidateRoutes.Add('/api')
+        $candidateRoutes.Add('/api/index')
+    }
+
+    foreach ($route in $candidateRoutes) {
+        foreach ($routeCandidate in @($route, $route.TrimEnd('/'))) {
+            if ([string]::IsNullOrWhiteSpace($routeCandidate)) {
+                continue
+            }
+
+            if ($AbsoluteRouteMap.ContainsKey($routeCandidate)) {
+                return (Get-RelativePathSafe -BasePath $BaseDirectory -TargetPath $AbsoluteRouteMap[$routeCandidate])
+            }
+        }
+    }
+
+    return $null
+}
+
+function Unwrap-MarkdownParagraphImages {
+    param([string]$Text)
+
+    return [regex]::Replace($Text, '(?im)^\s*<p>\s*(!\[[^\]]*\]\([^)]+\))\s*</p>\s*$', '$1')
+}
+
+function Convert-DetailsBlocks {
+    param([string]$Text)
+
+    return [regex]::Replace(
+        $Text,
+        '(?is)<details>\s*<summary>\s*(?<summary>.*?)\s*</summary>\s*(?<body>.*?)\s*</details>',
+        {
+            param($match)
+
+            $summary = ($match.Groups['summary'].Value -replace '\s+', ' ').Trim()
+            $body = $match.Groups['body'].Value.Trim()
+            if ([string]::IsNullOrWhiteSpace($summary)) {
+                return $body
+            }
+
+            if ([string]::IsNullOrWhiteSpace($body)) {
+                return "#### $summary"
+            }
+
+            return "#### $summary`n`n$body"
+        }
+    )
 }
 
 function Get-FallbackSiblingLines {
@@ -796,6 +883,7 @@ function Convert-RecordContent {
     param(
         [pscustomobject]$Record,
         [hashtable]$AbsoluteRouteMap,
+        [hashtable]$CollectionDocLookup,
         [hashtable]$DocSourceMap,
         [hashtable]$CopiedAssetMap,
         [string]$SkillRoot,
@@ -804,7 +892,7 @@ function Convert-RecordContent {
 
     $raw = Get-Content -LiteralPath $Record.SourcePath -Raw -Encoding UTF8
     $parsed = Parse-FrontMatter -Text $raw
-    $body = $parsed.Body
+    $body = Convert-DetailsBlocks (Unwrap-MarkdownParagraphImages $parsed.Body)
     $lines = $body -split "`r?`n", 0
     $importMap = @{}
     $processed = New-Object System.Collections.Generic.List[string]
@@ -877,7 +965,7 @@ function Convert-RecordContent {
             }
 
             if ($navItems) {
-                foreach ($navLine in (Get-NavLines -Items $navItems -DocLookup $script:DocLookupById -BaseDirectory $Record.OutputDirectory)) {
+                foreach ($navLine in (Get-NavLines -Items $navItems -DocLookup $CollectionDocLookup -BaseDirectory $Record.OutputDirectory -AbsoluteRouteMap $AbsoluteRouteMap)) {
                     $processed.Add($navLine)
                 }
                 $processed.Add('')
@@ -967,6 +1055,10 @@ function Convert-RecordContent {
 
         $currentLine = $line
 
+        if (-not $inCode -and $currentLine -match '^\s*<p>\s*(!\[[^\]]*\]\([^)]+\))\s*</p>\s*$') {
+            $currentLine = $matches[1]
+        }
+
         if (-not $inCode) {
             $currentLine = [regex]::Replace(
                 $currentLine,
@@ -994,6 +1086,9 @@ function Convert-RecordContent {
 
             $currentLine = Replace-MdxImageComponents -Line $currentLine -Record $Record -ImportMap $importMap -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
             $currentLine = Replace-ImgTags -Line $currentLine -Record $Record -ImportMap $importMap -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
+            if ($currentLine -match '^\s*<p>\s*(!\[[^\]]*\]\([^)]+\))\s*</p>\s*$') {
+                $currentLine = $matches[1]
+            }
             $currentLine = Rewrite-HtmlAttributes -Line $currentLine -Record $Record -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
             $currentLine = Rewrite-MarkdownLinks -Line $currentLine -Record $Record -AbsoluteRouteMap $AbsoluteRouteMap -DocSourceMap $DocSourceMap -CopiedAssetMap $CopiedAssetMap -SkillRoot $SkillRoot
         }
@@ -1039,8 +1134,8 @@ function New-DocRecord {
     $sourceText = Get-Content -LiteralPath $SourcePath -Raw -Encoding UTF8
     $parsed = Parse-FrontMatter -Text $sourceText
     $fallbackName = [System.IO.Path]::GetFileNameWithoutExtension($SourcePath)
-    $title = Get-MarkdownTitle -Metadata $parsed.Metadata -Body $parsed.Body -FallbackName $fallbackName
-    $relativeNoExtension = ConvertTo-ForwardSlashes ([System.IO.Path]::ChangeExtension($relativeWithinCollection, $null))
+    $title = Normalize-DocTitle (Get-MarkdownTitle -Metadata $parsed.Metadata -Body $parsed.Body -FallbackName $fallbackName)
+    $relativeNoExtension = ConvertTo-ForwardSlashes (Remove-PathExtension $relativeWithinCollection)
     $fileNameWithoutExtension = [System.IO.Path]::GetFileNameWithoutExtension($relativeWithinCollection)
     $directoryRoute = if ($relativeDirectory -eq '.') { '' } else { ConvertTo-ForwardSlashes $relativeDirectory }
     $docId = if ($parsed.Metadata.Contains('id') -and $parsed.Metadata.id) { $parsed.Metadata.id } else { $relativeNoExtension }
@@ -1083,7 +1178,8 @@ function Write-CollectionReadme {
         [string]$CollectionName,
         [string]$SkillRoot,
         [object[]]$SidebarItems,
-        [hashtable]$DocLookup
+        [hashtable]$DocLookup,
+        [hashtable]$AbsoluteRouteMap
     )
 
     $title = switch ($CollectionName) {
@@ -1106,7 +1202,69 @@ function Write-CollectionReadme {
     $lines.Add('This index mirrors the curated sidebar order from the source Avalonia docs site and links to the locally extracted markdown files in this skill.')
     $lines.Add('')
 
-    foreach ($line in (Get-NavLines -Items $SidebarItems -DocLookup $DocLookup -BaseDirectory $readmeDir)) {
+    $starterDocIds = switch ($CollectionName) {
+        'docs' {
+            @('welcome', 'get-started/index', 'basics/index', 'guides/index', 'concepts/index', 'reference/index', 'faq')
+        }
+        'accelerate' {
+            @(
+                'welcome',
+                'installation',
+                'tools/dev-tools/getting-started',
+                'tools/parcel/getting-started',
+                'tools/vs-extension/getting-started',
+                'components/media-player/quickstart',
+                'components/treedatagrid/quickstart',
+                'components/webview/quickstart',
+                'components/virtual-keyboard/getting-started',
+                'components/markdown/quickstart',
+                'community'
+            )
+        }
+        'xpf' {
+            @(
+                'welcome',
+                'getting-started',
+                'porting-tips',
+                'build-feeds',
+                'third-party-libraries',
+                'missing-features',
+                'platforms/linux',
+                'platforms/macos',
+                'embedding/xpf-in-avalonia',
+                'embedding/web-view',
+                'advanced/customizing-init',
+                'advanced/headless-testing',
+                'troubleshooting',
+                'release-notes'
+            )
+        }
+        'api' {
+            @('index', 'namespaces/avalonia', 'namespaces/avalonia-controls', 'namespaces/avalonia-markup-xaml', 'namespaces/avalonia-styling')
+        }
+        default {
+            @()
+        }
+    }
+
+    if ($starterDocIds.Count -gt 0) {
+        $lines.Add('## Key Starting Points')
+        $lines.Add('')
+
+        foreach ($starterDocId in $starterDocIds) {
+            if (-not $DocLookup.ContainsKey($starterDocId)) {
+                continue
+            }
+
+            $record = $DocLookup[$starterDocId]
+            $target = Get-RelativePathSafe -BasePath $readmeDir -TargetPath $record.OutputPath
+            $lines.Add("- [$($record.Title)]($target)")
+        }
+
+        $lines.Add('')
+    }
+
+    foreach ($line in (Get-NavLines -Items $SidebarItems -DocLookup $DocLookup -BaseDirectory $readmeDir -AbsoluteRouteMap $AbsoluteRouteMap)) {
         $lines.Add($line)
     }
 
@@ -1118,8 +1276,8 @@ $skillRoot = Get-NormalizedPath $SkillPath
 
 $collections = @(
     [pscustomobject]@{ Name = 'docs'; RouteBase = 'docs'; OutputRoot = 'docs'; SourceRoot = Join-Path $script:RepositoryRoot 'docs'; SidebarPath = Join-Path $script:RepositoryRoot 'sidebars.js'; SidebarKey = 'documentationSidebar' },
-    [pscustomobject]@{ Name = 'accelerate'; RouteBase = 'accelerate'; OutputRoot = 'accelerate'; SourceRoot = Join-Path $script:RepositoryRoot 'accelerate'; SidebarPath = Join-Path $script:RepositoryRoot 'accelerate-sidebar.js'; SidebarKey = 'defaultSidebar' },
-    [pscustomobject]@{ Name = 'xpf'; RouteBase = 'xpf'; OutputRoot = 'xpf'; SourceRoot = Join-Path $script:RepositoryRoot 'xpf'; SidebarPath = Join-Path $script:RepositoryRoot 'xpf-sidebar.js'; SidebarKey = 'defaultSidebar' }
+    [pscustomobject]@{ Name = 'accelerate'; RouteBase = 'accelerate'; OutputRoot = 'accelerate'; SourceRoot = Join-Path $script:RepositoryRoot 'accelerate'; SidebarPath = Join-Path $script:RepositoryRoot 'accelerate-sidebar.js'; SidebarKey = 'documentationSidebar' },
+    [pscustomobject]@{ Name = 'xpf'; RouteBase = 'xpf'; OutputRoot = 'xpf'; SourceRoot = Join-Path $script:RepositoryRoot 'xpf'; SidebarPath = Join-Path $script:RepositoryRoot 'xpf-sidebar.js'; SidebarKey = 'documentationSidebar' }
 )
 
 if ($ApiSourceRoot -and $ApiSidebarPath) {
@@ -1128,6 +1286,7 @@ if ($ApiSourceRoot -and $ApiSidebarPath) {
 
 $sidebarData = @{}
 $categoryMaps = @{}
+$docLookupByCollection = @{}
 $allRecords = New-Object System.Collections.Generic.List[object]
 $docLookupById = @{}
 $docSourceMap = @{}
@@ -1140,6 +1299,7 @@ foreach ($collection in $collections) {
     $sidebarJson = Invoke-NodeJsonFile -Path $collection.SidebarPath
     $sidebarItems = @($sidebarJson[$collection.SidebarKey])
     $sidebarData[$collection.Name] = $sidebarItems
+    $docLookupByCollection[$collection.Name] = @{}
 
     $categoryMap = @{}
     Get-SidebarCategoryMap -Items $sidebarItems -CategoryMap $categoryMap
@@ -1151,6 +1311,8 @@ foreach ($collection in $collections) {
         $docSourceMap[$record.SourcePath] = $record
         $docLookupById[$record.DocId] = $record
         $docLookupById[$record.RelativeNoExtension] = $record
+        $docLookupByCollection[$collection.Name][$record.DocId] = $record
+        $docLookupByCollection[$collection.Name][$record.RelativeNoExtension] = $record
 
         foreach ($alias in $record.RouteAliases) {
             $absoluteRouteMap[$alias] = $record.OutputPath
@@ -1169,12 +1331,12 @@ foreach ($record in $allRecords) {
         New-Item -ItemType Directory -Path $destinationDir -Force | Out-Null
     }
 
-    $content = Convert-RecordContent -Record $record -AbsoluteRouteMap $absoluteRouteMap -DocSourceMap $docSourceMap -CopiedAssetMap $copiedAssetMap -SkillRoot $skillRoot -CategoryMap $categoryMaps[$record.Collection]
+    $content = Convert-RecordContent -Record $record -AbsoluteRouteMap $absoluteRouteMap -CollectionDocLookup $docLookupByCollection[$record.Collection] -DocSourceMap $docSourceMap -CopiedAssetMap $copiedAssetMap -SkillRoot $skillRoot -CategoryMap $categoryMaps[$record.Collection]
     Set-Content -LiteralPath $record.OutputPath -Value $content -Encoding UTF8
 }
 
 foreach ($collection in $collections) {
-    Write-CollectionReadme -CollectionName $collection.Name -SkillRoot $skillRoot -SidebarItems $sidebarData[$collection.Name] -DocLookup $docLookupById
+    Write-CollectionReadme -CollectionName $collection.Name -SkillRoot $skillRoot -SidebarItems $sidebarData[$collection.Name] -DocLookup $docLookupByCollection[$collection.Name] -AbsoluteRouteMap $absoluteRouteMap
 }
 
 $includedCollectionNames = @($collections | ForEach-Object { $_.Name })
@@ -1244,6 +1406,7 @@ $skillLines.Add('')
 $skillLines.Add('- The markdown corpus is already extracted locally next to this file.')
 $skillLines.Add('- Use the local files only; do not browse the network unless the user explicitly asks for newer upstream content.')
 $skillLines.Add('- Prefer the collection indexes before deep-reading individual files.')
+$skillLines.Add('- Treat local corpus files as the source of truth even when a page still mentions docs.avaloniaui.net or api-docs.avaloniaui.net.')
 $skillLines.Add('')
 $skillLines.Add('## Corpus layout')
 $skillLines.Add('')
@@ -1262,17 +1425,30 @@ $skillLines.Add('- `static/` — local non-video static assets referenced by the
 $skillLines.Add('')
 $skillLines.Add('## Navigation strategy')
 $skillLines.Add('')
-$skillLines.Add('1. Start with the relevant collection README to find the curated section order.')
-$skillLines.Add('2. For broad Avalonia questions, begin in `docs/`.')
+$skillLines.Add('1. Start with the relevant collection README to find the curated section order and likely landing pages.')
+$skillLines.Add('2. For broad framework questions, concepts, how-to guidance, tutorials, or control overviews, begin in `docs/`.')
 if ($hasApiCollection) {
-    $skillLines.Add('3. For API surface, inheritance, members, and namespaces, use `api/`.')
-    $skillLines.Add('4. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.')
-    $skillLines.Add('5. For WPF migration and XPF-specific topics, use `xpf/`.')
-    $skillLines.Add('6. Quote the exact markdown files you used when answering detailed questions.')
+    $skillLines.Add('3. For exact API surface, inheritance, assemblies, constructors, properties, methods, events, fields, and namespace membership, pivot to `api/`.')
+    $skillLines.Add('4. Use `api/index.md` for namespace discovery, `api/namespaces/*.md` to enumerate types in a namespace, and `api/types/**/*.md` for the definitive page for a type.')
+    $skillLines.Add('5. When a docs page says “see the API docs” or links to api-docs.avaloniaui.net, use the local `api/` corpus instead of the network URL.')
+    $skillLines.Add('6. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.')
+    $skillLines.Add('7. For WPF migration, platform gaps, embedding, and XPF-specific guidance, use `xpf/`.')
+    $skillLines.Add('8. If a question asks both “how” and “what API,” answer from both the conceptual docs and the relevant local API type page.')
+    $skillLines.Add('9. Quote the exact markdown files you used when answering detailed questions.')
 } else {
     $skillLines.Add('3. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.')
     $skillLines.Add('4. For WPF migration and XPF-specific topics, use `xpf/`.')
-    $skillLines.Add('5. Quote the exact markdown files you used when answering detailed questions.')
+    $skillLines.Add('5. If a page points to external API docs, state that the API corpus is not included in this build and use the local conceptual docs first.')
+    $skillLines.Add('6. Quote the exact markdown files you used when answering detailed questions.')
+}
+$skillLines.Add('')
+$skillLines.Add('## API workflow')
+$skillLines.Add('')
+if ($hasApiCollection) {
+    $skillLines.Add('- If the user names a concrete type such as `TextBox`, `Window`, or `AvaloniaObject`, look for the matching file under `api/types/` and use the namespace page to confirm related types.')
+    $skillLines.Add('- If the user asks for events, properties, or methods, prefer the generated type page over prose docs because the member lists are more complete and structured.')
+    $skillLines.Add('- If the user asks how to use a type, pair the generated API page with a how-to or reference page from `docs/`, `accelerate/`, or `xpf/` when available.')
+    $skillLines.Add('- If multiple types share the same short name, disambiguate by namespace before answering.')
 }
 $skillLines.Add('')
 $skillLines.Add('## Working style')
@@ -1280,6 +1456,7 @@ $skillLines.Add('')
 $skillLines.Add('- Answer from local markdown evidence and cite file paths.')
 $skillLines.Add('- Keep internal links local; the corpus is intended to be portable as a zipped skill directory.')
 $skillLines.Add('- If a topic appears in multiple collections, mention the overlap and compare the relevant files.')
+$skillLines.Add('- Some tutorial and tooling pages use collapsible HTML details blocks; read the full file contents, not just the visible headings.')
 $skillLines.Add('- If a link points outside the local corpus (for example GitHub or Microsoft downloads), state that it is an external reference.')
 Set-Content -LiteralPath (Join-Path $skillRoot 'SKILL.md') -Value (($skillLines -join "`n") + "`n") -Encoding UTF8
 

@@ -39,14 +39,11 @@ If you are upgrading app from .NET 8/9 installation, you should first uninstall 
 
 Developer Tools can be then updated by running `dotnet tool update` command.
 
-<details>
-<summary>Developer tools update command</summary>
+#### Developer tools update command
 
 ```bash
 dotnet tool update --global AvaloniaUI.DeveloperTools
 ```
-
-</details>
 
 ### .NET 8/9
 
@@ -72,8 +69,7 @@ dotnet tool install --global AvaloniaUI.DeveloperTools.Linux
 
 Developer Tools can be then updated by running `dotnet tool update` command.
 
-<details>
-<summary>Developer tools update commands</summary>
+#### Developer tools update commands
 
 **Windows:**
 
@@ -92,8 +88,6 @@ dotnet tool update --global AvaloniaUI.DeveloperTools.macOS
 ```bash
 dotnet tool update --global AvaloniaUI.DeveloperTools.Linux
 ```
-
-</details>
 
 ## Step 2: Installing Diagnostics Support package
 
