@@ -9,6 +9,14 @@ The repository holds the code and markdown source files for the Avalonia UI docu
 
 This branch also includes a standalone `skills/avalonia-docs` skill generated from the repository markdown.
 
+The packaged skill is published from the `skills` branch, not from the default website branch.
+
+Install it directly from the branch-qualified GitHub tree URL:
+
+```bash
+npx skills add https://github.com/awakecoding/avalonia-docs/tree/skills/skills/avalonia-docs -g -y
+```
+
 - Rebuild it locally with `pwsh ./scripts/Build-AvaloniaDocsSkill.ps1`
 - Generate the pinned Avalonia API corpus as part of the skill with `pwsh ./scripts/Build-AvaloniaDocsSkill.ps1 -IncludeApiDocs`
 - Use the generated corpus from `skills/avalonia-docs/`

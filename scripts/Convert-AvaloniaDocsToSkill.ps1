@@ -1341,6 +1341,20 @@ foreach ($collection in $collections) {
 
 $includedCollectionNames = @($collections | ForEach-Object { $_.Name })
 $hasApiCollection = $includedCollectionNames -contains 'api'
+$docsCount = (($allRecords | Where-Object Collection -eq 'docs').Count)
+$accelerateCount = (($allRecords | Where-Object Collection -eq 'accelerate').Count)
+$xpfCount = (($allRecords | Where-Object Collection -eq 'xpf').Count)
+$apiCount = if ($hasApiCollection) { (($allRecords | Where-Object Collection -eq 'api').Count) } else { 0 }
+$apiNamespaceCount = if ($hasApiCollection) {
+    (Get-ChildItem -LiteralPath (Join-Path $skillRoot 'api\namespaces') -File -Filter *.md | Measure-Object).Count
+} else {
+    0
+}
+$apiTypeCount = if ($hasApiCollection) {
+    (Get-ChildItem -LiteralPath (Join-Path $skillRoot 'api\types') -Recurse -File -Filter *.md | Measure-Object).Count
+} else {
+    0
+}
 $corpusCollectionsText = if ($hasApiCollection) {
     'docs/, accelerate/, xpf/, and api/'
 } else {
@@ -1352,23 +1366,6 @@ $corpusReadmeLines.Add('# Avalonia Docs Skill')
 $corpusReadmeLines.Add('')
 $corpusReadmeLines.Add("Standalone markdown skill corpus built from the Avalonia documentation repository. The generated corpus keeps the original $corpusCollectionsText collections, rewrites internal links for local file browsing, and copies only the non-video static assets referenced by the markdown.")
 $corpusReadmeLines.Add('')
-$corpusReadmeLines.Add('## Installation')
-$corpusReadmeLines.Add('')
-$corpusReadmeLines.Add('Install from this repository with [skills.sh](https://skills.sh):')
-$corpusReadmeLines.Add('')
-$corpusReadmeLines.Add('```bash')
-$corpusReadmeLines.Add('npx skills add https://github.com/awakecoding/avalonia-docs --skill avalonia-docs -y -g')
-$corpusReadmeLines.Add('```')
-$corpusReadmeLines.Add('')
-$corpusReadmeLines.Add('Or rebuild the skill locally from a clone of this repository:')
-$corpusReadmeLines.Add('')
-$corpusReadmeLines.Add('```powershell')
-$corpusReadmeLines.Add('./scripts/Build-AvaloniaDocsSkill.ps1')
-if ($hasApiCollection) {
-    $corpusReadmeLines.Add('./scripts/Build-AvaloniaDocsSkill.ps1 -IncludeApiDocs')
-}
-$corpusReadmeLines.Add('```')
-$corpusReadmeLines.Add('')
 $corpusReadmeLines.Add('## Corpus layout')
 $corpusReadmeLines.Add('')
 $corpusReadmeLines.Add('- [`docs/README.md`](docs/README.md) — primary Avalonia documentation index.')
@@ -1376,16 +1373,18 @@ $corpusReadmeLines.Add('- [`accelerate/README.md`](accelerate/README.md) — Ava
 $corpusReadmeLines.Add('- [`xpf/README.md`](xpf/README.md) — Avalonia XPF documentation index.')
 if ($hasApiCollection) {
     $corpusReadmeLines.Add('- [`api/README.md`](api/README.md) — generated Avalonia API reference index.')
+    $corpusReadmeLines.Add('- [`api/index.md`](api/index.md) — namespace inventory for the generated API corpus.')
 }
+$corpusReadmeLines.Add('- [`LEGAL.md`](LEGAL.md) — source attribution and redistribution note.')
 $corpusReadmeLines.Add('- `static/` — copied non-video static assets referenced by the markdown corpus.')
 $corpusReadmeLines.Add('')
 $corpusReadmeLines.Add('## Included collections')
 $corpusReadmeLines.Add('')
-$corpusReadmeLines.Add("- Avalonia Docs: $((($allRecords | Where-Object Collection -eq 'docs').Count)) markdown files.")
-$corpusReadmeLines.Add("- Avalonia Accelerate: $((($allRecords | Where-Object Collection -eq 'accelerate').Count)) markdown files.")
-$corpusReadmeLines.Add("- Avalonia XPF: $((($allRecords | Where-Object Collection -eq 'xpf').Count)) markdown files.")
+$corpusReadmeLines.Add("- Avalonia Docs: $docsCount markdown files.")
+$corpusReadmeLines.Add("- Avalonia Accelerate: $accelerateCount markdown files.")
+$corpusReadmeLines.Add("- Avalonia XPF: $xpfCount markdown files.")
 if ($hasApiCollection) {
-    $corpusReadmeLines.Add("- Avalonia API Reference: $((($allRecords | Where-Object Collection -eq 'api').Count)) markdown files.")
+    $corpusReadmeLines.Add("- Avalonia API Reference: $apiCount markdown files across $apiNamespaceCount namespace pages and $apiTypeCount type pages.")
 }
 $corpusReadmeLines.Add('')
 $corpusReadmeLines.Add('## Source')
@@ -1408,14 +1407,30 @@ $skillLines.Add('- Use the local files only; do not browse the network unless th
 $skillLines.Add('- Prefer the collection indexes before deep-reading individual files.')
 $skillLines.Add('- Treat local corpus files as the source of truth even when a page still mentions docs.avaloniaui.net or api-docs.avaloniaui.net.')
 $skillLines.Add('')
+$skillLines.Add('## Corpus Scale')
+$skillLines.Add('')
+$skillLines.Add('- `docs/`: ' + $docsCount + ' markdown files covering onboarding, guides, concepts, deployment, reference, tutorials, and release-oriented notes.')
+$skillLines.Add('- `accelerate/`: ' + $accelerateCount + ' markdown files for commercial tooling and components such as Dev Tools, Parcel, VS Extension, Media Player, TreeDataGrid, WebView, Virtual Keyboard, and Markdown.')
+$skillLines.Add('- `xpf/`: ' + $xpfCount + ' markdown files for WPF migration, XPF platforms, embedding, advanced topics, and troubleshooting.')
+if ($hasApiCollection) {
+    $skillLines.Add('- `api/`: ' + $apiCount + ' markdown files, including ' + $apiNamespaceCount + ' namespace pages and ' + $apiTypeCount + ' type pages generated from the pinned Avalonia source tag.')
+}
+$skillLines.Add('')
 $skillLines.Add('## Corpus layout')
 $skillLines.Add('')
-$skillLines.Add('- `README.md` — top-level skill overview and install notes.')
+$skillLines.Add('- `README.md` — top-level corpus overview, collection counts, and source notes for this packaged directory.')
+$skillLines.Add('- `LEGAL.md` — source attribution and redistribution note. Use it for provenance or licensing questions, not framework behavior.')
 $skillLines.Add('- `docs/README.md` — primary Avalonia docs index in sidebar order.')
+$skillLines.Add('- `docs/get-started/`, `docs/basics/`, `docs/guides/`, `docs/concepts/`, `docs/deployment/`, `docs/reference/`, `docs/tutorials/`, `docs/stay-up-to-date/`, and `docs/overview/` — the main conceptual and task-oriented documentation sections.')
 $skillLines.Add('- `accelerate/README.md` — Accelerate product docs index.')
+$skillLines.Add('- `accelerate/tools/` and `accelerate/components/` — tooling workflows and component-specific product docs.')
 $skillLines.Add('- `xpf/README.md` — XPF docs index.')
+$skillLines.Add('- `xpf/platforms/`, `xpf/embedding/`, and `xpf/advanced/` — XPF-specific platform, interop, and migration details.')
 if ($hasApiCollection) {
-    $skillLines.Add('- `api/README.md` — generated API reference index.')
+    $skillLines.Add('- `api/README.md` — generated API reference index in sidebar order.')
+    $skillLines.Add('- `api/index.md` — namespace inventory and top-level counts for the generated API corpus.')
+    $skillLines.Add('- `api/namespaces/*.md` — namespace pages that enumerate the available types.')
+    $skillLines.Add('- `api/types/**/*.md` — definitive per-type API pages for members, inheritance, assembly, and summary information.')
 }
 $skillLines.Add('- `docs/`, `accelerate/`, `xpf/` — cleaned GFM markdown files.')
 if ($hasApiCollection) {
@@ -1423,40 +1438,62 @@ if ($hasApiCollection) {
 }
 $skillLines.Add('- `static/` — local non-video static assets referenced by the markdown.')
 $skillLines.Add('')
-$skillLines.Add('## Navigation strategy')
+$skillLines.Add('## Question Routing')
 $skillLines.Add('')
-$skillLines.Add('1. Start with the relevant collection README to find the curated section order and likely landing pages.')
-$skillLines.Add('2. For broad framework questions, concepts, how-to guidance, tutorials, or control overviews, begin in `docs/`.')
+$skillLines.Add('1. Start with the collection README before jumping into leaf pages. The README files are richer than many section landing pages and mirror the original site navigation.')
+$skillLines.Add('2. For onboarding, tutorials, WPF comparison material, and high-level product orientation, start in `docs/get-started/` and `docs/overview/`.')
+$skillLines.Add('3. For control usage, layout, styling, binding, images, interactivity, and other day-to-day app-building questions, start in `docs/basics/` and `docs/guides/`.')
+$skillLines.Add('4. For theory, architecture, templates, services, input, lifetimes, composition, and ReactiveUI background, start in `docs/concepts/`.')
+$skillLines.Add('5. For packaging, platform bring-up, deployment, and runtime environment questions, combine `docs/deployment/` with the relevant pages under `docs/guides/platforms/`.')
+$skillLines.Add('6. For release behavior, upgrade notes, and Avalonia 12 changes, use `docs/stay-up-to-date/` and `docs/avalonia12-breaking-changes.md`.')
 if ($hasApiCollection) {
-    $skillLines.Add('3. For exact API surface, inheritance, assemblies, constructors, properties, methods, events, fields, and namespace membership, pivot to `api/`.')
-    $skillLines.Add('4. Use `api/index.md` for namespace discovery, `api/namespaces/*.md` to enumerate types in a namespace, and `api/types/**/*.md` for the definitive page for a type.')
-    $skillLines.Add('5. When a docs page says “see the API docs” or links to api-docs.avaloniaui.net, use the local `api/` corpus instead of the network URL.')
-    $skillLines.Add('6. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.')
-    $skillLines.Add('7. For WPF migration, platform gaps, embedding, and XPF-specific guidance, use `xpf/`.')
-    $skillLines.Add('8. If a question asks both “how” and “what API,” answer from both the conceptual docs and the relevant local API type page.')
-    $skillLines.Add('9. Quote the exact markdown files you used when answering detailed questions.')
+    $skillLines.Add('7. For exact API surface, inheritance, assemblies, constructors, properties, methods, events, fields, and namespace membership, pivot to `api/`.')
+    $skillLines.Add('8. When a prose page says “see the API docs” or links to api-docs.avaloniaui.net, replace that link with the local `api/` page instead of using the network URL.')
+    $skillLines.Add('9. For commercial tooling, previewer, Parcel, Dev Tools, and paid Avalonia components, use `accelerate/`.')
+    $skillLines.Add('10. For XPF, WPF migration gaps, embedding, platform support, or advanced interoperability, use `xpf/`.')
+    $skillLines.Add('11. If a question asks both “how do I use it?” and “what API does it expose?”, answer from both the conceptual docs and the relevant local API page.')
+    $skillLines.Add('12. Quote the exact markdown files you used when answering detailed questions.')
 } else {
-    $skillLines.Add('3. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.')
-    $skillLines.Add('4. For WPF migration and XPF-specific topics, use `xpf/`.')
-    $skillLines.Add('5. If a page points to external API docs, state that the API corpus is not included in this build and use the local conceptual docs first.')
-    $skillLines.Add('6. Quote the exact markdown files you used when answering detailed questions.')
+    $skillLines.Add('7. For commercial tooling, previewer, Parcel, and Dev Tools questions, use `accelerate/`.')
+    $skillLines.Add('8. For WPF migration and XPF-specific topics, use `xpf/`.')
+    $skillLines.Add('9. If a page points to external API docs, state that the API corpus is not included in this build and use the local conceptual docs first.')
+    $skillLines.Add('10. Quote the exact markdown files you used when answering detailed questions.')
 }
+$skillLines.Add('')
+$skillLines.Add('## Reading Strategy')
+$skillLines.Add('')
+$skillLines.Add('- Start broad, then narrow: collection README -> section index page -> leaf page -> API page if needed.')
+$skillLines.Add('- If a section landing page is sparse or mostly introductory, return to the collection README or a nearby section index to find the denser leaf pages.')
+$skillLines.Add('- Treat local relative links and local images as part of the corpus. Screenshots in `static/` often provide important UI context for controls and tooling workflows.')
+$skillLines.Add('- Tutorial pages may contain critical guidance under `#### Hint`, `#### Solution`, or similarly named subsections that were converted from collapsible source blocks. Read the whole page before concluding it lacks detail.')
+$skillLines.Add('- When the same topic appears in multiple collections, compare them deliberately instead of assuming one supersedes the others. `docs/` explains framework behavior, `api/` gives exact type/member facts, `accelerate/` covers commercial tooling, and `xpf/` covers migration and compatibility.')
 $skillLines.Add('')
 $skillLines.Add('## API workflow')
 $skillLines.Add('')
 if ($hasApiCollection) {
-    $skillLines.Add('- If the user names a concrete type such as `TextBox`, `Window`, or `AvaloniaObject`, look for the matching file under `api/types/` and use the namespace page to confirm related types.')
-    $skillLines.Add('- If the user asks for events, properties, or methods, prefer the generated type page over prose docs because the member lists are more complete and structured.')
-    $skillLines.Add('- If the user asks how to use a type, pair the generated API page with a how-to or reference page from `docs/`, `accelerate/`, or `xpf/` when available.')
-    $skillLines.Add('- If multiple types share the same short name, disambiguate by namespace before answering.')
+    $skillLines.Add('- Use `api/index.md` to identify the namespace first, then open the corresponding file in `api/namespaces/`, and only then jump to the matching type page in `api/types/`.')
+    $skillLines.Add('- If the user names a concrete type such as `TextBox`, `Window`, or `AvaloniaObject`, use the namespace page to confirm the exact local type link before reading the type page.')
+    $skillLines.Add('- Do not guess API filenames from human-readable type names when generics or nested types are involved. The namespace page is the authoritative map from display name to local file path.')
+    $skillLines.Add('- If multiple type pages share the same display name or differ only by generic arity, disambiguate by namespace and cite the exact file path you used.')
+    $skillLines.Add('- If the user asks for events, properties, methods, fields, inheritance, or assembly information, prefer the generated type page over prose docs because the member lists are more complete and structured.')
+    $skillLines.Add('- If the user asks how to use a type, pair the generated API page with a how-to, tutorial, or reference page from `docs/`, `accelerate/`, or `xpf/` when available.')
 }
+$skillLines.Add('')
+$skillLines.Add('## Answer Construction')
+$skillLines.Add('')
+$skillLines.Add('- Lead with the local answer, then cite the specific file or files that support it.')
+$skillLines.Add('- If the best answer spans multiple collections, explain the split clearly: conceptual guidance from `docs/`, exact member facts from `api/`, commercial workflow from `accelerate/`, or migration caveats from `xpf/`.')
+$skillLines.Add('- When the corpus only provides partial guidance, say what is confirmed locally and identify any remaining uncertainty instead of guessing.')
+$skillLines.Add('- Preserve important qualifiers such as platform restrictions, version caveats, preview status, and licensing boundaries when they appear in the source files.')
 $skillLines.Add('')
 $skillLines.Add('## Working style')
 $skillLines.Add('')
 $skillLines.Add('- Answer from local markdown evidence and cite file paths.')
 $skillLines.Add('- Keep internal links local; the corpus is intended to be portable as a zipped skill directory.')
+$skillLines.Add('- Prefer local corpus evidence over memory. If you have not opened the relevant page yet, open it before asserting details.')
 $skillLines.Add('- If a topic appears in multiple collections, mention the overlap and compare the relevant files.')
-$skillLines.Add('- Some tutorial and tooling pages use collapsible HTML details blocks; read the full file contents, not just the visible headings.')
+$skillLines.Add('- When you cite an external link from the corpus, state that it is an external reference and not part of the offline skill payload.')
+$skillLines.Add('- Use `LEGAL.md` only for attribution, provenance, or redistribution questions; do not treat it as technical product documentation.')
 $skillLines.Add('- If a link points outside the local corpus (for example GitHub or Microsoft downloads), state that it is an external reference.')
 Set-Content -LiteralPath (Join-Path $skillRoot 'SKILL.md') -Value (($skillLines -join "`n") + "`n") -Encoding UTF8
 
